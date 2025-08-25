@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>View Attendance</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f9f9f9; margin:0; padding:20px; max-width: 900px; margin:auto; }
+    h1 { text-align: center; }
+     header {
+      background: #422ea1;
+      color: #ffffff;
+      padding: 20px;
+    }
+
+    .header-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .logo-box {
+      position: absolute;
+      left: 20px;
+    }
+
+    .logo {
+      height: 60px;
+      width: auto;
+    }
+
+    .content {
+      text-align: center;
+    }
+
+    .content h1 {
+      margin: 0;
+      font-size: 2em;
+    }
+
+    nav {
+      margin-top: 10px;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    th, td {
+      padding: 12px;
+      border-bottom: 1px solid #ddd;
+      text-align: left;
+    }
+    th { background: #422ea1; color: white; }
+    tr:hover { background-color: #f1f1f1; }
+    a.back-link {
+      display: block;
+      margin-top: 20px;
+      text-align: center;
+      color: #422ea1;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+<header>
+    <div class="header-container">
+      <!-- Logo at left -->
+      <div class="logo-box">
+        <img src="https://vtalent.in/images/vtalentlogo.png" class="logo" alt="Logo" />
+      </div>
+
+      <!-- Content at center -->
+      <div class="content">
+        <h1>Admin Panel</h1>
+        <nav>
+          <a href="View.html">Home</a>
+          <a href="#">Courses</a>
+          <a href="View.html">Contact</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+  <h1>View Attendance</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Student ID</th>
+        <th>Student Name</th>
+        <th>Course</th>
+        <th>Days Present</th>
+        <th>Days Absent</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>101</td>
+        <td>dinesh</td>
+        <td>Java</td>
+        <td>18</td>
+        <td>2</td>
+      </tr>
+      <tr>
+        <td>102</td>
+        <td>purna</td>
+        <td>Python</td>
+        <td>20</td>
+        <td>0</td>
+      </tr>
+      <!-- Dynamic data here -->
+    </tbody>
+  </table>
+  <a href="admin.html" class="back-link">Back to Dashboard</a>
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Admin Dashboard</title>
+  <style>
+    body {
+       font-family: Arial, sans-serif;
+		  background: #f3f0ff; /* soft light lavender */
+		  margin: 0;
+		  padding: 20px;
+		  display: flex;
+		  flex-direction: column;
+		  align-items: center;
+    }
+    header {
+      background: #422ea1;
+      color: #ffffff;
+      padding: 20px;
+      margin-bottom: 40px;
+      width: 100%;
+    }
+
+    .header-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .logo-box {
+      position: absolute;
+      left: 20px;
+    }
+
+    .logo {
+      height: 60px;
+      width: auto;
+    }
+
+    .content {
+      text-align: center;
+      width: 100%;
+    }
+
+    .content h1 {
+      margin: 0;
+      font-size: 2em;
+    }
+
+    nav {
+      margin-top: 10px;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 40px;
+      color: #fff;
+    }
+
+    .card-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 30px;
+      max-width: 700px;
+      width: 100%;
+    }
+
+    .card {
+      background: #422ea1;
+      color: white;
+      border-radius: 10px;
+      padding: 30px 20px;
+      text-align: center;
+      font-weight: bold;
+      font-size: 1.2em;
+      cursor: pointer;
+      box-shadow: 0 6px 10px rgba(66, 46, 161, 0.3);
+      transition: background 0.3s, box-shadow 0.3s, transform 0.3s;
+      text-decoration: none;
+      user-select: none;
+    }
+
+    .card:hover {
+      background: #5937c9;
+      box-shadow: 0 10px 15px rgba(89, 55, 201, 0.5);
+      transform: translateY(-5px);
+      text-decoration: none;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="header-container">
+    <div class="logo-box">
+      <img src="https://vtalent.in/images/vtalentlogo.png" class="logo" alt="Logo" />
+    </div>
+    <div class="content">
+      <h1>Admin Dashboard</h1>
+      <nav>
+        <a href="View.html">Home</a>
+        <a href="#">Courses</a>
+        <a href="View.html">Contact</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<div class="card-container">
+  <a href="add-student(admin).html" class="card">Add Student</a>
+  <a href="view-students(admin).html" class="card">View Students</a>
+  <a href="view-attendance(admin).html" class="card">View Attendance</a>
+  <a href="viewPerformace(admin).html" class="card">View Performance</a>
+</div>
+
+</body>
+</html>

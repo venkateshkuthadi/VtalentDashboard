@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>View Students</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f9f9f9; margin:0; padding:20px; max-width: 800px; margin:auto; }
+    h1 { text-align: center; }
+     header {
+      background: #422ea1;
+      color: #ffffff;
+      padding: 20px;
+    }
+
+    .header-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .logo-box {
+      position: absolute;
+      left: 20px;
+    }
+
+    .logo {
+      height: 60px;
+      width: auto;
+    }
+
+    .content {
+      text-align: center;
+    }
+
+    .content h1 {
+      margin: 0;
+      font-size: 2em;
+    }
+
+    nav {
+      margin-top: 10px;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    th, td {
+      padding: 12px;
+      border-bottom: 1px solid #ddd;
+      text-align: left;
+    }
+    th { background: #422ea1; color: white; }
+    tr:hover { background-color: #f1f1f1; }
+    a.button {
+      text-decoration: none;
+      background-color: #422ea1;
+      color: white;
+      padding: 5px 10px;
+      border-radius: 5px;
+      margin-right: 5px;
+      font-size: 0.9em;
+    }
+    a.button.delete { background-color: #d9534f; }
+    a.button:hover { opacity: 0.8; }
+    a.back-link {
+      display: block;
+      margin-top: 20px;
+      text-align: center;
+      color: #422ea1;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+<header>
+    <div class="header-container">
+      <!-- Logo at left -->
+      <div class="logo-box">
+        <img src="https://vtalent.in/images/vtalentlogo.png" class="logo" alt="Logo" />
+      </div>
+
+      <!-- Content at center -->
+      <div class="content">
+        <h1>Admin Panel</h1>
+        <nav>
+          <a href="View.html">Home</a>
+          <a href="#">Courses</a>
+          <a href="View.html">Contact</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+  <h1>View Students</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Student ID</th>
+        <th>Name</th>
+        <th>Course</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Sample row -->
+      <tr>
+        <td>101</td>
+        <td>Rahul</td>
+        <td>Java</td>
+        <td>
+          <a href="#" class="button">Edit</a>
+          <a href="#" class="button delete">Delete</a>
+        </td>
+      </tr>
+      <tr>
+        <td>102</td>
+        <td>Priya</td>
+        <td>Python</td>
+        <td>
+          <a href="#" class="button">Edit</a>
+          <a href="#" class="button delete">Delete</a>
+        </td>
+      </tr>
+      <!-- Add more rows dynamically -->
+    </tbody>
+  </table>
+  <a href="admin.html" class="back-link">Back to Dashboard</a>
+</body>
+</html>
