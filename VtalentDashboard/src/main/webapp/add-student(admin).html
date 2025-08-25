@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Full Width Header</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+   header {
+      background: #422ea1;
+      color: #ffffff;
+      padding: 20px;
+    }
+
+    .header-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .logo-box {
+      position: absolute;
+      left: 20px;
+    }
+
+    .logo {
+      height: 60px;
+      width: auto;
+    }
+
+    .content {
+      text-align: center;
+    }
+
+    .content h1 {
+      margin: 0;
+      font-size: 2em;
+    }
+
+    nav {
+      margin-top: 10px;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+    
+    form {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    }
+    label, input {
+      display: block;
+      width: 100%;
+      margin-bottom: 15px;
+    }
+    input[type="text"], input[type="number"] {
+      padding: 8px;
+      font-size: 1em;
+    }
+    input[type="submit"] {
+      background: #422ea1;
+      color: white;
+      border: none;
+      padding: 12px;
+      border-radius: 5px;
+      font-size: 1em;
+      cursor: pointer;
+    }
+    input[type="submit"]:hover {
+      background: #5937c9;
+    }
+    a { display: block; text-align: center; margin-top: 20px; color: #422ea1; text-decoration:none; }
+  
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-container">
+    <div class="logo-box">
+      <img src="https://vtalent.in/images/vtalentlogo.png" alt="Logo" class="logo" />
+    </div>
+    <div class="content">
+      <h1>Admin Dashboard</h1>
+      <nav>
+        <a href="View.html">Home</a>
+        <a href="#">Courses</a>
+        <a href="View.html">Contact</a>
+      </nav>
+    </div>
+  </div>
+  	
+</header>
+ <h1>Add Student</h1>
+  <form action="#" method="post">
+    <label for="name">Student Name</label>
+    <input type="text" id="name" name="name" required />
+
+    <label for="studentId">Student ID</label>
+    <input type="text" id="studentId" name="studentId" required />
+
+    <label for="course">Course</label>
+    <input type="text" id="course" name="course" required />
+
+    <input type="submit" value="Add Student" />
+  </form>
+  <a href="index.html">Back to Dashboard</a>
+  
+
+</body>
+</html>
