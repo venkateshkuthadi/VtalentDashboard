@@ -106,6 +106,66 @@
       color: white;
       margin-top: 50px;
     }
+    .wrap {
+    max-width :2000px;
+    margin: 48px auto;
+    padding: 0 15px;
+  }
+
+  .slider {
+    position: relative;
+    overflow: hidden;               /* hide scrolling track edges */
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.35);
+    background: white;
+  }
+
+  /* The “track” is twice as wide because we duplicate slides for a perfect loop */
+  .track {
+    display: flex;
+    width: max-content;             /* shrink-wrap to slides */
+    animation: scroll 20s linear infinite;
+    /* Pause on hover (optional) */
+  }
+  .slider:hover .track { animation-play-state: paused; }
+
+  .slide {
+    flex: 0 0 auto;                 /* no shrinking, no growing */
+    width: 250px;                   /* each card’s width */
+    aspect-ratio: 16 / 9;           /* keeps slides proportional */
+    margin-right: 12px;             /* gap between slides */
+    border-radius: 12px;
+    overflow: hidden;
+    background: #000;
+    object-fit: cover;
+  }
+
+  .slide img {
+   
+      width: 100%;
+    height:100%;
+     object-fit: cover;
+ display: block;
+   
+  }
+
+  /* Keyframes: move the whole duplicated track left by 50% of its length,
+     which equals one full set of slides, then loop seamlessly. */
+  @keyframes scroll {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+
+  /* Optional: gradient edge masks for a nice fade in/out */
+  .slider::before,
+  .slider::after {
+    content: "";
+    position: absolute; z-index: 2; top: 0; bottom: 0;
+    width: 56px; pointer-events: none;
+  }
+  .slider::before { left: 0;  background: linear-gradient(to right, #000, transparent); }
+  .slider::after  { right: 0; background: linear-gradient(to left,    #000, transparent); }
+    
   </style>
 </head>
 <body>
@@ -123,8 +183,24 @@
 
   <!-- Hero Section -->
   <div class="hero">
-    <h1>Welcome to Vtalent Dashboard</h1>
-    <p>Your gateway to learning, growth, and career opportunities.</p>
+  <h1>Welcome to Vtalent!</h1>
+   <div class="slider">
+      <div class="track">
+        <!-- Set A -->
+        <figure class="slide"><img src="VtalentScrollingImages/sir.jpg"  alt="Slide 1"></figure>
+        <figure class="slide"><img src="VtalentScrollingImages/frontend.jpg"  alt="Slide 2"></figure>
+        <figure class="slide"><img src="VtalentScrollingImages/prasadsir.jpg" alt="Slide 3"></figure>
+        <figure class="slide"><img src="VtalentScrollingImages/softskills.jpg" alt="Slide 4"></figure>
+        <figure class="slide"><img src="VtalentScrollingImages/aptitude.jpg" alt="Slide 5"></figure>
+
+        <!-- Set B (duplicate Set A, same order) -->
+        <figure class="slide"><img src="VtalentScrollingImages/sir.jpg"   alt="Slide 1 duplicate"></figure>
+        <figure class="slide"><img src="VtalentScrollingImages/frontend.jpg"   alt="Slide 2 duplicate"></figure>
+        <figure class="slide"><img src="VtalentScrollingImages/prasadsir.jpg" alt="Slide 3 duplicate"></figure>
+        <figure class="slide"><img src="VtalentScrollingImages/softskills.jpg" alt="Slide 4 duplicate"></figure>
+        <figure class="slide"><img src="VtalentScrollingImages/aptitude.jpg" alt="Slide 5 duplicate"></figure>
+      </div>
+    </div>
   </div>
 
   <!-- Highlights Section -->
