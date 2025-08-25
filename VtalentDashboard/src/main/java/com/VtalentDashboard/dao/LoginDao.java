@@ -21,7 +21,7 @@ public class LoginDao {
 		
 		if(l.getRole().equals("student")) {
 		try {
-			String sql="select * from Student where username = ? and password = ?";
+			String sql="select * from student where Name = ? and Password = ?";
 			p=con.prepareStatement(sql);
 			p.setString(1, l.getUsername());
 			p.setString(2, l.getPassword());

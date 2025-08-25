@@ -11,7 +11,7 @@ public class SQLConnInst {
 		
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/Student","root","root");
+			con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/vtalent","root","root");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
