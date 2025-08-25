@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Page</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+    integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- <link rel="Stylesheet" href="style.css" /> -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+    crossorigin="anonymous"></script>
+<style>
+.navbar{
+  background-color:aliceblue;
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+}
+*{
+  /* background-color:black;  */
+   background-color:aliceblue; 
+}
+li{
+  list-style:none;
+  display: inline-block;
+}
+li a{
+  color:#0b3f8c;
+  font-size: 18px;
+  margin-right: 100px;
+  margin-top: 50px;
+  padding-top:120px;
+  align-content: center;
+  
+}
+#index_page:hover,
+#contact_page:hover,
+#content_page:hover
+{
+  background-color: aliceblue;
+  color: orangered;
+  
+}
+#login_page
+{
+  background-color: rgb(255, 69, 0);
+}
+#register_page
+{
+  background-color: orangered;
+}
+#login_page:hover
+{
+  background-color: white;
+  color: #0b3f8c;
+box-shadow: 10px 10px 10px rgba(0, 123, 255, 0.7);
+}
+#register_page:hover{
+  background-color: white;
+  color:#0b3f8c;
+  box-shadow: 10px 10px 10px rgba(0, 123, 255, 0.7);
+
+}
+.home
+{
+  margin: 25px;
+  height:25rem;
+  /* background-color: rgb(236, 236, 15); */
+  background-color:aliceblue;
+  padding:15 rem;
+}
+.matter
+{
+  /* margin: 35px;
+  height: 15rem;
+  padding-top:6rex;
+  background-color:wheat; */
+  display:flex;
+} 
+.info
+{
+  background-color: brown;
+  margin:5px;
+  
+}
+.rounded.float-end
+{
+   width: 50%;   /* set fixed width */
+   height: auto; 
+} 
+ section {
+      height: 100vh;
+      padding: 50px;
+    }
+    .card mb-3
+    {
+      margin:50rem;
+      
+    }
+    .card-body
+    {
+      margin:10px;
+      background-color: aliceblue;
+      
+    }
+    .card-body:hover{
+      box-shadow: 10px 10px 10px rgba(20, 24, 29, 0.7);
+
+    }
+    .h2{
+      margin-bottom:120px;
+    }
+    #content
+    {
+      margin-bottom: 25px;
+    }
+    .card-footer text-body-secondary
+    {
+      height:40px;
+    }
+    .blockquote
+    {
+      display:inline-block;
+    }
+    #hyd_address:hover,#vizak_address:hover
+    {
+            background-color:white;
+            position: absolute;
+      box-shadow: 10px 10px 10px rgba(20, 24, 29, 0.7);
+
+    }</style>
+    
+</head>
+
+<body>https://vtalent.in/images/
+
+  <header>
+    <div class="navbar">
+      <div class="logo">
+        <img src="https://vtalent.in/images/vtalentlogo.png" alt="logo">
+      </div>
+      <div class="options">
+        <!-- <ul>
+              <li><a href="index.html" class="btn btn-primary btn-lg" id="index_page" >Home</a></li>
+              <li><a href="content.html" class="btn btn-primary btn-lg" id="content_page">content</a></li>
+              <li><a href="contact.html" class="btn btn-primary btn-lg" id="contact_page">contact</a></li>
+              <li><a href="login.html" class="btn btn-primary btn-lg"id="login_page">Login</a></li>
+              <li><a href="Register.html "class="btn btn-primary btn-lg" id="register_page">Register</a></li>
+            </ul> -->
+        <ul>
+          <li><a href="#home" class="btn btn-primary btn-lg" id="index_page">Home</a></li>
+          <li><a href="Coursespage.html" class="btn btn-primary btn-lg" id="content_page">Course</a></li>
+          <li><a href="#contact" class="btn btn-primary btn-lg" id="contact_page">Contact</a></li>
+          <li><a href="index.jsp" class="btn btn-primary btn-lg" id="login_page">Login</a></li>
+          <li><a href="register.html" class="btn btn-primary btn-lg" id="register_page">Register</a></li>
+        </ul>
+
+      </div>
+
+    </div>
+
+  </header>
+  <section class="home">
+    <div class="matter">
+      <!-- <p class="info">Vtalent is a leading Technical Training, Skill Development and Placement company based in Hyderabad serving PAN India.
+               Our courses are designed and developed by IT Veterans with more than a decade of experience in training and placing the right candidates in leading MNC’s.
+We are named for our extensive practical training that gives students real- exposure with the highly demanded technologies in the industry. 
+Also Trainers are highly qualified from various MNC’s so students can understand real time working scenarios and get corporate exposure.</p> -->
+      <div class="card mb-3" style="width: 50%;">
+        <div class="card-body">
+          <h5 class="card-title">Vtalent is a leading Technical Training</h5>
+          <p class="card-text">Vtalent is a leading technical training, skill development, and placement company based
+            in Hyderabad, serving across India.
+            It is known for its extensive practical training that provides students with real-time exposure to highly
+            demanded technologies, guided by trainers with corporate experience from top MNCs.
+            The institute offers courses in Java, .Net, Python, Data Science, Salesforce, and other IT domains, covering
+            everything from basics to real-time projects.
+            With over 3000 students trained and a strong record of 100% job placements in reputed companies, Vtalent
+            ensures an immense learning experience and career opportunities in the IT industry.</p>
+          <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+        </div>
+      </div>
+      <img src="https://vtalent.in/images/vtalentlogo.png" class="rounded float-end" alt="video">
+    </div>
+  </section>
+  <!-- <section id="home">
+    <div class="matter d-flex justify-content-between align-items-center">
+      <p class="info">
+        Vtalent is a leading Technical Training, Skill Development and Placement company based in Hyderabad serving PAN India.
+        Our courses are designed and developed by IT Veterans with more than a decade of experience in training and placing the right candidates in leading MNC’s.
+      </p>
+      <img src="vtalentlogo.png" class="rounded float-end" alt="video">
+    </div>
+  </section> -->
+  
+         
+
+  <section id="contact">
+    <h2>📞 Contact Section</h2>
+    <div class="card">
+      <div class="card-header">
+        Quote
+      </div>
+      <div class="card-body">
+      <figure>
+          <!-- <blockquote class="blockquote"> -->
+            <!-- <p>A well-known quote, contained in a blockquote element.</p> -->
+            <div class="row">
+               <div class="col-sm-3"></div>
+              <div class="col-sm-3" >
+                <div class="card text-center mb-3" style="width: 18rem;">
+                  <div class="card-body" id="hyd_address" >
+                    <h5 class="card-title">Hyderabad Address</h5>
+                    <p class="card-text">
+
+                      3rd Floor
+                      <br>
+
+                      Namaskar Bhavan,<br>
+
+                      Opp to : AED Hospital Road No. 01,<br>
+
+                      KPHB Phase - 01<br>
+
+                      Kukatpally ,
+
+                      Hyderabad ,
+
+                      Telangana - 500072.
+                    </p><br>
+                    <span class="fw-bold">Email:</span> hr@vtalent.in
+                    hr.vtalent@gmail.com <br></p>
+                    <a href="#" class="btn btn-primary ">Phone No : 8977149444</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-sm-6">
+                <div class="card text-center mb-3" style="width: 18rem;">
+                  <div class="card-body" id="vizak_address">
+                    <h5 class="card-title">Visakhapatnam Address</h5>
+                    <p class="card-text">
+
+                      Chillapalli Complex
+                      <br>
+
+                      1st Floor,1st Lane,<br>
+
+                      Dwaraka Nagar,<br>
+
+                      Near V Square<br>
+
+                      Visakhapatnam - 530020.
+                      <br>
+                      <br>
+                      <br>
+                    <P>
+                    <br>
+                        <span class="fw-bold">Email:</span> hr@vtalent.in
+                          hr.vtalent@gmail.com
+                        <br>
+                     </P>
+                    <a href="#" class="btn btn-primary ">Phone No : 8522943444</a>
+                  </div>
+                </div>
+              </div>
+              <!-- <div class="col-sm-6">
+          <div class="card text-center mb-3" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title">Special title treatment</h5>
+            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+          </div>
+        </div> -->
+
+            </div>
+      </div>
+    </div>
+    </blockquote>
+    <figcaption class="blockquote-footer">
+      Someone famous in <cite title="Source Title">Source Title</cite>
+    </figcaption>
+    </figure>
+    </div>
+    </div>
+
+  </section>
+
+</body>
+
+</html>
