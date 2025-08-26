@@ -56,7 +56,7 @@
     <label for="professor">Professor:</label>
     <input type="text" id="professor" name="professor" required>
 
-    <label for="rating">Rating (1-5):</label>
+    <label for="rating">Rating (1-5)</label>
     <select id="rating" name="rating" required>
         <option value="">--Select--</option>
         <option value="1">1 - Poor</option>

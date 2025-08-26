@@ -24,7 +24,7 @@
     .rating { margin: 5px 0 15px 0; color: #f5a623; font-weight: bold; }
     .button { width: 100%; background: #422ea1; color: #fff; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer; font-size: 1rem; transition: background .3s ease; }
     .button:hover { background: #3a2693; }
-    .button.secondary { margin-top: 10px; background: #0ea5e9; } /* Feedback button */
+    .button.secondary { margin-top: 10px; background: #0ea5e9; }
     .button.secondary:hover { background: #0284c7; }
 
     footer { background: #422ea1; color: #ffffff; text-align: center; padding: 15px; margin-top: auto; }
@@ -54,7 +54,7 @@
       <h2>JAVA</h2>
       <p class="professor">Prof. Venkatesh</p>
       <p class="duration">Duration: 6 Months</p>
-      <p class="rating">⭐ 4.5/5</p>
+      <p class="rating">⭐ No rating yet</p>
       <button class="button" onclick="location.href='java.html'">Explore</button>
       <button class="button secondary"
         onclick="location.href='feedback.html?course=JAVA&prof=Prof.%20Venkatesh'">
@@ -68,7 +68,7 @@
       <h2>PYTHON</h2>
       <p class="professor">Prof. Raghunandhan</p>
       <p class="duration">Duration: 6 Months</p>
-      <p class="rating">⭐ 4.7/5</p>
+      <p class="rating">⭐ No rating yet</p>
       <button class="button" onclick="location.href='python.html'">Explore</button>
       <button class="button secondary"
         onclick="location.href='feedback.html?course=PYTHON&prof=Prof.%20Raghunandhan'">
@@ -82,7 +82,7 @@
       <h2>AWS</h2>
       <p class="professor">Prof. Prasad</p>
       <p class="duration">Duration: 6 Months</p>
-      <p class="rating">⭐ 4.3/5</p>
+      <p class="rating">⭐ No rating yet</p>
       <button class="button" onclick="location.href='aws.html'">Explore</button>
       <button class="button secondary"
         onclick="location.href='feedback.html?course=AWS&prof=Prof.%20Prasad'">
@@ -96,7 +96,7 @@
       <h2>AI/ML</h2>
       <p class="professor">Prof. Ramireddy</p>
       <p class="duration">Duration: 6 Months</p>
-      <p class="rating">⭐ 4.6/5</p>
+      <p class="rating">⭐ No rating yet</p>
       <button class="button" onclick="location.href='aiml.html'">Explore</button>
       <button class="button secondary"
         onclick="location.href='feedback.html?course=AI/ML&prof=Prof.%20Ramireddy'">
@@ -110,7 +110,7 @@
       <h2>FRONTEND</h2>
       <p class="professor">Prof. Syam</p>
       <p class="duration">Duration: 6 Months</p>
-      <p class="rating">⭐ 4.4/5</p>
+      <p class="rating">⭐ No rating yet</p>
       <button class="button" onclick="location.href='frontend.html'">Explore</button>
       <button class="button secondary"
         onclick="location.href='feedback.html?course=FRONTEND&prof=Prof.%20Syam'">
@@ -123,5 +123,23 @@
     &copy; 2025 Course Content | All Rights Reserved
   </footer>
 
+  <script>
+    // ✅ Load feedback data
+    let feedbackData = JSON.parse(localStorage.getItem("feedbackData")) || {};
+
+    // Loop through course cards and update ratings
+    document.querySelectorAll(".card").forEach(card => {
+      const courseName = card.querySelector("h2").innerText;
+      const ratingElement = card.querySelector(".rating");
+
+      if (feedbackData[courseName]) {
+        const feedbacks = feedbackData[courseName];
+        const total = feedbacks.reduce((sum, f) => sum + f.rating, 0);
+        const avg = (total / feedbacks.length).toFixed(1);
+
+        ratingElement.textContent = `⭐ ${avg}/5 (${feedbacks.length} reviews)`;
+      }
+    });
+  </script>
 </body>
 </html>
