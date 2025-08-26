@@ -150,7 +150,7 @@
   <div class="container">
     <div class="form-box">
       <div class="logo-section">
-        <img src="Images/vtalentlogo.png" alt="logo" class="main-logo">
+        <img src="images/vtalentlogo.png.jpg" alt="logo" class="main-logo">
       </div>
       <br>
       <h2>Registration Form</h2>
