@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pattern Problems Compiler</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background: linear-gradient(135deg, #1a2a6c 0%, #b21f1f 50%, #fdbb2d 100%); color: #333; min-height: 100vh; display: flex; flex-direction: column; padding: 20px; }
+        header { text-align: center; margin-bottom: 20px; color: white; text-shadow: 0 2px 4px rgba(0,0,0,0.3); }
+        h1 { font-size: 2.5rem; margin-bottom: 10px; }
+        .subtitle { font-size: 1.2rem; opacity: 0.9; }
+        .container { display: flex; height: 80vh; background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); flex-grow: 1; }
+        .panel { padding: 20px; overflow: auto; display: flex; flex-direction: column; }
+        .left-panel { flex: 1; background: #f8f9fa; }
+        .right-panel { flex: 1; background: #2d2d2d; }
+        .divider { width: 8px; background: #3498db; cursor: col-resize; position: relative; }
+        .divider::after { content: ""; position: absolute; top: 50%; left: 1px; right: 1px; height: 50px; background: #2c5364; border-radius: 4px; }
+        .panel-title { color: #2c5364; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid #eaeaea; }
+        .right-panel .panel-title { color: #3498db; border-bottom: 2px solid #444; }
+        .content { flex-grow: 1; line-height: 1.6; }
+        .content h3 { color: #2c5364; margin: 15px 0 10px; }
+        .content p { margin-bottom: 15px; }
+        .content ul { padding-left: 20px; margin-bottom: 15px; }
+        .content li { margin-bottom: 8px; }
+        .content code { background: #e8e8e8; padding: 2px 6px; border-radius: 4px; font-family: 'Courier New', monospace; }
+        .problem-info { background: #e8f4fc; border-left: 4px solid #3498db; padding: 15px; border-radius: 4px; margin: 15px 0; }
+        .problem-nav { display: flex; justify-content: space-between; margin-top: 20px; padding-top: 15px; border-top: 1px solid #ddd; }
+        .nav-btn { padding: 10px 20px; border: none; border-radius: 6px; background: #2c5364; color: white; cursor: pointer; transition: all 0.3s; }
+        .nav-btn:hover { background: #3a6b80; transform: translateY(-2px); }
+        .nav-btn:disabled { background: #95a5a6; cursor: not-allowed; transform: none; }
+        footer { text-align: center; color: white; margin-top: 20px; opacity: 0.8; font-size: 0.9rem; }
+        .programiz-frame { width: 100%; height: 100%; border: none; border-radius: 8px; }
+        .compiler-container { display: flex; flex-direction: column; height: 100%; }
+        .compiler-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+        .compiler-title { color: #3498db; font-weight: bold; }
+        .pattern-example { background: #f5f5f5; padding: 10px; border-radius: 4px; margin: 10px 0; font-family: monospace; line-height: 1.2; }
+        @media (max-width: 768px) {
+            .container { flex-direction: column; }
+            .divider { width: 100%; height: 8px; cursor: row-resize; }
+            .divider::after { width: 50px; height: 100%; top: 0; left: 50%; transform: translateX(-50%); }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Pattern Problems Compiler</h1>
+        <p class="subtitle">Left: Problem Description | Right: Online Java Compiler</p>
+    </header>
+    
+    <div class="container">
+        <div class="panel left-panel">
+            <h2 class="panel-title" id="problem-title">Problem 1: Right-Angled Triangle Pattern</h2>
+            
+            <div class="content" id="problem-content">
+                <h3>Description</h3>
+                <p>Write a Java function to print a right-angled triangle pattern using asterisks (*).</p>
+                
+                <div class="problem-info">
+                    <h4>Function Signature</h4>
+                    <code>public static void printRightTriangle(int n)</code>
+                </div>
+                
+                <h3>Requirements:</h3>
+                <ul>
+                    <li>Print a right-angled triangle with n rows</li>
+                    <li>Each row should have the appropriate number of asterisks</li>
+                </ul>
+                
+                <h3>Example (n=5):</h3>
+                <div class="pattern-example">
+                    *<br>
+                    **<br>
+                    ***<br>
+                    ****<br>
+                    *****
+                </div>
+                
+                <h3>How to use the compiler:</h3>
+                <ol>
+                    <li>Write your solution in the code editor on the right</li>
+                    <li>Click the "Run" button in the Programiz compiler to execute your code</li>
+                    <li>Check the output in the compiler's output panel</li>
+                </ol>
+            </div>
+            
+            <div class="problem-nav">
+                <button class="nav-btn" id="prev-btn" disabled><i class="fas fa-arrow-left"></i> Previous</button>
+                <span id="problem-counter">Problem 1 of 5</span>
+                <button class="nav-btn" id="next-btn">Next <i class="fas fa-arrow-right"></i></button>
+            </div>
+        </div>
+        
+        <div class="divider" id="divider"></div>
+        
+        <div class="panel right-panel">
+            <h2 class="panel-title">Online Java Compiler</h2>
+            
+            <div class="compiler-container">
+                <iframe id="programiz-compiler" class="programiz-frame" src="https://www.programiz.com/java-programming/online-compiler/" title="Online Java Compiler"></iframe>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>Pattern Problems Compiler - Integrated with Programiz Online Java Compiler</p>
+    </footer>
+
+    <script>
+        // Problem data
+        var problems = [
+            {
+                title: "Problem 1: Right-Angled Triangle Pattern",
+                content: `<h3>Description</h3><p>Write a Java function to print a right-angled triangle pattern using asterisks (*).</p>
+                <div class="problem-info"><h4>Function Signature</h4><code>public static void printRightTriangle(int n)</code></div>
+                <h3>Requirements:</h3><ul><li>Print a right-angled triangle with n rows</li><li>Each row should have the appropriate number of asterisks</li></ul>
+                <h3>Example (n=5):</h3>
+                <div class="pattern-example">
+                    *<br>
+                    **<br>
+                    ***<br>
+                    ****<br>
+                    *****
+                </div>
+                <h3>How to use the compiler:</h3>
+                <ol>
+                    <li>Write your solution in the code editor on the right</li>
+                    <li>Click the "Run" button in the Programiz compiler to execute your code</li>
+                    <li>Check the output in the compiler's output panel</li>
+                </ol>`
+            },
+            {
+                title: "Problem 2: Pyramid Pattern",
+                content: `<h3>Description</h3><p>Write a Java function to print a pyramid pattern using asterisks (*).</p>
+                <div class="problem-info"><h4>Function Signature</h4><code>public static void printPyramid(int n)</code></div>
+                <h3>Requirements:</h3><ul><li>Print a pyramid with n rows</li><li>The pyramid should be centered</li></ul>
+                <h3>Example (n=5):</h3>
+                <div class="pattern-example">
+                    &nbsp;&nbsp;&nbsp;&nbsp;*<br>
+                    &nbsp;&nbsp;&nbsp;***<br>
+                    &nbsp;&nbsp;*****<br>
+                    &nbsp;*******<br>
+                    *********
+                </div>
+                <h3>How to use the compiler:</h3>
+                <ol>
+                    <li>Write your solution in the code editor on the right</li>
+                    <li>Click the "Run" button in the Programiz compiler to execute your code</li>
+                    <li>Check the output in the compiler's output panel</li>
+                </ol>`
+            },
+            {
+                title: "Problem 3: Diamond Pattern",
+                content: `<h3>Description</h3><p>Write a Java function to print a diamond pattern using asterisks (*).</p>
+                <div class="problem-info"><h4>Function Signature</h4><code>public static void printDiamond(int n)</code></div>
+                <h3>Requirements:</h3><ul><li>Print a diamond with 2n-1 rows</li><li>The diamond should be centered and symmetric</li></ul>
+                <h3>Example (n=3):</h3>
+                <div class="pattern-example">
+                    &nbsp;&nbsp;*<br>
+                    &nbsp;***<br>
+                    *****<br>
+                    &nbsp;***<br>
+                    &nbsp;&nbsp;*
+                </div>
+                <h3>How to use the compiler:</h3>
+                <ol>
+                    <li>Write your solution in the code editor on the right</li>
+                    <li>Click the "Run" button in the Programiz compiler to execute your code</li>
+                    <li>Check the output in the compiler's output panel</li>
+                </ol>`
+            },
+            {
+                title: "Problem 4: Number Pattern",
+                content: `<h3>Description</h3><p>Write a Java function to print a number pattern where each row contains numbers in sequence.</p>
+                <div class="problem-info"><h4>Function Signature</h4><code>public static void printNumberPattern(int n)</code></div>
+                <h3>Requirements:</h3><ul><li>Print a pattern with n rows</li><li>Each row should contain numbers from 1 to the row number</li></ul>
+                <h3>Example (n=5):</h3>
+                <div class="pattern-example">
+                    1<br>
+                    12<br>
+                    123<br>
+                    1234<br>
+                    12345
+                </div>
+                <h3>How to use the compiler:</h3>
+                <ol>
+                    <li>Write your solution in the code editor on the right</li>
+                    <li>Click the "Run" button in the Programiz compiler to execute your code</li>
+                    <li>Check the output in the compiler's output panel</li>
+                </ol>`
+            },
+            {
+                title: "Problem 5: Hollow Square Pattern",
+                content: `<h3>Description</h3><p>Write a Java function to print a hollow square pattern using asterisks (*).</p>
+                <div class="problem-info"><h4>Function Signature</h4><code>public static void printHollowSquare(int n)</code></div>
+                <h3>Requirements:</h3><ul><li>Print a hollow square with n rows and n columns</li><li>Only the border should be printed with asterisks</li></ul>
+                <h3>Example (n=5):</h3>
+                <div class="pattern-example">
+                    *****<br>
+                    *&nbsp;&nbsp;&nbsp;*<br>
+                    *&nbsp;&nbsp;&nbsp;*<br>
+                    *&nbsp;&nbsp;&nbsp;*<br>
+                    *****
+                </div>
+                <h3>How to use the compiler:</h3>
+                <ol>
+                    <li>Write your solution in the code editor on the right</li>
+                    <li>Click the "Run" button in the Programiz compiler to execute your code</li>
+                    <li>Check the output in the compiler's output panel</li>
+                </ol>`
+            }
+        ];
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const divider = document.getElementById('divider');
+            const container = document.querySelector('.container');
+            const leftPanel = document.querySelector('.left-panel');
+            const rightPanel = document.querySelector('.right-panel');
+            const prevBtn = document.getElementById('prev-btn');
+            const nextProbBtn = document.getElementById('next-btn');
+            const problemTitle = document.getElementById('problem-title');
+            const problemContent = document.getElementById('problem-content');
+            const problemCounter = document.getElementById('problem-counter');
+            const programizFrame = document.getElementById('programiz-compiler');
+            
+            let currentProblem = 0;
+            
+            // Initialize the first problem
+            updateProblem();
+            
+            // Divider functionality
+            divider.addEventListener('mousedown', function(e) {
+                e.preventDefault();
+                document.addEventListener('mousemove', resize);
+                document.addEventListener('mouseup', stopResize);
+                
+                function resize(e) {
+                    const containerRect = container.getBoundingClientRect();
+                    const percent = (e.clientX - containerRect.left) / containerRect.width * 100;
+                    leftPanel.style.flex = `1 1 ${percent}%`;
+                    rightPanel.style.flex = `1 1 ${100 - percent}%`;
+                }
+                
+                function stopResize() {
+                    document.removeEventListener('mousemove', resize);
+                }
+            });
+            
+            // Next Problem button
+            nextProbBtn.addEventListener('click', nextProblem);
+            
+            // Previous button
+            prevBtn.addEventListener('click', function() {
+                if (currentProblem > 0) {
+                    currentProblem--;
+                    updateProblem();
+                }
+            });
+            
+            // Update problem function
+            function updateProblem() {
+                problemTitle.textContent = problems[currentProblem].title;
+                problemContent.innerHTML = problems[currentProblem].content;
+                problemCounter.textContent = `Problem ${currentProblem + 1} of ${problems.length}`;
+                prevBtn.disabled = currentProblem === 0;
+                nextProbBtn.disabled = currentProblem === problems.length - 1;
+                
+                // Reload the iframe to clear previous code
+                programizFrame.src = 'https://www.programiz.com/java-programming/online-compiler/';
+            }
+            
+            function nextProblem() {
+                if (currentProblem < problems.length - 1) {
+                    currentProblem++;
+                    updateProblem();
+                }
+            }
+        });
+    </script>
+</body>
+</html>

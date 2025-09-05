@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      box-sizing: border-box;
+      background: #fff;
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .tab-bar {
+      width: 100%;
+      background: linear-gradient(#422ea1);
+      border-bottom: 1px solid #f5f4f3;
+      padding: 12px 20px;
+      box-sizing: border-box;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .tab-menu {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .tab-button {
+      padding: 10px 22px;
+      border: 2px solid #e0e0e0;
+      background: white;
+      color: #222;
+      font-weight: bold;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: border-color 0.2s, background 0.2s;
+      outline: none;
+      text-decoration: none;
+    }
+
+    .tab-button:hover {
+      background: #e7922a;
+      color: white;
+      border-color: #2a62e7;
+    }
+
+    .site-logo {
+      height: 50px;
+      display: block;
+      margin-left: 5px;
+    }
+
+    .content-area {
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .aptitude-card-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;  
+      margin: 40px;
+    }
+
+    .aptitude-card {
+      aspect-ratio: 1 / 1;
+      background: linear-gradient(120deg, #a19bfa 75%, #c9c3c3 100%);
+      border-radius: 14px;
+      box-shadow: 0 4px 16px rgba(60, 90, 140, 0.12);
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .aptitude-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 6px 20px rgba(60, 90, 140, 0.2);
+    }
+
+    .apt-card-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 28px;
+      text-align: center;
+      color: #232d45;
+    }
+
+    .open-btn {
+      border: 2px solid #232d45;
+      background: #fff;
+      color: #232d45;
+      border-radius: 6px;
+      padding: 10px 40px;
+      font-size: 1rem;
+      font-weight: 500;
+      cursor: pointer;
+      margin-top: auto;
+      transition: background 0.15s, color 0.15s;
+      text-decoration: none;
+      display: inline-block;
+      text-align: center;
+    }
+
+    .open-btn:hover {
+      background: #232d45;
+      color: #fff;
+    }
+
+    @media (max-width: 900px) {
+      .aptitude-card-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (max-width: 500px) {
+      .aptitude-card-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="tab-bar">
+  <div class="tab-menu">
+    <img src="vtalentLogo.png" alt="Logo" class="site-logo"/>
+    <a href="index.html">
+      <img src="homeLogo.png" alt="Home" style="height: 50px; border-radius: 10px;"/>
+    </a>
+    <a href="Aptitude.html" class="tab-button">Aptitude</a>
+    <a href="Communication.html" class="tab-button">Verbal Ability</a>
+    <a href="Coding.html" class="tab-button">Coding</a>
+    <a href="ai-9.html" class="tab-button">AI MCQ</a>
+  </div>
+</div>
+
+<div class="content-area">
+  <img src="Home.jpg" alt="Vtalent Home Page logo" style="width: 100%; border-radius: 12px; margin-top: 10px;">
+</div>
+
+</body>
+</html>

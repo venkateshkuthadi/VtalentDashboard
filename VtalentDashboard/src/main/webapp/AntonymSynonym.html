@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentence Correction</title>
+    <style>
+        .main_box {
+            border: 0.5px solid black;
+            margin-top: 20px;
+        }
+        .main_box:hover {
+            border: 0;
+            box-shadow: 0px 2px 7px rgb(0, 0, 0);
+        }
+        .container {
+            box-shadow: 0px 0px 7px white;
+            margin: 12px;
+            padding: 15px;
+            border-radius: 10px;
+            background-color: aliceblue;
+        }
+        .question {
+            border: 1px solid;
+            font-size: large;
+            background-color: rgb(39, 39, 39);
+            color: white;
+            box-shadow: inset 0px 0px 5px rgb(0, 0, 0);
+        }
+        .hidden { display: none; }
+        .option-text {
+            position: relative;
+            padding-right: 25px;
+        }
+        .option-text.correct::after {
+            content: "✔";
+            color: green;
+            font-weight: bold;
+            position: absolute;
+            right: 0;
+        }
+        .option-text.wrong::after {
+            content: "✖";
+            color: red;
+            font-weight: bold;
+            position: absolute;
+            right: 0;
+        }
+        .explanation {
+            display: none;
+            margin-top: 10px;
+            color: #22b435;
+        }
+        .explanation .label {
+            font-weight: bold;
+            font-size: large;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Question 1 -->
+    <div class="container main_box">
+        <div class="container question">
+            1) Which word is the synonym of "CORPULENT"?
+        </div>
+        <div class="container options">
+            <label><input type="radio" name="Q1" onchange="fun(this,'A','D')"> <span class="option-text">Lean</span></label><br>
+            <label><input type="radio" name="Q1" onchange="fun(this,'B','D')"> <span class="option-text">Gaunt</span></label><br>
+            <label><input type="radio" name="Q1" onchange="fun(this,'C','D')"> <span class="option-text">Emaciated</span></label><br>
+            <label><input type="radio" name="Q1" onchange="fun(this,'D','D')"> <span class="option-text">Obese</span></label>
+        </div>
+    </div>
+
+        <!-- Question 2 -->
+    <div class="container main_box">
+        <div class="container question">
+            2)Which word is the synonym of "BRIEF"?
+        </div>
+        <div class="container options">
+            <label><input type="radio" name="Q2" onchange="fun(this,'A','A')"> <span class="option-text">Short</span></label><br>
+            <label><input type="radio" name="Q2" onchange="fun(this,'B','A')"> <span class="option-text">Limited</span></label><br>
+            <label><input type="radio" name="Q2" onchange="fun(this,'C','A')"> <span class="option-text">Small</span></label><br>
+            <label><input type="radio" name="Q2" onchange="fun(this,'D','A')"> <span class="option-text">Little</span></label>
+        </div>
+    </div>
+
+        <!-- Question 3 -->
+    <div class="container main_box">
+        <div class="container question">
+            3)Which word is the synonym of "EMBEZZLE"?
+        </div>
+        <div class="container options">
+            <label><input type="radio" name="Q3" onchange="fun(this,'A','B')"> <span class="option-text">Balance</span></label><br>
+            <label><input type="radio" name="Q3" onchange="fun(this,'B','B')"> <span class="option-text">Misappropriate</span></label><br>
+            <label><input type="radio" name="Q3" onchange="fun(this,'C','B')"> <span class="option-text">Remunerate</span></label><br>
+            <label><input type="radio" name="Q3" onchange="fun(this,'D','B')"> <span class="option-text">Clear</span></label>
+        </div>
+    </div>
+
+
+           <!-- Question 4 -->
+    <div class="container main_box">
+        <div class="container question">
+            4)Which word is the synonym of "VENT"?
+        </div>
+        <div class="container options">
+            <label><input type="radio" name="Q4" onchange="fun(this,'A','A')"> <span class="option-text">Opening</span></label><br>
+            <label><input type="radio" name="Q4" onchange="fun(this,'B','A')"> <span class="option-text">Stodge</span></label><br>
+            <label><input type="radio" name="Q4" onchange="fun(this,'C','A')"> <span class="option-text">End</span></label><br>
+            <label><input type="radio" name="Q4" onchange="fun(this,'D','A')"> <span class="option-text">Past tense of go</span></label>
+        </div>
+    </div>
+
+
+    
+           <!-- Question 5 -->
+    <div class="container main_box">
+        <div class="container question">
+            5)Which word is the synonym of "AUGUST"?
+        </div>
+        <div class="container options">
+            <label><input type="radio" name="Q5" onchange="fun(this,'A','D')"> <span class="option-text">Common</span></label><br>
+            <label><input type="radio" name="Q5" onchange="fun(this,'B','D')"> <span class="option-text">Ridiculous</span></label><br>
+            <label><input type="radio" name="Q5" onchange="fun(this,'C','D')"> <span class="option-text">Dignified</span></label><br>
+            <label><input type="radio" name="Q5" onchange="fun(this,'D','D')"> <span class="option-text">Petty</span></label>
+        </div>
+    </div>
+
+
+       
+           <!-- Question 6 -->
+    <div class="container main_box">
+        <div class="container question">
+            6)Which word is the synonym of "CANDID"?
+
+        </div>
+        <div class="container options">
+            <label><input type="radio" name="Q6" onchange="fun(this,'A','B')"> <span class="option-text">Secretive</span></label><br>
+            <label><input type="radio" name="Q6" onchange="fun(this,'B','B')"> <span class="option-text">Honest</span></label><br>
+            <label><input type="radio" name="Q6" onchange="fun(this,'C','B')"> <span class="option-text">False</span></label><br>
+            <label><input type="radio" name="Q6" onchange="fun(this,'D','B')"> <span class="option-text">Tricky</span></label>
+        </div>
+    </div>
+
+
+         <!-- Question 7 -->
+    <div class="container main_box">
+        <div class="container question">
+            7)Which word is the synonym of "FRUGAL"?
+
+        </div>
+        <div class="container options">
+            <label><input type="radio" name="Q7" onchange="fun(this,'A','C')"> <span class="option-text">Wasteful</span></label><br>
+            <label><input type="radio" name="Q7" onchange="fun(this,'B','C')"> <span class="option-text">Generous</span></label><br>
+            <label><input type="radio" name="Q7" onchange="fun(this,'C','C')"> <span class="option-text">Economical</span></label><br>
+            <label><input type="radio" name="Q7" onchange="fun(this,'D','C')"> <span class="option-text">Lavish</span></label>
+        </div>
+    </div>
+
+
+       <!-- Question 8 -->
+    <div class="container main_box">
+        <div class="container question">
+            8)Which word is the synonym of "RAPID"?
+
+        </div>
+        <div class="container options">
+            <label><input type="radio" name="Q8" onchange="fun(this,'A','B')"> <span class="option-text">Slow</span></label><br>
+            <label><input type="radio" name="Q8" onchange="fun(this,'B','B')"> <span class="option-text">Quick</span></label><br>
+            <label><input type="radio" name="Q8" onchange="fun(this,'C','B')"> <span class="option-text">Delayed</span></label><br>
+            <label><input type="radio" name="Q8" onchange="fun(this,'D','B')"> <span class="option-text">Lazy</span></label>
+        </div>
+    </div>
+
+    
+       <!-- Question 9 -->
+    <div class="container main_box">
+        <div class="container question">
+            9) Which word is the synonym of "HOSTILE"?
+
+
+        </div>
+        <div class="container options">
+            <label><input type="radio" name="Q9" onchange="fun(this,'A','B')"> <span class="option-text">Friendly</span></label><br>
+            <label><input type="radio" name="Q9" onchange="fun(this,'B','B')"> <span class="option-text">Angry</span></label><br>
+            <label><input type="radio" name="Q9" onchange="fun(this,'C','B')"> <span class="option-text">Peaceful</span></label><br>
+            <label><input type="radio" name="Q9" onchange="fun(this,'D','B')"> <span class="option-text">Kind</span></label>
+        </div>
+    </div>
+
+
+           <!-- Question 10-->
+    <div class="container main_box">
+        <div class="container question">
+            10) Which word is the synonym of "NEBULOUS"?
+
+
+        </div>
+        <div class="container options">
+            <label><input type="radio" name="Q10" onchange="fun(this,'A','B')"> <span class="option-text">Clear</span></label><br>
+            <label><input type="radio" name="Q10" onchange="fun(this,'B','B')"> <span class="option-text">Vague</span></label><br>
+            <label><input type="radio" name="Q10" onchange="fun(this,'C','B')"> <span class="option-text">Bright</span></label><br>
+            <label><input type="radio" name="Q10" onchange="fun(this,'D','B')"> <span class="option-text">Obvious</span></label>
+        </div>
+    </div>
+
+    
+           <!-- Question 11-->
+    <div class="container main_box">
+        <div class="container question">
+            11)Which word is the antonym of "GENEROSITY"?
+
+
+        </div>
+        <div class="container options">
+            <label><input type="radio" name="Q11" onchange="fun(this,'A','A')"> <span class="option-text">selfishness</span></label><br>
+            <label><input type="radio" name="Q11" onchange="fun(this,'B','A')"> <span class="option-text">Kindness</span></label><br>
+            <label><input type="radio" name="Q11" onchange="fun(this,'C','A')"> <span class="option-text">Helpfulness</span></label><br>
+            <label><input type="radio" name="Q11" onchange="fun(this,'D','A')"> <span class="option-text">Charity</span></label>
+        </div>
+    </div>
+
+
+    
+    
+           <!-- Question 12-->
+    <div class="container main_box">
+        <div class="container question">
+            12)Which word is the antonym of "FREQUENT"?
+
+
+        </div>
+        <div class="container options">
+            <label><input type="radio" name="Q12" onchange="fun(this,'A','C')"> <span class="option-text">Usual</span></label><br>
+            <label><input type="radio" name="Q12" onchange="fun(this,'B','C')"> <span class="option-text">Often</span></label><br>
+            <label><input type="radio" name="Q12" onchange="fun(this,'C','C')"> <span class="option-text">Rare</span></label><br>
+            <label><input type="radio" name="Q12" onchange="fun(this,'D','C')"> <span class="option-text">Common</span></label>
+        </div>
+    </div>
+
+              <!-- Question 13-->
+    <div class="container main_box">
+        <div class="container question">
+            13)Which word is the antonym of "VISIBLE"?
+
+
+        </div>
+        <div class="container options">
+            <label><input type="radio" name="Q13" onchange="fun(this,'A','C')"> <span class="option-text">Seen</span></label><br>
+            <label><input type="radio" name="Q13" onchange="fun(this,'B','C')"> <span class="option-text">Clear</span></label><br>
+            <label><input type="radio" name="Q13" onchange="fun(this,'C','C')"> <span class="option-text">Hidden</span></label><br>
+            <label><input type="radio" name="Q13" onchange="fun(this,'D','C')"> <span class="option-text">Bright</span></label>
+        </div>
+    </div>
+
+              <!-- Question 14-->
+    <div class="container main_box">
+        <div class="container question">
+            14)Which word is the antonym of "ENORMOUS"?
+
+
+        </div>
+        <div class="container options">
+            <label><input type="radio" name="Q14" onchange="fun(this,'A','A')"> <span class="option-text">Small</span></label><br>
+            <label><input type="radio" name="Q14" onchange="fun(this,'B','A')"> <span class="option-text">Large</span></label><br>
+            <label><input type="radio" name="Q14" onchange="fun(this,'C','A')"> <span class="option-text">Huge</span></label><br>
+            <label><input type="radio" name="Q14" onchange="fun(this,'D','A')"> <span class="option-text">Big</span></label>
+        </div>
+    </div>
+
+              <!-- Question 15-->
+    <div class="container main_box">
+        <div class="container question">
+            15)Which word is the antonym of "HARMONY"?
+
+
+        </div>
+        <div class="container options">
+            <label><input type="radio" name="Q15" onchange="fun(this,'A','B')"> <span class="option-text">Unity</span></label><br>
+            <label><input type="radio" name="Q15" onchange="fun(this,'B','B')"> <span class="option-text">Conflict</span></label><br>
+            <label><input type="radio" name="Q15" onchange="fun(this,'C','B')"> <span class="option-text">Peace</span></label><br>
+            <label><input type="radio" name="Q15" onchange="fun(this,'D','B')"> <span class="option-text">Friendship</span></label>
+        </div>
+    </div>
+
+              <!-- Question 16-->
+    <div class="container main_box">
+        <div class="container question">
+            16)Which word is the antonym of "ANCIENT"?
+
+
+        </div>
+        <div class="container options">
+            <label><input type="radio" name="Q16" onchange="fun(this,'A','D')"> <span class="option-text">Old</span></label><br>
+            <label><input type="radio" name="Q16" onchange="fun(this,'B','D')"> <span class="option-text">Primitive</span></label><br>
+            <label><input type="radio" name="Q16" onchange="fun(this,'C','D')"> <span class="option-text">Past</span></label><br>
+            <label><input type="radio" name="Q16" onchange="fun(this,'D','D')"> <span class="option-text">Modern</span></label>
+        </div>
+    </div>
+
+              <!-- Question 17-->
+    <div class="container main_box">
+        <div class="container question">
+            17)Which word is the antonym of "OPTIMISTIC"?
+
+
+        </div>
+        <div class="container options">
+            <label><input type="radio" name="Q17" onchange="fun(this,'A','B')"> <span class="option-text">Cheerful</span></label><br>
+            <label><input type="radio" name="Q17" onchange="fun(this,'B','B')"> <span class="option-text">Pessimistic</span></label><br>
+            <label><input type="radio" name="Q17" onchange="fun(this,'C','B')"> <span class="option-text">Hopeful</span></label><br>
+            <label><input type="radio" name="Q17" onchange="fun(this,'D','B')"> <span class="option-text">Positive</span></label>
+        </div>
+    </div>
+
+              <!-- Question 18-->
+    <div class="container main_box">
+        <div class="container question">
+            18)Which word is the antonym of "ARTIFICIAL"?
+
+
+        </div>
+        <div class="container options">
+            <label><input type="radio" name="Q18" onchange="fun(this,'A','C')"> <span class="option-text">Fake</span></label><br>
+            <label><input type="radio" name="Q18" onchange="fun(this,'B','C')"> <span class="option-text">False</span></label><br>
+            <label><input type="radio" name="Q18" onchange="fun(this,'C','C')"> <span class="option-text">Natural</span></label><br>
+            <label><input type="radio" name="Q18" onchange="fun(this,'D','C')"> <span class="option-text">Unreal</span></label>
+        </div>
+    </div>
+
+              <!-- Question 19-->
+    <div class="container main_box">
+        <div class="container question">
+            19)Which word is the antonym of "PERMANENT"?
+
+
+        </div>
+        <div class="container options">
+            <label><input type="radio" name="Q19" onchange="fun(this,'A','C')"> <span class="option-text">Lasting</span></label><br>
+            <label><input type="radio" name="Q19" onchange="fun(this,'B','C')"> <span class="option-text">Fixed</span></label><br>
+            <label><input type="radio" name="Q19" onchange="fun(this,'C','C')"> <span class="option-text">Temporary</span></label><br>
+            <label><input type="radio" name="Q19" onchange="fun(this,'D','C')"> <span class="option-text">Stable</span></label>
+        </div>
+    </div>
+
+              <!-- Question 20-->
+    <div class="container main_box">
+        <div class="container question">
+            20)Which word is the antonym of "COMPLEX"?
+
+
+        </div>
+        <div class="container options">
+            <label><input type="radio" name="Q20" onchange="fun(this,'A','B')"> <span class="option-text">Complicated</span></label><br>
+            <label><input type="radio" name="Q20" onchange="fun(this,'B','B')"> <span class="option-text">Simple</span></label><br>
+            <label><input type="radio" name="Q20" onchange="fun(this,'C','B')"> <span class="option-text">Hard</span></label><br>
+            <label><input type="radio" name="Q20" onchange="fun(this,'D','B')"> <span class="option-text">Intricate</span></label>
+        </div>
+    </div>
+
+
+
+
+
+    <script>
+        function fun(input, user_ans, right_ans, expId) {
+            const span = input.nextElementSibling;
+            if (user_ans === right_ans) {
+                span.classList.add("correct");
+            } else {
+                span.classList.add("wrong");
+            }
+        }
+    </script>
+
+</body>
+</html>

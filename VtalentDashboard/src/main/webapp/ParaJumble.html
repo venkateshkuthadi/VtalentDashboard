@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Relations quiz</title>
+    <style>
+        .main_box {
+            border: 0.5px solid black;
+            margin-top: 20px;
+        }
+        .main_box:hover {
+            border: 0;
+            box-shadow: 0px 2px 7px rgb(0, 0, 0);
+        }
+        .container {
+            box-shadow: 0px 0px 7px white;
+            margin: 12px;
+            padding: 15px;
+            border-radius: 10px;
+            background-color: aliceblue;
+        }
+        .question {
+            border: 1px solid;
+            font-size: large;
+            background-color: rgb(39, 39, 39);
+            color: white;
+            box-shadow: inset 0px 0px 5px rgb(0, 0, 0);
+        }
+        .hidden { display: none; }
+        .option-text {
+            position: relative;
+            padding-right: 25px;
+        }
+        .option-text.correct::after {
+            content: "✔";
+            color: green;
+            font-weight: bold;
+            position: absolute;
+            right: 0;
+        }
+        .option-text.wrong::after {
+            content: "✖";
+            color: red;
+            font-weight: bold;
+            position: absolute;
+            right: 0;
+        }
+        .explanation {
+            display: none;
+            margin-top: 10px;
+            color: #22b435;
+        }
+        .explanation .label {
+            font-weight: bold;
+            font-size: large;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Question 1 -->
+    <div class="container main_box">
+        <div class="container question">
+           <p>Many birds migrate thousands of miles every year</p>
+           <p>The Arctic tern, for instance, travels from the Arctic to the Antarctic</p>
+           <p>Migration helps birds find food and favorable climates</p>
+           <p>This long journey is one of the most remarkable feats in the animal kingdom</p>
+        </div>
+        <div class="container options">
+            <label><input type="radio" name="Q1" onchange="fun(this,'A','D','explanationQ1')"> <span class="option-text">B → C → D → A</span></label><br>
+            <label><input type="radio" name="Q1" onchange="fun(this,'B','D','explanationQ1')"> <span class="option-text">C → B → A → D</span></label><br>
+            <label><input type="radio" name="Q1" onchange="fun(this,'C','D','explanationQ1')"> <span class="option-text">D → B → A → C</span></label><br>
+            <label><input type="radio" name="Q1" onchange="fun(this,'D','D','explanationQ1')"> <span class="option-text">A → C → D → B</span></label>
+
+            <div id="explanationQ1" class="explanation">
+                <div class="label">Explanation:</div>
+                <p>Option D</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Question 2 -->
+    <div class="container main_box">
+        <div class="container question">
+            <P>She decided to adopt a minimalist lifestyle</P>
+            <P>Her home became clutter-free and more peacefu</P>
+            <P>Minimalism helped her focus on what really mattered</P>
+            <P>She began by decluttering her wardrobe and kitchen</P>
+        </div>
+        <div class="container options">
+            <label><input type="radio" name="Q2" onchange="fun(this,'A','C','explanationQ2')"> <span class="option-text">D → B → A → C</span></label><br>
+            <label><input type="radio" name="Q2" onchange="fun(this,'B','C','explanationQ2')"> <span class="option-text">B → A → C → D</span></label><br>
+            <label><input type="radio" name="Q2" onchange="fun(this,'C','C','explanationQ2')"> <span class="option-text">A → D → B → C</span></label><br>
+            <label><input type="radio" name="Q2" onchange="fun(this,'D','C','explanationQ2')"> <span class="option-text">C → A → D → B</span></label>
+
+            <div id="explanationQ2" class="explanation">
+                <div class="label">Explanation:</div>
+                <p>Option C</p>
+            </div>  
+        </div>
+    </div>
+    <!--Question3--->
+     <div class="container main_box">
+        <div class="container question">
+           <P>Climate change is affecting rainfall patterns worldwide</P>
+           <P>Farmers are now experimenting with drought-resistant crops</P>
+           <P>Unpredictable weather is causing crop failures in many regions</P>
+           <P>Governments are funding research to mitigate these impacts</P>
+        </div>
+        <div class="container options">
+            <label><input type="radio" name="Q3" onchange="fun(this,'A','D','explanationQ3')"> <span class="option-text">B → D → A → C</span></label><br>
+            <label><input type="radio" name="Q3" onchange="fun(this,'B','D','explanationQ3')"> <span class="option-text">D → A → C → D</span></label><br>
+            <label><input type="radio" name="Q3" onchange="fun(this,'C','D','explanationQ3')"> <span class="option-text">C → D → A → B</span></label><br>
+            <label><input type="radio" name="Q3" onchange="fun(this,'D','D','explanationQ3')"> <span class="option-text">A → C → B → D</span></label>
+
+            <div id="explanationQ3" class="explanation">
+                <div class="label">Explanation:</div>
+                <p>Option D</p>
+                 </div>
+        </div>
+    </div>
+    <!--Q4-->
+    <div class="container main_box">
+        <div class="container question">
+        <P>Ancient Egyptians believed in life after death</P>
+        <P>They built pyramids to serve as tombs for their pharaohs</P>
+        <P>These structures protected the bodies and treasures</P>
+        <P>The grandeur of the pyramids shows the importance of their beliefs</P>
+      </div>
+        <div class="container options">
+            <label><input type="radio" name="Q4" onchange="fun(this,'A','A','explanationQ4')"> <span class="option-text">A → B → C → D</span></label><br>
+            <label><input type="radio" name="Q4" onchange="fun(this,'B','A','explanationQ4')"> <span class="option-text">C → B → A → D</span></label><br>
+            <label><input type="radio" name="Q4" onchange="fun(this,'C','A','explanationQ4')"> <span class="option-text">B → C → D → A</span></label><br>
+            <label><input type="radio" name="Q4" onchange="fun(this,'D','A','explanationQ4')"> <span class="option-text">D → A → B → C</span></label>
+
+            <div id="explanationQ4" class="explanation">
+                <div class="label">Explanation:</div>
+                <p>Option  A</p>
+            </div>
+        </div>
+    </div>
+    <!--Question5--->
+     <div class="container main_box">
+        <div class="container question">
+            <P>Regular exercise improves mental health as well</P>
+            <P>Physical activity strengthens muscles and bones</P>
+            <P>People who exercise regularly tend to be more energetic</P>
+            <P>It also reduces stress and anxiety</P>
+
+
+        </div>
+        <div class="container options">
+            <label><input type="radio" name="Q5" onchange="fun(this,'A','A','explanationQ5')"> <span class="option-text">B → C → A → D</span></label><br>
+            <label><input type="radio" name="Q5" onchange="fun(this,'B','A','explanationQ5')"> <span class="option-text">C → B → A → D</span></label><br>
+            <label><input type="radio" name="Q5" onchange="fun(this,'C','A','explanationQ5')"> <span class="option-text">D → C → B → A</span></label><br>
+            <label><input type="radio" name="Q5" onchange="fun(this,'D','A','explanationQ5')"> <span class="option-text">A → D → B → C</span></label>
+
+            <div id="explanationQ5" class="explanation">
+                <div class="label">Explanation:</div>
+                <p>Option A</p>
+                 </div>
+        </div>
+    </div>
+     <!--Question6--->
+     <div class="container main_box">
+        <div class="container question">
+            <P>Technology is changing the way we work</P>
+            <P>Remote work has become increasingly common</P>
+            <P>Many companies are adopting digital collaboration tools</P>
+            <P>This shift allows employees to balance life and work better</P>
+
+        </div>
+        <div class="container options">
+            <label><input type="radio" name="Q6" onchange="fun(this,'A','D','explanationQ6')"> <span class="option-text">B → C → D → A</span></label><br>
+            <label><input type="radio" name="Q6" onchange="fun(this,'B','D','explanationQ6')"> <span class="option-text">C → B → A → D</span></label><br>
+            <label><input type="radio" name="Q6" onchange="fun(this,'C','D','explanationQ6')"> <span class="option-text">D → B → A → C</span></label><br>
+            <label><input type="radio" name="Q6" onchange="fun(this,'D','D','explanationQ6')"> <span class="option-text">A → B → C → D</span></label>
+
+            <div id="explanationQ6" class="explanation">
+                <div class="label">Explanation:</div>
+                <p>Option D</p>
+                 </div>
+        </div>
+    </div>
+    <!--Question7--->
+     <div class="container main_box">
+        <div class="container question">
+        <P>The universe is vast and full of mysteries</P>
+        <P>Astronomers use powerful telescopes to explore it</P>
+        <P>Black holes are among the most intriguing phenomena</P>
+        <P>Discoveries in space help us understand the origins of our planet</P>
+         </div>
+        <div class="container options">
+            <label><input type="radio" name="Q7" onchange="fun(this,'A','D','explanationQ7')"> <span class="option-text">D → A → C → B</span></label><br>
+            <label><input type="radio" name="Q7" onchange="fun(this,'B','D','explanationQ7')"> <span class="option-text">B → C → D → A</span></label><br>
+            <label><input type="radio" name="Q7" onchange="fun(this,'C','D','explanationQ7')"> <span class="option-text">C → D → A → B</span></label><br>
+            <label><input type="radio" name="Q7" onchange="fun(this,'D','D','explanationQ7')"> <span class="option-text">A → B → C → D</span></label>
+
+            <div id="explanationQ7" class="explanation">
+                <div class="label">Explanation:</div>
+                <p>Option D</p>
+                 </div>
+        </div>
+    </div>
+    <!--Question8--->
+     <div class="container main_box">
+        <div class="container question">
+             <P>Social media has changed how people communicate</P>
+             <P>Information spreads faster than ever before</P>
+            <P>Fake news can also circulate quickly</P>
+            <P>People must critically evaluate the content they read</P>
+        </div>
+        <div class="container options">
+            <label><input type="radio" name="Q8" onchange="fun(this,'A','A','explanationQ8')"> <span class="option-text">A → B → C → D</span></label><br>
+            <label><input type="radio" name="Q8" onchange="fun(this,'B','A','explanationQ8')"> <span class="option-text">B → D → A → C</span></label><br>
+            <label><input type="radio" name="Q8" onchange="fun(this,'C','A','explanationQ8')"> <span class="option-text">A → D → B → A</span></label><br>
+            <label><input type="radio" name="Q8" onchange="fun(this,'D','A','explanationQ8')"> <span class="option-text">D → A → A → B</span></label>
+
+            <div id="explanationQ8" class="explanation">
+                <div class="label">Explanation:</div>
+                <p>Option A</p>
+             </div>
+        </div>
+    </div>
+    <!--Question9--->
+     <div class="container main_box">
+        <div class="container question">
+            <P>The chef prepared a variety of dishes for the feast</P>
+            <P>Guests praised the flavors and presentation</P>
+            <P>He carefully selected the freshest ingredients</P>
+             <P>Cooking became a form of art and self-expression for him</P>
+        </div>
+        <div class="container options">
+            <label><input type="radio" name="Q9" onchange="fun(this,'A','B','explanationQ9')"> <span class="option-text">D → B → A → A</span></label><br>
+            <label><input type="radio" name="Q9" onchange="fun(this,'B','B','explanationQ9')"> <span class="option-text">C → A → B → D</span></label><br>
+            <label><input type="radio" name="Q9" onchange="fun(this,'C','B','explanationQ9')"> <span class="option-text">B → A → C → D</span></label><br>
+            <label><input type="radio" name="Q9" onchange="fun(this,'D','B','explanationQ9')"> <span class="option-text">B → C → A → B</span></label>
+
+            <div id="explanationQ9" class="explanation">
+                <div class="label">Explanation:</div>
+                <p>Option B</p>
+             </div>
+        </div>
+    </div>
+    <!--Question10--->
+     <div class="container main_box">
+        <div class="container question">
+          <P>Reading improves vocabulary and comprehension</P>
+          <P>Children who read regularly develop better imagination</P>
+          <P>It also fosters empathy and understanding of others</P>
+          <P>Parents should encourage daily reading habits</P>
+
+        </div>
+        <div class="container options">
+            <label><input type="radio" name="Q10" onchange="fun(this,'A','D','explanationQ10')"> <span class="option-text"> B → C → B → A</span></label><br>
+            <label><input type="radio" name="Q10" onchange="fun(this,'B','D','explanationQ10')"> <span class="option-text">C → A → B → D</span></label><br>
+            <label><input type="radio" name="Q10" onchange="fun(this,'C','D','explanationQ10')"> <span class="option-text">B → D → A → C</span></label><br>
+            <label><input type="radio" name="Q10" onchange="fun(this,'D','D','explanationQ10')"> <span class="option-text">A → B → C → D</span></label>
+
+            <div id="explanationQ10" class="explanation">
+                <div class="label">Explanation:</div>
+                <p>Option D</p>
+             </div>
+        </div>
+    </div>
+    <!-- Question 11 -->
+    <div class="container main_box">
+        <div class="container question">
+           <p>The city was hit by heavy floods last week</p>
+            <P>Rescue teams worked tirelessly to help affected families
+            <P>Many roads and houses were damaged
+            <P>Relief camps were set up to provide shelter and food</P>
+        </div>
+        <div class="container options">
+            <label><input type="radio" name="Q11" onchange="fun(this,'A','D','explanationQ11')"> <span class="option-text">B → C → D → A</span></label><br>
+            <label><input type="radio" name="Q11" onchange="fun(this,'B','D','explanationQ11')"> <span class="option-text">C → B → A → D</span></label><br>
+            <label><input type="radio" name="Q11" onchange="fun(this,'C','D','explanationQ11')"> <span class="option-text">D → B → A → C</span></label><br>
+            <label><input type="radio" name="Q11" onchange="fun(this,'D','D','explanationQ11')"> <span class="option-text">A → C → B → D</span></label>
+
+            <div id="explanationQ11" class="explanation">
+                <div class="label">Explanation:</div>
+                <p>Option D</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Question 12 -->
+    <div class="container main_box">
+        <div class="container question">
+            <P></P>Yoga originated in ancient India</P>
+            <P>It promotes physical and mental well-being</P>
+            <P>People across the world now practice yoga daily</P>
+            <P>Meditation and breathing exercises are integral parts of yoga</P>
+
+        </div>
+        <div class="container options">
+            <label><input type="radio" name="Q12" onchange="fun(this,'A','C','explanationQ12')"> <span class="option-text">D → B → A → C</span></label><br>
+            <label><input type="radio" name="Q12" onchange="fun(this,'B','C','explanationQ12')"> <span class="option-text">B → A → C → D</span></label><br>
+            <label><input type="radio" name="Q12" onchange="fun(this,'C','C','explanationQ12')"> <span class="option-text">A → D → B → C</span></label><br>
+            <label><input type="radio" name="Q12" onchange="fun(this,'D','C','explanationQ12')"> <span class="option-text">C → A → D → B</span></label>
+
+            <div id="explanationQ12" class="explanation">
+                <div class="label">Explanation:</div>
+                <p>Option C</p>
+            </div>  
+        </div>
+    </div>
+    <!--Question13--->
+     <div class="container main_box">
+        <div class="container question">
+         <P>Renewable energy sources are becoming more popular</P>
+          <P>Solar and wind power generate electricity without pollution</P>
+           <P>Governments are offering incentives to adopt these technologies</P>
+            <P>These sources can reduce dependence on fossil fuels</P>
+
+        </div>
+        <div class="container options">
+            <label><input type="radio" name="Q13" onchange="fun(this,'A','D','explanationQ13')"> <span class="option-text">B → D → A → C</span></label><br>
+            <label><input type="radio" name="Q13" onchange="fun(this,'B','D','explanationQ13')"> <span class="option-text">D → A → C → D</span></label><br>
+            <label><input type="radio" name="Q13" onchange="fun(this,'C','D','explanationQ13')"> <span class="option-text">C → D → A → B</span></label><br>
+            <label><input type="radio" name="Q13" onchange="fun(this,'D','D','explanationQ13')"> <span class="option-text">A → B → D → C</span></label>
+
+            <div id="explanationQ13" class="explanation">
+                <div class="label">Explanation:</div>
+                <p>Option D</p>
+                 </div>
+        </div>
+    </div>
+    <!--Q14-->
+    <div class="container main_box">
+        <div class="container question">
+        <P>The artist painted murals depicting everyday life</P>
+        <P>His work captured the struggles and joys of ordinary people</P>
+        <p>Many of these murals are now considered cultural heritage</p>
+        <p>He started his career as a street painter in his hometown</p>
+
+      </div>
+        <div class="container options">
+            <label><input type="radio" name="Q14" onchange="fun(this,'A','A','explanationQ14')"> <span class="option-text">D → A → B → C</span></label><br>
+            <label><input type="radio" name="Q14" onchange="fun(this,'B','A','explanationQ14')"> <span class="option-text">C → B → A → D</span></label><br>
+            <label><input type="radio" name="Q14" onchange="fun(this,'C','A','explanationQ14')"> <span class="option-text">B → C → D → A</span></label><br>
+            <label><input type="radio" name="Q14" onchange="fun(this,'D','A','explanationQ14')"> <span class="option-text">A → C → D → B</span></label>
+
+            <div id="explanationQ14" class="explanation">
+                <div class="label">Explanation:</div>
+                <p>Option A</p>
+            </div>
+        </div>
+    </div>
+    <!--Question15--->
+     <div class="container main_box">
+        <div class="container question">
+         <P>Learning a new language improves cognitive abilities</P>
+        <P>It enhances memory and problem-solving skills</P>
+       <P>Children exposed to multiple languages often perform better academically</P>
+        <P>Adults can also benefit by expanding their communication skills</P> 
+     </div>
+        <div class="container options">
+            <label><input type="radio" name="Q15" onchange="fun(this,'A','A','explanationQ15')"> <span class="option-text">A → B → C → D</span></label><br>
+            <label><input type="radio" name="Q15" onchange="fun(this,'B','A','explanationQ15')"> <span class="option-text">C → B → A → D</span></label><br>
+            <label><input type="radio" name="Q15" onchange="fun(this,'C','A','explanationQ15')"> <span class="option-text">D → C → B → A</span></label><br>
+            <label><input type="radio" name="Q15" onchange="fun(this,'D','A','explanationQ15')"> <span class="option-text">A → D → B → C</span></label>
+
+            <div id="explanationQ15" class="explanation">
+                <div class="label">Explanation:</div>
+                <p>Option A</p>
+                 </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <script>
+        function fun(input, user_ans, right_ans, expId) {
+            const span = input.nextElementSibling;
+            if (user_ans === right_ans) {
+                span.classList.add("correct");
+            } else {
+                span.classList.add("wrong");
+            }
+            document.getElementById(expId).style.display = "block";
+        }
+    </script>
+
+</body>
+</html>
