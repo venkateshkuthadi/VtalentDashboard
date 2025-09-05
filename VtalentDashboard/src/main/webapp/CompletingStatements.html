@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Relations quiz</title>
+    <style>
+        .main_box {
+            border: 0.5px solid black;
+            margin-top: 20px;
+        }
+        .main_box:hover {
+            border: 0;
+            box-shadow: 0px 2px 7px rgb(0, 0, 0);
+        }
+        .container {
+            box-shadow: 0px 0px 7px white;
+            margin: 12px;
+            padding: 15px;
+            border-radius: 10px;
+            background-color: aliceblue;
+        }
+        .question {
+            border: 1px solid;
+            font-size: large;
+            background-color: rgb(39, 39, 39);
+            color: white;
+            box-shadow: inset 0px 0px 5px rgb(0, 0, 0);
+        }
+        .hidden { display: none; }
+        .option-text {
+            position: relative;
+            padding-right: 25px;
+        }
+        .option-text.correct::after {
+            content: "✔";
+            color: green;
+            font-weight: bold;
+            position: absolute;
+            right: 0;
+        }
+        .option-text.wrong::after {
+            content: "✖";
+            color: red;
+            font-weight: bold;
+            position: absolute;
+            right: 0;
+        }
+        .explanation {
+            display: none;
+            margin-top: 10px;
+            color: #22b435;
+        }
+        .explanation .label {
+            font-weight: bold;
+            font-size: large;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Question 1 -->
+    <div class="container main_box">
+        <div class="container question">
+           1) Despite his best efforts to conceal his anger
+     </div>
+        <div class="container options">
+            <label><input type="radio" name="Q1" onchange="fun(this,'A','D','explanationQ1')"> <span class="option-text">we could detect that he was very happy</span></label><br>
+            <label><input type="radio" name="Q1" onchange="fun(this,'B','D','explanationQ1')"> <span class="option-text">he succeeded in camouflaging his emotions</span></label><br>
+            <label><input type="radio" name="Q1" onchange="fun(this,'C','D','explanationQ1')"> <span class="option-text">he could succeed in doing it easily</span></label><br>
+            <label><input type="radio" name="Q1" onchange="fun(this,'D','D','explanationQ1')"> <span class="option-text">people came to know that he was annoyed</span></label>
+
+            <div id="explanationQ1" class="explanation">
+                <div class="label">Explanation:</div>
+                <p>Option D</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Question 2 -->
+    <div class="container main_box">
+        <div class="container question">
+        2) Even if it rains I shall come means 
+        </div>
+        <div class="container options">
+            <label><input type="radio" name="Q2" onchange="fun(this,'A','C','explanationQ2')"> <span class="option-text">if I come it will not rain</span></label><br>
+            <label><input type="radio" name="Q2" onchange="fun(this,'B','C','explanationQ2')"> <span class="option-text">if it rains I shall not come</span></label><br>
+            <label><input type="radio" name="Q2" onchange="fun(this,'C','C','explanationQ2')"> <span class="option-text">I will certainly come whether it rains or not</span></label><br>
+            <label><input type="radio" name="Q2" onchange="fun(this,'D','C','explanationQ2')"> <span class="option-text">whenever there is rain I shall come</span></label>
+
+            <div id="explanationQ2" class="explanation">
+                <div class="label">Explanation:</div>
+                <p>Option C</p>
+            </div>  
+        </div>
+    </div>
+    <!--Question3--->
+     <div class="container main_box">
+        <div class="container question">
+       3) His appearance is unsmiling but 
+        </div>
+        <div class="container options">
+            <label><input type="radio" name="Q3" onchange="fun(this,'A','D','explanationQ3')"> <span class="option-text">he looks very serious on most occasions</span></label><br>
+            <label><input type="radio" name="Q3" onchange="fun(this,'B','D','explanationQ3')"> <span class="option-text">people are afraid of him</span></label><br>
+            <label><input type="radio" name="Q3" onchange="fun(this,'C','D','explanationQ3')"> <span class="option-text">he is full of jealousy towards his colleagues</span></label><br>
+            <label><input type="radio" name="Q3" onchange="fun(this,'D','D','explanationQ3')"> <span class="option-text">his heart is full of compassion for others</span></label>
+
+            <div id="explanationQ3" class="explanation">
+                <div class="label">Explanation:</div>
+                <p>Option D</p>
+                 </div>
+        </div>
+    </div>
+    <!--Q4-->
+    <div class="container main_box">
+        <div class="container question">
+        4) She never visits any zoo because she is strong opponent of the idea of
+      </div>
+        <div class="container options">
+            <label><input type="radio" name="Q4" onchange="fun(this,'A','A','explanationQ4')"> <span class="option-text">holding the animals in captivity for our joy</span></label><br>
+            <label><input type="radio" name="Q4" onchange="fun(this,'B','A','explanationQ4')"> <span class="option-text">going out of the house on a holiday</span></label><br>
+            <label><input type="radio" name="Q4" onchange="fun(this,'C','A','explanationQ4')"> <span class="option-text">setting the animals free into forest</span></label><br>
+            <label><input type="radio" name="Q4" onchange="fun(this,'D','A','explanationQ4')"> <span class="option-text">watching the animals in their natural abode</span></label>
+
+            <div id="explanationQ4" class="explanation">
+                <div class="label">Explanation:</div>
+                <p>Option  A</p>
+            </div>
+        </div>
+    </div>
+    <!--Question5--->
+     <div class="container main_box">
+        <div class="container question">
+        5) I felt somewhat more relaxed    
+        </div>
+        <div class="container options">
+            <label><input type="radio" name="Q5" onchange="fun(this,'A','A','explanationQ5')"> <span class="option-text">and tension-free as compared to earlier</span></label><br>
+            <label><input type="radio" name="Q5" onchange="fun(this,'B','A','explanationQ5')"> <span class="option-text">but tense as compared to earlier</span></label><br>
+            <label><input type="radio" name="Q5" onchange="fun(this,'C','A','explanationQ5')"> <span class="option-text">and tense as compared to earlier</span></label><br>
+            <label><input type="radio" name="Q5" onchange="fun(this,'D','A','explanationQ5')"> <span class="option-text">as there was already no tension at al</span></label>
+
+            <div id="explanationQ5" class="explanation">
+                <div class="label">Explanation:</div>
+                <p>Option A</p>
+                 </div>
+        </div>
+    </div>
+     <!--Question6--->
+     <div class="container main_box">
+        <div class="container question">
+       6) It is not easy to remain tranquil when those around you
+        </div>
+        <div class="container options">
+            <label><input type="radio" name="Q6" onchange="fun(this,'A','D','explanationQ6')"> <span class="option-text"></span>behave in a socially acceptable manne</label><br>
+            <label><input type="radio" name="Q6" onchange="fun(this,'B','D','explanationQ6')"> <span class="option-text">exhibit pleasant mannerism</span></label><br>
+            <label><input type="radio" name="Q6" onchange="fun(this,'C','D','explanationQ6')"> <span class="option-text">are losing their heads</span></label><br>
+            <label><input type="radio" name="Q6" onchange="fun(this,'D','D','explanationQ6')"> <span class="option-text">agree to whatever you say</span></label>
+
+            <div id="explanationQ6" class="explanation">
+                <div class="label">Explanation:</div>
+                <p>Option D</p>
+                 </div>
+        </div>
+    </div>
+    <!--Question7--->
+     <div class="container main_box">
+        <div class="container question">
+        7) Although initial investigations pointed towards him
+         </div>
+        <div class="container options">
+            <label><input type="radio" name="Q7" onchange="fun(this,'A','D','explanationQ7')"> <span class="option-text">the preceding events corroborated his involvement in the crime</span></label><br>
+            <label><input type="radio" name="Q7" onchange="fun(this,'B','D','explanationQ7')"> <span class="option-text">he gave an open confession of his crime</span></label><br>
+            <label><input type="radio" name="Q7" onchange="fun(this,'C','D','explanationQ7')"> <span class="option-text">the additional information confirmed his guilt</span></label><br>
+            <label><input type="radio" name="Q7" onchange="fun(this,'D','D','explanationQ7')"> <span class="option-text">the subsequent events proved that he was innocent</span></label>
+
+            <div id="explanationQ7" class="explanation">
+                <div class="label">Explanation:</div>
+                <p>Option D</p>
+                 </div>
+        </div>
+    </div>
+    <!--Question8--->
+     <div class="container main_box">
+        <div class="container question">
+        8) The weather outside was extremely pleasant and hence we decided to
+        </div>
+        <div class="container options">
+            <label><input type="radio" name="Q8" onchange="fun(this,'A','A','explanationQ8')"> <span class="option-text">enjoy a morning ride in the open</span></label><br>
+            <label><input type="radio" name="Q8" onchange="fun(this,'B','A','explanationQ8')"> <span class="option-text">utilise our time in watching the television</span></label><br>
+            <label><input type="radio" name="Q8" onchange="fun(this,'C','A','explanationQ8')"> <span class="option-text">refrain from going out for a morning walk</span></label><br>
+            <label><input type="radio" name="Q8" onchange="fun(this,'D','A','explanationQ8')"> <span class="option-text">remain seated in our rooms in the bungalow</span></label>
+
+            <div id="explanationQ8" class="explanation">
+                <div class="label">Explanation:</div>
+                <p>Option A</p>
+             </div>
+        </div>
+    </div>
+    <!--Question9--->
+     <div class="container main_box">
+        <div class="container question">
+         9) "It is an uphill task but you will have to do it" means
+        </div>
+        <div class="container options">
+            <label><input type="radio" name="Q9" onchange="fun(this,'A','B','explanationQ9')"> <span class="option-text">It is a very easy task but you must do it</span></label><br>
+            <label><input type="radio" name="Q9" onchange="fun(this,'B','B','explanationQ9')"> <span class="option-text">It is very difficult task but you have to do it</span></label><br>
+            <label><input type="radio" name="Q9" onchange="fun(this,'C','B','explanationQ9')"> <span class="option-text">It is almost impossible for others but you can do it</span></label><br>
+            <label><input type="radio" name="Q9" onchange="fun(this,'D','B','explanationQ9')"> <span class="option-text">The work is above the hill and you will have to do it</span></label>
+
+            <div id="explanationQ9" class="explanation">
+                <div class="label">Explanation:</div>
+                <p>Option B</p>
+             </div>
+        </div>
+    </div>
+    <!--Question10--->
+     <div class="container main_box">
+        <div class="container question">
+         10) "Anand stuck up a friendship with Mahesh in just 2 days" means
+        </div>
+        <div class="container options">
+            <label><input type="radio" name="Q10" onchange="fun(this,'A','D','explanationQ10')"> <span class="option-text">Anand friendship with Mahesh came to an end recently </span></label><br>
+            <label><input type="radio" name="Q10" onchange="fun(this,'B','D','explanationQ10')"> <span class="option-text">Anand found out the other friends of Mahesh</span></label><br>
+            <label><input type="radio" name="Q10" onchange="fun(this,'C','D','explanationQ10')"> <span class="option-text">Anand fixed a deal with Mahesh in 2 days</span></label><br>
+            <label><input type="radio" name="Q10" onchange="fun(this,'D','D','explanationQ10')"> <span class="option-text">Anand became a friend of Mahesh in less than 2 days</span></label>
+
+            <div id="explanationQ10" class="explanation">
+                <div class="label">Explanation:</div>
+                <p>Option D</p>
+             </div>
+        </div>
+    </div>
+    
+    <script>
+        function fun(input, user_ans, right_ans, expId) {
+            const span = input.nextElementSibling;
+            if (user_ans === right_ans) {
+                span.classList.add("correct");
+            } else {
+                span.classList.add("wrong");
+            }
+            document.getElementById(expId).style.display = "block";
+        }
+    </script>
+
+</body>
+</html>

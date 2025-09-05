@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Intrest & Compond Intrest</title>
+    <style>
+        .main_box {
+            border: 0.5px solid black;
+            margin-top: 20px;
+        }
+        .main_box:hover {
+            border: 0;
+            box-shadow: 0px 2px 7px rgb(0, 0, 0);
+        }
+        .container {
+            box-shadow: 0px 0px 7px white;
+            margin: 12px;
+            padding: 15px;
+            border-radius: 10px;
+            background-color: aliceblue;
+        }
+        .question {
+            border: 1px solid;
+            font-size: large;
+            background-color: rgb(39, 39, 39);
+            color: white;
+            box-shadow: inset 0px 0px 5px rgb(0, 0, 0);
+        }
+        .hidden { display: none; }
+        .option-text {
+            position: relative;
+            padding-right: 25px;
+        }
+        .option-text.correct::after {
+            content: "✔";
+            color: green;
+            font-weight: bold;
+            position: absolute;
+            right: 0;
+        }
+        .option-text.wrong::after {
+            content: "✖";
+            color: red;
+            font-weight: bold;
+            position: absolute;
+            right: 0;
+        }
+        .explanation {
+            display: none;
+            margin-top: 10px;
+            color: #22b435;
+        }
+        .explanation .label {
+            font-weight: bold;
+            font-size: large;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Question 1 -->
+    <div class="container main_box">
+        <div class="container question">
+            1)A person crosses a 600 m long street in 5 minutes. What is his speed in km per hour?
+        </div>
+        <div class="container options">
+            <label><input type="radio" name="Q1" onchange="fun(this,'A','C','explanationQ1')"> <span class="option-text">Rs.650</span></label><br>
+            <label><input type="radio" name="Q1" onchange="fun(this,'B','C','explanationQ1')"> <span class="option-text">Rs.690</span></label><br>
+            <label><input type="radio" name="Q1" onchange="fun(this,'C','C','explanationQ1')"> <span class="option-text">Rs.698</span></label><br>
+            <label><input type="radio" name="Q1" onchange="fun(this,'D','C','explanationQ1')"> <span class="option-text">Rs.700</span></label>
+
+            <div id="explanationQ1" class="explanation">
+                <div class="label">Explanation:</div>
+                <p>Option C</p>
+                <p>S.I. for 1 year = Rs. (854 - 815) = Rs. 39.</p>
+                <p>S.I. for 3 years = Rs.(39 x 3) = Rs. 117.</p>
+                <p>Principal = Rs. (815 - 117) = Rs. 698.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Question 2 -->
+    <div class="container main_box">
+        <div class="container question">
+           2)A sum fetched a total simple interest of Rs. 4016.25 at the rate of 9 p.c.p.a. in 5 years. What is the sum?
+        </div>
+        <div class="container options">
+            <label><input type="radio" name="Q2" onchange="fun(this,'A','D','explanationQ2')"> <span class="option-text">Rs. 4462.50</span></label><br>
+            <label><input type="radio" name="Q2" onchange="fun(this,'B','D','explanationQ2')"> <span class="option-text">Rs. 8032.50</span></label><br>
+            <label><input type="radio" name="Q2" onchange="fun(this,'C','D','explanationQ2')"> <span class="option-text">Rs. 8900</span></label><br>
+            <label><input type="radio" name="Q2" onchange="fun(this,'D','D','explanationQ2')"> <span class="option-text">Rs. 8925</span></label>
+
+            <div id="explanationQ2" class="explanation">
+                <div class="label">Explanation:</div>
+                <p>Option D</p>
+                <p>Principal=(Rs. 100*4016.25)/9*5</p>
+                <p>Rs.(401625/45)</p>
+                <p>Rs.8925</p>
+            </div>
+        </div>
+    </div>
+    <!--Question3--->
+     <div class="container main_box">
+        <div class="container question">
+         3)Mr. Thomas invested an amount of Rs. 13,900 divided in two different schemes A and B at the simple interest rate of 14% p.a. and 11% p.a. respectively. If the total amount of simple interest earned in 2 years be Rs. 3508, what was the amount invested in Scheme B?
+        </div>
+        <div class="container options">
+            <label><input type="radio" name="Q3" onchange="fun(this,'A','A','explanationQ3')"> <span class="option-text">Rs.6400</span></label><br>
+            <label><input type="radio" name="Q3" onchange="fun(this,'B','A','explanationQ3')"> <span class="option-text">Rs.6500</span></label><br>
+            <label><input type="radio" name="Q3" onchange="fun(this,'C','A','explanationQ3')"> <span class="option-text">Rs.7200</span></label><br>
+            <label><input type="radio" name="Q3" onchange="fun(this,'D','A','explanationQ3')"> <span class="option-text">rs.7500</span></label>
+
+            <div id="explanationQ3" class="explanation">
+                <div class="label">Explanation:</div>
+                <p>Option A</p>
+                <p>Let the sum invested in Scheme A be Rs. x and that in Scheme B be Rs. (13900 - x).</p>
+                <p>Then,{(x*14*2/100)}+{(13900-x)*11*2/100}=3508</p>
+                <p> 28x - 22x = 350800 - (13900 x 22)</p>
+                <p> 6x = 45000</p>
+                <p>x = 7500..</p>
+                <p>So, sum invested in Scheme B = Rs. (13900 - 7500) = Rs. 6400.</p>
+            </div>
+        </div>
+    </div>
+    <!--Q4-->
+    <div class="container main_box">
+        <div class="container question">
+           4)A sum of Rs. 12,500 amounts to Rs. 15,500 in 4 years at the rate of simple interest. What is the rate of interest?
+        </div>
+        <div class="container options">
+            <label><input type="radio" name="Q4" onchange="fun(this,'A','D','explanationQ4')"> <span class="option-text">3%</span></label><br>
+            <label><input type="radio" name="Q4" onchange="fun(this,'B','D','explanationQ4')"> <span class="option-text">4%</span></label><br>
+            <label><input type="radio" name="Q4" onchange="fun(this,'C','D','explanationQ4')"> <span class="option-text">5%</span></label><br>
+            <label><input type="radio" name="Q4" onchange="fun(this,'D','D','explanationQ4')"> <span class="option-text">6%</span></label>
+
+            <div id="explanationQ4" class="explanation">
+                <div class="label">Explanation:</div>
+                <p>Option D</p>
+                <p>S.I. = Rs. (15500 - 12500) = Rs. 3000</p>
+                <p>Rate=(100*300/12500*4)%=6%</p>
+            </div>
+        </div>
+    </div>
+    <!--Q5-->
+     <div class="container main_box">
+        <div class="container question">
+          5)An automobile financier claims to be lending money at simple interest, but he includes the interest every six months for calculating the principal. If he is charging an interest of 10%, the effective rate of interest becomes:
+        </div>
+        <div class="container options">
+            <label><input type="radio" name="Q5" onchange="fun(this,'A','B','explanationQ5')"> <span class="option-text">10%</span></label><br>
+            <label><input type="radio" name="Q5" onchange="fun(this,'B','B','explanationQ5')"> <span class="option-text">10.25%</span></label><br>
+            <label><input type="radio" name="Q5" onchange="fun(this,'C','B','explanationQ5')"> <span class="option-text">10.5%</span></label><br>
+            <label><input type="radio" name="Q5" onchange="fun(this,'D','B','explanationQ5')"> <span class="option-text">None of these</span></label>
+
+            <div id="explanationQ5" class="explanation">
+                <div class="label">Explanation:</div>
+                <p>Option B</p>
+                <p>Let the sum be Rs. 100. Then,</p>
+                <p>S.I for first 6 months=Rs.(100*10*1/100*2)=Rs. 5 </p>
+                <p>S.I for last 6 months=Rs. (105*10*1)/100*2 =Rs.5.25</p>
+                <p>So, amount at the end of 1 year = Rs. (100 + 5 + 5.25) = Rs. 110.25</p>
+                <p>x = 1600</p>
+                <p>Effective rate = (110.25 - 100) = 10.25%</p>
+            </div>
+        </div>
+    </div>
+     <!--Q6-->
+     <div class="container main_box">
+        6)A lent Rs. 5000 to B for 2 years and Rs. 3000 to C for 4 years on simple interest at the same rate of interest and received Rs. 2200 in all from both of them as interest. The rate of interest per annum is:</div>
+        <div class="container options">
+            <label><input type="radio" name="Q6" onchange="fun(this,'A','D','explanationQ6')"> <span class="option-text">5%</span></label><br>
+            <label><input type="radio" name="Q6" onchange="fun(this,'B','D','explanationQ6')"> <span class="option-text">7%</span></label><br>
+            <label><input type="radio" name="Q6" onchange="fun(this,'C','D','explanationQ6')"> <span class="option-text">7 (1/8)%</span></label><br>
+            <label><input type="radio" name="Q6" onchange="fun(this,'D','D','explanationQ6')"> <span class="option-text">10%</span></label>
+
+            <div id="explanationQ6" class="explanation">
+                <div class="label">Explanation:</div>
+                <p>Option D</p>
+                <p>Let the rate be R% p.a.</p>
+                <p>Then,(5000*R*2)/(100) + (3000*R*4)/100 = 2200</p>
+                <p>100R + 120R = 2200</p>
+                <p>R=2200/220 =10</p>
+                <p>Rate=10%</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Q7-->
+    <div class="container main_box">
+        <div class="container question">
+         7)A bank offers 5% compound interest calculated on half-yearly basis. A customer deposits Rs. 1600 each on 1st January and 1st July of a year. At the end of the year, the amount he would have gained by way of interest is:</div>
+        <div class="container options">
+            <label><input type="radio" name="Q7" onchange="fun(this,'A','C','explanationQ7')"> <span class="option-text">RS.120</span></label><br>
+            <label><input type="radio" name="Q7" onchange="fun(this,'B','C','explanationQ7')"> <span class="option-text">RS.121</span></label><br>
+            <label><input type="radio" name="Q7" onchange="fun(this,'C','C','explanationQ7')"> <span class="option-text">RS.122</span></label><br>
+            <label><input type="radio" name="Q7" onchange="fun(this,'D','C','explanationQ7')"> <span class="option-text">Rs.123</span></label>
+
+            <div id="explanationQ7" class="explanation">
+                <div class="label">Explanation:</div>
+                <p>Option B</p>
+                <p>Amount = Rs.{1600*[1 + [1+ 5/(2*100)]^2 +1600*[1+5/(2*100)]}</p>
+                <p>Rs.[1600*41/40 *41/40+1600*41/40]</p>
+                <p>Rs. 3321</p>
+                <p>C.I=Rs.(3321-3200)=Rs.121</p>
+            </div>
+        </div>
+    </div>
+    <!--Q8-->
+    <div class="container main_box">
+        <div class="container question">
+         8)What is the difference between the compound interests on Rs. 5000 for 1 years at 4% per annum compounded yearly and half-yearly?</div>
+        <div class="container options">
+            <label><input type="radio" name="Q8" onchange="fun(this,'A','A','explanationQ8')"> <span class="option-text">RS.2.04</span></label><br>
+            <label><input type="radio" name="Q8" onchange="fun(this,'B','A','explanationQ8')"> <span class="option-text">RS.3.06</span></label><br>
+            <label><input type="radio" name="Q8" onchange="fun(this,'C','A','explanationQ8')"> <span class="option-text">RS.4.80</span></label><br>
+            <label><input type="radio" name="Q8" onchange="fun(this,'D','A','explanationQ8')"> <span class="option-text">Rs.8.30</span></label>
+
+            <div id="explanationQ8" class="explanation">
+                <div class="label">Explanation:</div>
+                <p>Option B</p>
+                <p>C.I when interest compounded yearly=Rs[500x(1 + 4/100)x (1+(1/2)x4)/100]</p>
+                <p>Rs. (5000*26/25*51/50)</p>
+                <p>Rs.5304</p>
+                <p>C.I. when interest is compounded half-yearly	=Rs.[500*(1 + 2/100)^3]</p>
+                <p>Rs. 5306.04</p>
+                <p>Difference = Rs. (5306.04 - 5304) = Rs. 2.04</p>
+            </div>
+        </div>
+    </div>
+    <!--Q9-->
+    <div class="container main_box">
+        <div class="container question">
+         9)There is 60% increase in an amount in 6 years at simple interest. What will be the compound interest of Rs. 12,000 after 3 years at the same rate?</div>
+        <div class="container options">
+            <label><input type="radio" name="Q9" onchange="fun(this,'A','C','explanationQ9')"> <span class="option-text">Rs.2160</span></label><br>
+            <label><input type="radio" name="Q9" onchange="fun(this,'B','C','explanationQ9')"> <span class="option-text">Rs.3120</span></label><br>
+            <label><input type="radio" name="Q9" onchange="fun(this,'C','c','explanationQ9')"> <span class="option-text">Rs.3972</span></label><br>
+            <label><input type="radio" name="Q9" onchange="fun(this,'D','C','explanationQ9')"> <span class="option-text">Rs.6240</span></label>
+
+            <div id="explanationQ9" class="explanation">
+                <div class="label">Explanation:</div>
+                <p>Option C</p>
+                <p>
+                 Let P = Rs. 100. Then, S.I. Rs. 60 and T = 6 years.<br>
+                 R =100 x 60 / 100x60= 10% p.a.<br>
+                 Now, P = Rs. 12000. T = 3 years and R = 10% p.a.<br>
+                 C.I.= Rs.	{12000 x	[1 +10/100]^3- 1}	<br>
+                = Rs.	12000 x	331	/1000 =3972
+               </p>
+            </div>
+        </div>
+    </div>
+      <!--Q10-->
+    <div class="container main_box">
+        <div class="container question">
+         10)The compound interest on Rs. 30,000 at 7% per annum is Rs. 4347. The period (in years) is:</div>
+        <div class="container options">
+            <label><input type="radio" name="Q10" onchange="fun(this,'A','A','explanationQ10')"> <span class="option-text">2</span></label><br>
+            <label><input type="radio" name="Q10" onchange="fun(this,'B','A','explanationQ10')"> <span class="option-text">2(1/2)</span></label><br>
+            <label><input type="radio" name="Q10" onchange="fun(this,'C','A','explanationQ10')"> <span class="option-text">3</span></label><br>
+            <label><input type="radio" name="Q10" onchange="fun(this,'D','A','explanationQ10')"> <span class="option-text">4</span></label>
+
+            <div id="explanationQ10" class="explanation">
+                <div class="label">Explanation:</div>
+                <p>Option A</p>
+                <p style="font-style: 14ph;">
+                Amount = Rs. (30000 + 4347) = Rs. 34347.<br>
+                Let the time be n years.<br>
+                Then, 30000	[1 +7/100]^	n= 34347<br>
+		        [107/100]^n	=34347/30000	=11449/10000	=(107/100)^2<br>
+                n=2 year.
+               </pre>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function fun(input, user_ans, right_ans, expId) {
+            const span = input.nextElementSibling;
+            if (user_ans === right_ans) {
+                span.classList.add("correct");
+            } else {
+                span.classList.add("wrong");
+            }
+            document.getElementById(expId).style.display = "block";
+        }
+    </script>
+
+</body>
+</html>

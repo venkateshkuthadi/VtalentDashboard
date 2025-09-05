@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentence Correction</title>
+    <style>
+        .main_box {
+            border: 0.5px solid black;
+            margin-top: 20px;
+        }
+        .main_box:hover {
+            border: 0;
+            box-shadow: 0px 2px 7px rgb(0, 0, 0);
+        }
+        .container {
+            box-shadow: 0px 0px 7px white;
+            margin: 12px;
+            padding: 15px;
+            border-radius: 10px;
+            background-color: aliceblue;
+        }
+        .question {
+            border: 1px solid;
+            font-size: large;
+            background-color: rgb(39, 39, 39);
+            color: white;
+            box-shadow: inset 0px 0px 5px rgb(0, 0, 0);
+        }
+        .hidden { display: none; }
+        .option-text {
+            position: relative;
+            padding-right: 25px;
+        }
+        .option-text.correct::after {
+            content: "✔";
+            color: green;
+            font-weight: bold;
+            position: absolute;
+            right: 0;
+        }
+        .option-text.wrong::after {
+            content: "✖";
+            color: red;
+            font-weight: bold;
+            position: absolute;
+            right: 0;
+        }
+        .explanation {
+            display: none;
+            margin-top: 10px;
+            color: #22b435;
+        }
+        .explanation .label {
+            font-weight: bold;
+            font-size: large;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Question 1 -->
+    <div class="container main_box">
+        <div class="container question">
+            1) Cat : Kitten :: Dog :?
+        </div>
+        <div class="container options">
+            <label><input type="radio" name="Q1" onchange="fun(this,'A','C')"> <span class="option-text">Calf</span></label><br>
+            <label><input type="radio" name="Q1" onchange="fun(this,'B','C')"> <span class="option-text">Cub</span></label><br>
+            <label><input type="radio" name="Q1" onchange="fun(this,'C','C')"> <span class="option-text">Puppy</span></label><br>
+            <label><input type="radio" name="Q1" onchange="fun(this,'D','C')"> <span class="option-text">Foal</span></label>
+        </div>
+    </div>
+
+        <!-- Question 2 -->
+    <div class="container main_box">
+        <div class="container question">
+            2) Doctor : Hospital :: Teacher : ?
+        </div>
+        <div class="container options">
+            <label><input type="radio" name="Q2" onchange="fun(this,'A','A')"> <span class="option-text">School</span></label><br>
+            <label><input type="radio" name="Q2" onchange="fun(this,'B','A')"> <span class="option-text">College</span></label><br>
+            <label><input type="radio" name="Q2" onchange="fun(this,'C','A')"> <span class="option-text">Class</span></label><br>
+            <label><input type="radio" name="Q2" onchange="fun(this,'D','A')"> <span class="option-text">Library</span></label>
+        </div>
+    </div>
+
+        <!-- Question 3 -->
+    <div class="container main_box">
+        <div class="container question">
+            3)Wheel : Car :: Wing : ?
+        </div>
+        <div class="container options">
+            <label><input type="radio" name="Q3" onchange="fun(this,'A','B')"> <span class="option-text">Fish</span></label><br>
+            <label><input type="radio" name="Q3" onchange="fun(this,'B','B')"> <span class="option-text">Bird</span></label><br>
+            <label><input type="radio" name="Q3" onchange="fun(this,'C','B')"> <span class="option-text">Man</span></label><br>
+            <label><input type="radio" name="Q3" onchange="fun(this,'D','B')"> <span class="option-text">Tree</span></label>
+        </div>
+    </div>
+
+            <!-- Question 4 -->
+    <div class="container main_box">
+        <div class="container question">
+            4)Pen : Writer :: Brush : ?
+        </div>
+        <div class="container options">
+            <label><input type="radio" name="Q4" onchange="fun(this,'A','A')"> <span class="option-text">Painter</span></label><br>
+            <label><input type="radio" name="Q4" onchange="fun(this,'B','a')"> <span class="option-text">Tailor</span></label><br>
+            <label><input type="radio" name="Q4" onchange="fun(this,'C','A')"> <span class="option-text">Player</span></label><br>
+            <label><input type="radio" name="Q4" onchange="fun(this,'D','A')"> <span class="option-text">Doctor</span></label>
+        </div>
+    </div>
+
+            <!-- Question 5 -->
+    <div class="container main_box">
+        <div class="container question">
+            5)Hot : Cold :: Day : ?
+        </div>
+        <div class="container options">
+            <label><input type="radio" name="Q5" onchange="fun(this,'A','D')"> <span class="option-text">Dark</span></label><br>
+            <label><input type="radio" name="Q5" onchange="fun(this,'B','D')"> <span class="option-text">Sun</span></label><br>
+            <label><input type="radio" name="Q5" onchange="fun(this,'C','D')"> <span class="option-text">Light</span></label><br>
+            <label><input type="radio" name="Q5" onchange="fun(this,'D','D')"> <span class="option-text">Night</span></label>
+        </div>
+    </div>
+            <!-- Question 6 -->
+    <div class="container main_box">
+        <div class="container question">
+            6)Mango : Fruit :: Potato : ?
+        </div>
+        <div class="container options">
+            <label><input type="radio" name="Q6" onchange="fun(this,'A','C')"> <span class="option-text">Root</span></label><br>
+            <label><input type="radio" name="Q6" onchange="fun(this,'B','C')"> <span class="option-text">Stem</span></label><br>
+            <label><input type="radio" name="Q6" onchange="fun(this,'C','C')"> <span class="option-text">Vegetable</span></label><br>
+            <label><input type="radio" name="Q6" onchange="fun(this,'D','C')"> <span class="option-text">Plant</span></label>
+        </div>
+    </div>
+
+            <!-- Question 7 -->
+    <div class="container main_box">
+        <div class="container question">
+            7Lead : Pencil :: Ink : ?
+        </div>
+        <div class="container options">
+            <label><input type="radio" name="Q7" onchange="fun(this,'A','A')"> <span class="option-text">Pen</span></label><br>
+            <label><input type="radio" name="Q7" onchange="fun(this,'B','A')"> <span class="option-text">Book</span></label><br>
+            <label><input type="radio" name="Q7" onchange="fun(this,'C','A')"> <span class="option-text">Paper</span></label><br>
+            <label><input type="radio" name="Q7" onchange="fun(this,'D','A')"> <span class="option-text">Brush</span></label>
+        </div>
+    </div>
+
+            <!-- Question 8 -->
+    <div class="container main_box">
+        <div class="container question">
+            8)Soldier : Army :: Sailor : ?
+        </div>
+        <div class="container options">
+            <label><input type="radio" name="Q8" onchange="fun(this,'A','B')"> <span class="option-text">Ship</span></label><br>
+            <label><input type="radio" name="Q8" onchange="fun(this,'B','B')"> <span class="option-text">Navy</span></label><br>
+            <label><input type="radio" name="Q8" onchange="fun(this,'C','B')"> <span class="option-text">Sea</span></label><br>
+            <label><input type="radio" name="Q8" onchange="fun(this,'D','B')"> <span class="option-text">Captain</span></label>
+        </div>
+    </div>
+
+            <!-- Question 9 -->
+    <div class="container main_box">
+        <div class="container question">
+            9)Eye : Sight :: Ear : ?
+        </div>
+        <div class="container options">
+            <label><input type="radio" name="Q9" onchange="fun(this,'A','B')"> <span class="option-text">Noise</span></label><br>
+            <label><input type="radio" name="Q9" onchange="fun(this,'B','B')"> <span class="option-text">Sound</span></label><br>
+            <label><input type="radio" name="Q9" onchange="fun(this,'C','B')"> <span class="option-text">Hearing</span></label><br>
+            <label><input type="radio" name="Q9" onchange="fun(this,'D','B')"> <span class="option-text">Listen</span></label>
+        </div>
+    </div>
+
+            <!-- Question 10 -->
+    <div class="container main_box">
+        <div class="container question">
+            10)Fire : Ashes :: Explosion : ?
+        </div>
+        <div class="container options">
+            <label><input type="radio" name="Q10" onchange="fun(this,'A','B')"> <span class="option-text">Noise</span></label><br>
+            <label><input type="radio" name="Q10" onchange="fun(this,'B','B')"> <span class="option-text">Destruction</span></label><br>
+            <label><input type="radio" name="Q10" onchange="fun(this,'C','B')"> <span class="option-text">Ruins</span></label><br>
+            <label><input type="radio" name="Q10" onchange="fun(this,'D','B')"> <span class="option-text">Blast</span></label>
+        </div>
+    </div>
+
+
+    <script>
+        function fun(input, user_ans, right_ans, expId) {
+            const span = input.nextElementSibling;
+            if (user_ans === right_ans) {
+                span.classList.add("correct");
+            } else {
+                span.classList.add("wrong");
+            }
+        }
+    </script>
+
+</body>
+</html>

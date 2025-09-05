@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profit & Loss Quiz</title>
+    <style>
+        .main_box {
+            border: 0.5px solid black;
+            margin-top: 20px;
+        }
+        .main_box:hover {
+            border: 0;
+            box-shadow: 0px 2px 7px rgb(0, 0, 0);
+        }
+        .container {
+            box-shadow: 0px 0px 7px white;
+            margin: 12px;
+            padding: 15px;
+            border-radius: 10px;
+            background-color: aliceblue;
+        }
+        .question {
+            border: 1px solid;
+            font-size: large;
+            background-color: rgb(39, 39, 39);
+            color: white;
+            box-shadow: inset 0px 0px 5px rgb(0, 0, 0);
+        }
+        .hidden { display: none; }
+        .option-text {
+            position: relative;
+            padding-right: 25px;
+        }
+        .option-text.correct::after {
+            content: "✔";
+            color: green;
+            font-weight: bold;
+            position: absolute;
+            right: 0;
+        }
+        .option-text.wrong::after {
+            content: "✖";
+            color: red;
+            font-weight: bold;
+            position: absolute;
+            right: 0;
+        }
+        .explanation {
+            display: none;
+            margin-top: 10px;
+            color: #22b435;
+        }
+        .explanation .label {
+            font-weight: bold;
+            font-size: large;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Question 1 -->
+    <div class="container main_box">
+        <div class="container question">
+            1) A man buys a pen for ₹50 and sells it for ₹60. His profit percentage is:
+        </div>
+        <div class="container options">
+            <label><input type="radio" name="Q1" onchange="fun(this,'A','C','explanationQ1')"> <span class="option-text">10%</span></label><br>
+            <label><input type="radio" name="Q1" onchange="fun(this,'B','C','explanationQ1')"> <span class="option-text">15%</span></label><br>
+            <label><input type="radio" name="Q1" onchange="fun(this,'C','C','explanationQ1')"> <span class="option-text">20%</span></label><br>
+            <label><input type="radio" name="Q1" onchange="fun(this,'D','C','explanationQ1')"> <span class="option-text">25%</span></label>
+
+            <div id="explanationQ1" class="explanation">
+                <div class="label">Explanation:</div>
+                <p>Option C</p>
+                <p>Profit = 60−50 = 10; % = 10/50 ×100 = 20%.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Question 2 -->
+    <div class="container main_box">
+        <div class="container question">
+            2) The cost price of 20 articles is the same as the selling price of x articles. If the profit is 25%, then the value of x is:
+        </div>
+        <div class="container options">
+            <label><input type="radio" name="Q2" onchange="fun(this,'A','B','explanationQ2')"> <span class="option-text">15</span></label><br>
+            <label><input type="radio" name="Q2" onchange="fun(this,'B','B','explanationQ2')"> <span class="option-text">16</span></label><br>
+            <label><input type="radio" name="Q2" onchange="fun(this,'C','B','explanationQ2')"> <span class="option-text">18</span></label><br>
+            <label><input type="radio" name="Q2" onchange="fun(this,'D','B','explanationQ2')"> <span class="option-text">25</span></label>
+
+            <div id="explanationQ2" class="explanation">
+                <div class="label">Explanation:</div>
+                <p>Option B</p>
+                <p>Let C.P. of each article = 1. C.P. of 20 = 20.</p>
+                <p>S.P. of x = 20.</p>
+                <p>Profit = 25% ⇒ (20−x)/x ×100 = 25.</p>
+                <p>Solve: 2000 − 100x = 25x ⇒ 125x = 2000 ⇒ x = 16.</p>
+            </div>
+        </div>
+    </div>
+    <!--Question3--->
+     <div class="container main_box">
+        <div class="container question">
+            3) In a certain store, the profit is 320% of the cost. If the cost increases by 25% but the selling price remains constant, approximately what percentage of the selling price is the profit?
+        </div>
+        <div class="container options">
+            <label><input type="radio" name="Q3" onchange="fun(this,'A','B','explanationQ3')"> <span class="option-text">30%</span></label><br>
+            <label><input type="radio" name="Q3" onchange="fun(this,'B','B','explanationQ3')"> <span class="option-text">70%</span></label><br>
+            <label><input type="radio" name="Q3" onchange="fun(this,'C','B','explanationQ3')"> <span class="option-text">100%</span></label><br>
+            <label><input type="radio" name="Q3" onchange="fun(this,'D','B','explanationQ3')"> <span class="option-text">250%</span></label>
+
+            <div id="explanationQ3" class="explanation">
+                <div class="label">Explanation:</div>
+                <p>Option B</p>
+                <p>Let C.P.= Rs. 100. Then, Profit = Rs. 320, S.P. = Rs. 420.</p>
+                <p>Let C.P.= Rs. 100. Then, Profit = Rs. 320, S.P. = Rs. 420.</p>
+                <p>New S.P. = Rs. 420.</p>
+                <p>Profit = Rs. (420 - 125) = Rs. 295.</p>
+                <p> Required percentage ={(295/420)*100}%=(1475/21)% = 70% (approximately).</p>
+            </div>
+        </div>
+    </div>
+    <!--Q4-->
+    <div class="container main_box">
+        <div class="container question">
+            4) A vendor bought toffees at 6 for a rupee. How many for a rupee must he sell to gain 20%?
+        </div>
+        <div class="container options">
+            <label><input type="radio" name="Q4" onchange="fun(this,'A','C','explanationQ4')"> <span class="option-text">3</span></label><br>
+            <label><input type="radio" name="Q4" onchange="fun(this,'B','C','explanationQ4')"> <span class="option-text">4</span></label><br>
+            <label><input type="radio" name="Q4" onchange="fun(this,'C','C','explanationQ4')"> <span class="option-text">5</span></label><br>
+            <label><input type="radio" name="Q4" onchange="fun(this,'D','C','explanationQ4')"> <span class="option-text">6</span></label>
+
+            <div id="explanationQ4" class="explanation">
+                <div class="label">Explanation:</div>
+                <p>Option C</p>
+                <p>C.P. of 6 toffees = Re. 1</p>
+                <p>S.P. of 6 toffees = 120% of Re. 1 = Rs.	6/5</p>
+                <p>For Rs.	6/5, toffees sold = 6.</p>
+                <p>For Re. 1, toffees sold =6x5/6= 5.</p>
+            </div>
+        </div>
+    </div>
+    <!--Q5-->
+     <div class="container main_box">
+        <div class="container question">
+          5)The percentage profit earned by selling an article for Rs. 1920 is equal to the percentage loss incurred by selling the same article for Rs. 1280. At what price should the article be sold to make 25% profit?
+        </div>
+        <div class="container options">
+            <label><input type="radio" name="Q5" onchange="fun(this,'A','A','explanationQ5')"> <span class="option-text">RS.2000</span></label><br>
+            <label><input type="radio" name="Q5" onchange="fun(this,'B','A','explanationQ5')"> <span class="option-text">RS.2200</span></label><br>
+            <label><input type="radio" name="Q5" onchange="fun(this,'C','A','explanationQ5')"> <span class="option-text">RS.2400</span></label><br>
+            <label><input type="radio" name="Q5" onchange="fun(this,'D','A','explanationQ5')"> <span class="option-text">Data inadequate</span></label>
+
+            <div id="explanationQ5" class="explanation">
+                <div class="label">Explanation:</div>
+                <p>Option A</p>
+                <p>Let C.P. be Rs. x</p>
+                <p>Then,(1920-x/x)*100={(x-1280)/x}*100</p>
+                <p>920 - x = x - 1280.</p>
+                <p>2x = 3200</p>
+                <p>x = 1600</p>
+                <p> Required S.P. = 125% of Rs. 1600=Rs.(125/100 * 1600)=Rs.2000</p>
+            </div>
+        </div>
+    </div>
+     <!--Q6-->
+     <div class="container main_box">
+        <div class="container question">
+         6)A shopkeeper expects a gain of 22.5% on his cost price. If in a week, his sale was of Rs. 392, what was his profit?</div>
+        <div class="container options">
+            <label><input type="radio" name="Q6" onchange="fun(this,'A','C','explanationQ6')"> <span class="option-text">RS.18.20</span></label><br>
+            <label><input type="radio" name="Q6" onchange="fun(this,'B','C','explanationQ6')"> <span class="option-text">RS.70</span></label><br>
+            <label><input type="radio" name="Q6" onchange="fun(this,'C','C','explanationQ6')"> <span class="option-text">RS.72</span></label><br>
+            <label><input type="radio" name="Q6" onchange="fun(this,'D','C','explanationQ6')"> <span class="option-text">Rs.88.25</span></label>
+
+            <div id="explanationQ6" class="explanation">
+                <div class="label">Explanation:</div>
+                <p>Option C</p>
+                <p>C.P=Rs.(100/122.5 * 392)=rs. (1000/1225*392)</p>
+                <p>Profit=Rs. (392-320)=rs.72</p>
+            </div>
+        </div>
+    </div>
+    <!--Q7-->
+    <div class="container main_box">
+        <div class="container question">
+         7)A man buys a cycle for Rs. 1400 and sells it at a loss of 15%. What is the selling price of the cycle?</div>
+        <div class="container options">
+            <label><input type="radio" name="Q7" onchange="fun(this,'A','C','explanationQ7')"> <span class="option-text">RS.1090</span></label><br>
+            <label><input type="radio" name="Q7" onchange="fun(this,'B','C','explanationQ7')"> <span class="option-text">RS.1160</span></label><br>
+            <label><input type="radio" name="Q7" onchange="fun(this,'C','C','explanationQ7')"> <span class="option-text">RS.1190</span></label><br>
+            <label><input type="radio" name="Q7" onchange="fun(this,'D','C','explanationQ7')"> <span class="option-text">Rs.1202</span></label>
+
+            <div id="explanationQ7" class="explanation">
+                <div class="label">Explanation:</div>
+                <p>Option C</p>
+                <p>S.P=85% of Rs.1400=rs.(85/100 * 1400)=Rs.1190</p>
+            </div>
+        </div>
+    </div>
+    <!--Q8-->
+    <div class="container main_box">
+        <div class="container question">
+         8)On selling 17 balls at Rs. 720, there is a loss equal to the cost price of 5 balls. The cost price of a ball is:</div>
+        <div class="container options">
+            <label><input type="radio" name="Q8" onchange="fun(this,'A','D','explanationQ8')"> <span class="option-text">RS.45</span></label><br>
+            <label><input type="radio" name="Q8" onchange="fun(this,'B','D','explanationQ8')"> <span class="option-text">RS.50</span></label><br>
+            <label><input type="radio" name="Q8" onchange="fun(this,'C','D','explanationQ8')"> <span class="option-text">RS.55</span></label><br>
+            <label><input type="radio" name="Q8" onchange="fun(this,'D','D','explanationQ8')"> <span class="option-text">Rs.60</span></label>
+
+            <div id="explanationQ8" class="explanation">
+                <div class="label">Explanation:</div>
+                <p>Option D</p>
+                <pre>(C.P. of 17 balls) - (S.P. of 17 balls) = (C.P. of 5 balls)
+                       C.P. of 12 balls = S.P. of 17 balls = Rs.720
+                        C.P. of 1 ball = Rs.720/12=rs.60</pre>
+            </div>
+        </div>
+    </div>
+    <!--Q9-->
+    <div class="container main_box">
+        <div class="container question">
+         9)A trader mixes 26 kg of rice at Rs. 20 per kg with 30 kg of rice of other variety at Rs. 36 per kg and sells the mixture at Rs. 30 per kg. His profit percent is:</div>
+        <div class="container options">
+            <label><input type="radio" name="Q9" onchange="fun(this,'A','B','explanationQ9')"> <span class="option-text">No profit,no loss</span></label><br>
+            <label><input type="radio" name="Q9" onchange="fun(this,'B','B','explanationQ9')"> <span class="option-text">5%</span></label><br>
+            <label><input type="radio" name="Q9" onchange="fun(this,'C','B','explanationQ9')"> <span class="option-text">8%</span></label><br>
+            <label><input type="radio" name="Q9" onchange="fun(this,'D','B','explanationQ9')"> <span class="option-text">10%</span></label>
+
+            <div id="explanationQ9" class="explanation">
+                <div class="label">Explanation:</div>
+                <p>Option B</p>
+                <pre>
+                 C.P. of 56 kg rice = Rs. (26 x 20 + 30 x 36) = Rs. (520 + 1080) = Rs. 1600.
+                 S.P. of 56 kg rice = Rs. (56 x 30) = Rs. 1680.
+                 Gain =	80/1600	x 100	% = 5%.
+               </pre>
+            </div>
+        </div>
+    </div>
+      <!--Q10-->
+    <div class="container main_box">
+        <div class="container question">
+         10)100 oranges are bought at the rate of Rs. 350 and sold at the rate of Rs. 48 per dozen. The percentage of profit or loss is:</div>
+        <div class="container options">
+            <label><input type="radio" name="Q10" onchange="fun(this,'A','A','explanationQ10')"> <span class="option-text">14(2/7)% gain</span></label><br>
+            <label><input type="radio" name="Q10" onchange="fun(this,'B','A','explanationQ10')"> <span class="option-text">15% gain</span></label><br>
+            <label><input type="radio" name="Q10" onchange="fun(this,'C','A','explanationQ10')"> <span class="option-text">17% gain</span></label><br>
+            <label><input type="radio" name="Q10" onchange="fun(this,'D','A','explanationQ10')"> <span class="option-text">10% gain</span></label>
+
+            <div id="explanationQ10" class="explanation">
+                <div class="label">Explanation:</div>
+                <p>Option A</p>
+                <pre style="font-style: 14ph;">
+                
+C.P. of 1 orange = Rs.350/100= Rs. 3.50
+S.P. of 1 orange = Rs.48/12	= Rs. 4
+Gain% =0.50/3.50	x 100	%	=	100/7 % = 14(2/7)	%
+               </pre>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function fun(input, user_ans, right_ans, expId) {
+            const span = input.nextElementSibling;
+            if (user_ans === right_ans) {
+                span.classList.add("correct");
+            } else {
+                span.classList.add("wrong");
+            }
+            document.getElementById(expId).style.display = "block";
+        }
+    </script>
+
+</body>
+</html>

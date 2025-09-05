@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reading Comprehensions</title>
+    <style>
+        .paragraph-box {
+          background-color: white;
+          color: #2c3e50;
+          font-family: 'Georgia', serif;
+          font-size: 18px;
+          line-height: 1.8;
+          text-align: justify;
+          padding: 15px;
+          border-radius: 10px;
+          box-shadow: 0px 2px 6px rgba(0,0,0,0.1);
+          margin-bottom: 10px;
+}
+
+        .main_box {
+            border: 0.5px solid black;
+            margin-top: 20px;
+        }
+        .main_box:hover {
+            border: 0;
+            box-shadow: 0px 2px 7px black;
+        }
+        .container {
+            box-shadow: 0px 0px 7px white;
+            margin: 12px;
+            padding: 15px;
+            border-radius: 10px;
+            background-color: aliceblue;
+        }
+        .question {
+            border: 1px solid;
+            font-size: large;
+            background-color: rgb(39, 39, 39);
+            color: white;
+            box-shadow: inset 0px 0px 5px rgb(0, 0, 0);
+        }
+        .hidden { display: none; }
+        .option-text {
+            position: relative;
+            padding-right: 25px;
+        }
+        .option-text.correct::after {
+            content: "✔";
+            color: green;
+            font-weight: bold;
+            position: absolute;
+            right: 0;
+        }
+        .option-text.wrong::after {
+            content: "✖";
+            color: red;
+            font-weight: bold;
+            position: absolute;
+            right: 0;
+        }
+        .instruction {
+         border-left: 5px solid lightcyan;
+         padding: 10px 15px;
+         margin: 15px 0;
+         font-size: 17px;
+         font-weight: bold;
+         border-radius: 6px;
+         box-shadow: 0px 1px 5px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Question 1 -->
+    <div class="container main_box">
+        <div><b>Paragraph 1</b></div>
+        <div class="container paragraph-box">
+           <p>The greatest thing this age can be proud of is the birth of man in the conciousness of men. In his drunken orgies of power and national pride man may flout and jeer at it. when organised national selfishness, racial antipathy and commercial self seeking begin to display their ugly deformities in all their nakedness, then comes the time for man to know that his salvation is not in political organisations and extended trade relations, not in any mechanical re-arrangement of social system but in a deeper transformation of life, in the liberation of consciousness in love, in the realisation of God in man.</p>
+        </div>
+        <div class="instruction">
+         Read the above passage and answer the following questions
+        </div>
+        <div class="container question">
+            1)In this passage, the phrase "God in man" implies
+        </div>
+        <div class="container options">
+            <label><input type="radio" name="Q1" onchange="fun(this,'A','D')"> <span class="option-text">God having assumed the shape of man</span></label><br>
+            <label><input type="radio" name="Q1" onchange="fun(this,'B','D')"> <span class="option-text">neither fully godly nor fully human</span></label><br>
+            <label><input type="radio" name="Q1" onchange="fun(this,'C','D')"> <span class="option-text">man being transformed into God</span></label><br>
+            <label><input type="radio" name="Q1" onchange="fun(this,'D','D')"> <span class="option-text">the divine qualities in man</span></label>
+        </div>
+        <div class="container question">
+            2)The author uses the expression 'ugly deformities' to show his indignation at
+        </div>
+        <div class="container options">
+            <label><input type="radio" name="Q2" onchange="fun(this,'A','C')"> <span class="option-text">political organisations</span></label><br>
+            <label><input type="radio" name="Q2" onchange="fun(this,'B','C')"> <span class="option-text">the liberation of human consciousness</span></label><br>
+            <label><input type="radio" name="Q2" onchange="fun(this,'C','C')"> <span class="option-text">selfishness and materialism of the people</span></label><br>
+            <label><input type="radio" name="Q2" onchange="fun(this,'D','C')"> <span class="option-text">the drunken orgies of power</span></label>
+        </div>
+        <div class="container question">
+            3)According to the author, "salvation" of human beings lies in the
+        </div>
+        <div class="container options">
+            <label><input type="radio" name="Q3" onchange="fun(this,'A','B')"> <span class="option-text">extended trade relations</span></label><br>
+            <label><input type="radio" name="Q3" onchange="fun(this,'B','B')"> <span class="option-text">spiritual transformation of life</span></label><br>
+            <label><input type="radio" name="Q3" onchange="fun(this,'C','B')"> <span class="option-text">orgy of national pride</span></label><br>
+            <label><input type="radio" name="Q3" onchange="fun(this,'D','B')"> <span class="option-text">wholehearted participated in political organisations</span></label>
+        </div>
+        <div class="container question">
+            4)In the phrase "the birth of Man in the consciousness of men", AMn stands for
+        </div>
+        <div class="container options">
+            <label><input type="radio" name="Q4" onchange="fun(this,'A','D')"> <span class="option-text">power and arrogance</span></label><br>
+            <label><input type="radio" name="Q4" onchange="fun(this,'B','D')"> <span class="option-text">egocentricity</span></label><br>
+            <label><input type="radio" name="Q4" onchange="fun(this,'C','D')"> <span class="option-text">noble human qualities</span></label><br>
+            <label><input type="radio" name="Q4" onchange="fun(this,'D','D')"> <span class="option-text">an idealistic notion of the human self</span></label>
+        </div>
+        <div class="container question">
+            5)People jeer at the 'birth of Man' in the human consciousness when they
+        </div>
+        <div class="container options">
+            <label><input type="radio" name="Q5" onchange="fun(this,'A','B')"> <span class="option-text">begin to think of themselves as God</span></label><br>
+            <label><input type="radio" name="Q5" onchange="fun(this,'B','B')"> <span class="option-text">become power hungry</span></label><br>
+            <label><input type="radio" name="Q5" onchange="fun(this,'C','B')"> <span class="option-text">restructure the social system</span></label><br>
+            <label><input type="radio" name="Q5" onchange="fun(this,'D','B')"> <span class="option-text">become mentally deranged</span></label>
+        </div>
+    </div>
+    <!--Q2-->
+        <!-- Question 2 -->
+    <div class="container main_box">
+        <div><b>Paragraph 2</b></div>
+        <div class="container paragraph-box">
+            <p>
+                Technology has drastically transformed human life in the 21st century. 
+                From smartphones to artificial intelligence, people are now more 
+                connected and informed than ever before. While these advancements 
+                improve efficiency and communication, they also raise concerns about 
+                privacy, over-dependence, and reduced human interaction. 
+                True progress lies not just in creating smarter machines, 
+                but in ensuring that these innovations serve humanity’s best interests.
+            </p>
+        </div>
+        <div class="instruction">
+         Read the above passage and answer the following questions
+        </div>
+
+        <div class="container question">
+            1) According to the passage, what has technology mainly provided in the 21st century?
+        </div>
+        <div class="container options">
+            <label><input type="radio" name="Q6" onchange="fun(this,'A','B')"> <span class="option-text">Only entertainment</span></label><br>
+            <label><input type="radio" name="Q6" onchange="fun(this,'B','B')"> <span class="option-text">More connectivity and information</span></label><br>
+            <label><input type="radio" name="Q6" onchange="fun(this,'C','B')"> <span class="option-text">Complete privacy</span></label><br>
+            <label><input type="radio" name="Q6" onchange="fun(this,'D','B')"> <span class="option-text">Less human interaction</span></label>
+        </div>
+
+        <div class="container question">
+            2) What is the author’s concern about modern technology?
+        </div>
+        <div class="container options">
+            <label><input type="radio" name="Q7" onchange="fun(this,'A','C')"> <span class="option-text">It improves efficiency</span></label><br>
+            <label><input type="radio" name="Q7" onchange="fun(this,'B','C')"> <span class="option-text">It connects people worldwide</span></label><br>
+            <label><input type="radio" name="Q7" onchange="fun(this,'C','C')"> <span class="option-text">It may reduce privacy and human interaction</span></label><br>
+            <label><input type="radio" name="Q7" onchange="fun(this,'D','C')"> <span class="option-text">It replaces manual work</span></label>
+        </div>
+
+        <div class="container question">
+            3) According to the author, what defines true progress?
+        </div>
+        <div class="container options">
+            <label><input type="radio" name="Q8" onchange="fun(this,'A','D')"> <span class="option-text">Creating faster machines</span></label><br>
+            <label><input type="radio" name="Q8" onchange="fun(this,'B','D')"> <span class="option-text">Making people dependent on technology</span></label><br>
+            <label><input type="radio" name="Q8" onchange="fun(this,'C','D')"> <span class="option-text">Using only artificial intelligence</span></label><br>
+            <label><input type="radio" name="Q8" onchange="fun(this,'D','D')"> <span class="option-text">Ensuring technology benefits humanity</span></label>
+        </div>
+    </div>
+        <!-- Q3 -->
+    <div class="container main_box">
+        <div><b>Paragraph 3</b></div>
+        <div class="container paragraph-box">
+            <p>
+                In recent decades, the rapid advancement of science and technology has 
+                dramatically altered the way human societies function. From instant communication 
+                through smartphones and the internet, to breakthroughs in medical research and 
+                renewable energy, technology has become an inseparable part of our everyday lives. 
+                Yet, these developments also raise a series of ethical and social questions. 
+                While automation and artificial intelligence can increase efficiency and reduce 
+                human error, they may also lead to large-scale unemployment and a widening 
+                gap between the rich and the poor. The issue of privacy has also become critical, 
+                as personal data is constantly being collected, stored, and analyzed by corporations 
+                and governments. In education, technology has opened doors to learning resources 
+                beyond imagination, but excessive screen time and overreliance on digital platforms 
+                may hinder the development of interpersonal skills and critical thinking. 
+                Similarly, though medical technology has prolonged human life expectancy, 
+                it has also given rise to debates about affordability, access, and ethical limits 
+                of genetic engineering. The true challenge before humanity is to strike a 
+                balance: to ensure that technological progress not only drives economic growth 
+                and convenience but also promotes equity, sustainability, and the well-being of 
+                all people. Ultimately, technology should serve as a tool to empower humanity 
+                rather than dominate it.
+            </p>
+        </div>
+        <div class="instruction">
+            Read the above passage carefully and answer the following questions
+        </div>
+        <div class="container question">
+            1) What are some positive effects of modern technology mentioned in the passage?
+        </div>
+        <div class="container options">
+            <label><input type="radio" name="Q9" onchange="fun(this,'A','D')"> <span class="option-text">It has led only to unemployment</span></label><br>
+            <label><input type="radio" name="Q9" onchange="fun(this,'B','D')"> <span class="option-text">It reduced the life expectancy of people</span></label><br>
+            <label><input type="radio" name="Q9" onchange="fun(this,'C','D')"> <span class="option-text">It has restricted access to education</span></label><br>
+            <label><input type="radio" name="Q9" onchange="fun(this,'D','D')"> <span class="option-text">It improved communication, medicine, and education</span></label>
+        </div>
+
+        <div class="container question">
+            2) According to the passage, what is a major drawback of excessive use of technology in education?
+        </div>
+        <div class="container options">
+            <label><input type="radio" name="Q10" onchange="fun(this,'A','B')"> <span class="option-text">It prevents access to online resources</span></label><br>
+            <label><input type="radio" name="Q10" onchange="fun(this,'B','B')"> <span class="option-text">It may reduce interpersonal and critical thinking skills</span></label><br>
+            <label><input type="radio" name="Q10" onchange="fun(this,'C','B')"> <span class="option-text">It increases manual workload</span></label><br>
+            <label><input type="radio" name="Q10" onchange="fun(this,'D','B')"> <span class="option-text">It lowers digital literacy levels</span></label>
+        </div>
+
+        <div class="container question">
+            3) What is the ethical concern regarding medical technology mentioned in the passage?
+        </div>
+        <div class="container options">
+            <label><input type="radio" name="Q11" onchange="fun(this,'A','C')"> <span class="option-text">That it is entirely free and accessible to all</span></label><br>
+            <label><input type="radio" name="Q11" onchange="fun(this,'B','C')"> <span class="option-text">That it has completely removed diseases</span></label><br>
+            <label><input type="radio" name="Q11" onchange="fun(this,'C','C')"> <span class="option-text">Concerns about affordability, access, and genetic engineering</span></label><br>
+            <label><input type="radio" name="Q11" onchange="fun(this,'D','C')"> <span class="option-text">It shortens human life expectancy</span></label>
+        </div>
+
+        <div class="container question">
+            4) What does the author suggest is the true challenge of technological progress?
+        </div>
+        <div class="container options">
+            <label><input type="radio" name="Q12" onchange="fun(this,'A','D')"> <span class="option-text">Making machines smarter than humans</span></label><br>
+            <label><input type="radio" name="Q12" onchange="fun(this,'B','D')"> <span class="option-text">Encouraging people to stop using technology</span></label><br>
+            <label><input type="radio" name="Q12" onchange="fun(this,'C','D')"> <span class="option-text">Using technology only for entertainment</span></label><br>
+            <label><input type="radio" name="Q12" onchange="fun(this,'D','D')"> <span class="option-text">Balancing progress with equity, sustainability, and well-being</span></label>
+        </div>
+    </div>
+
+    <script>
+        function fun(input, user_ans, right_ans, expId) {
+            const span = input.nextElementSibling;
+            if (user_ans === right_ans) {
+                span.classList.add("correct");
+            } else {
+                span.classList.add("wrong");
+            }
+            document.getElementById(expId).style.display = "block";
+        }
+    </script>
+
+</body>
+</html>
