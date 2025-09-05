@@ -5,40 +5,143 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Courses</title>
   <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f5f5f5; display: flex; flex-direction: column; min-height: 100vh; color: #333; }
-    header { background: #ffffff; color: #000000; padding: 20px 40px; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 2px 4px rgba(0,0,0,.1); }
-    .logo { height: 60px; width: auto; }
-    nav a { color: #000; margin-left: 20px; text-decoration: none; font-weight: bold; }
-    nav a:hover { text-decoration: underline; }
+    body { 
+      font-family: Arial, sans-serif; 
+      margin: 0; 
+      padding: 0; 
+      background: #f5f5f5; 
+      display: flex; 
+      flex-direction: column; 
+      min-height: 100vh; 
+      color: #333; 
+    }
 
-    .course-title { text-align: center; margin-top: 20px; }
-    .course-title h1 { font-size: 2.5em; color: #333; margin: 0; }
+    /* ✅ Updated Header */
+    header { 
+      background: #422ea1;  /* Updated blue-purple background */
+      padding: 20px 40px; 
+      display: flex; 
+      align-items: center; 
+      justify-content: space-between; 
+      box-shadow: 0 2px 4px rgba(0,0,0,.1); 
+    }
+    .logo { 
+      height: 60px; 
+      width: auto; 
+    }
+    nav a { 
+      color: #ffffff;  /* White buttons */
+      margin-left: 20px; 
+      text-decoration: none; 
+      font-weight: bold; 
+      font-size: 16px;
+    }
+    nav a:hover { 
+      color: orangered; /* Hover effect */
+    }
 
-    .container { max-width: 1000px; margin: 40px auto; padding: 20px; display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; }
-    .card { width: 250px; background: #fff; border-radius: 20px; padding: 20px; box-shadow: 0 4px 8px rgba(0,0,0,.1); transition: transform .2s ease-in-out; text-align: center; display: flex; flex-direction: column; align-items: center; }
-    .card:hover { transform: translateY(-5px); }
-    .card-image { width: 100px; height: 100px; margin-bottom: 10px; border-radius: 10px; object-fit: contain; }
-    .card h2 { margin: 5px 0 8px 0; color: #0c0909; }
-    .professor { margin: 0; font-size: .9rem; font-weight: 600; color: #555; }
-    .duration { margin: 6px 0 10px; font-size: .9rem; color: #666; }
-    .rating { margin: 5px 0 15px 0; color: #f5a623; font-weight: bold; }
-    .button { width: 100%; background: #422ea1; color: #fff; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer; font-size: 1rem; transition: background .3s ease; }
-    .button:hover { background: #3a2693; }
-    .button.secondary { margin-top: 10px; background: #0ea5e9; }
-    .button.secondary:hover { background: #0284c7; }
+    .course-title { 
+      text-align: center; 
+      margin-top: 20px; 
+    }
+    .course-title h1 { 
+      font-size: 2.5em; 
+      color: #333; 
+      margin: 0; 
+    }
 
-    footer { background: #422ea1; color: #ffffff; text-align: center; padding: 15px; margin-top: auto; }
+    .container { 
+      max-width: 1000px; 
+      margin: 40px auto; 
+      padding: 20px; 
+      display: flex; 
+      gap: 20px; 
+      flex-wrap: wrap; 
+      justify-content: center; 
+    }
+    .card { 
+      width: 250px; 
+      background: #fff; 
+      border-radius: 20px; 
+      padding: 20px; 
+      box-shadow: 0 4px 8px rgba(0,0,0,.1); 
+      transition: transform .2s ease-in-out; 
+      text-align: center; 
+      display: flex; 
+      flex-direction: column; 
+      align-items: center; 
+    }
+    .card:hover { 
+      transform: translateY(-5px); 
+    }
+    .card-image { 
+      width: 100px; 
+      height: 100px; 
+      margin-bottom: 10px; 
+      border-radius: 10px; 
+      object-fit: contain; 
+    }
+    .card h2 { 
+      margin: 5px 0 8px 0; 
+      color: #0c0909; 
+    }
+    .professor { 
+      margin: 0; 
+      font-size: .9rem; 
+      font-weight: 600; 
+      color: #555; 
+    }
+    .duration { 
+      margin: 6px 0 10px; 
+      font-size: .9rem; 
+      color: #666; 
+    }
+    .rating { 
+      margin: 5px 0 15px 0; 
+      color: #f5a623; 
+      font-weight: bold; 
+    }
+    .button { 
+      width: 100%; 
+      background: #422ea1; 
+      color: #fff; 
+      border: none; 
+      padding: 10px 20px; 
+      border-radius: 8px; 
+      cursor: pointer; 
+      font-size: 1rem; 
+      transition: background .3s ease; 
+    }
+    .button:hover { 
+      background: #3a2693; 
+    }
+    .button.secondary { 
+      margin-top: 10px; 
+      background: #0ea5e9; 
+    }
+    .button.secondary:hover { 
+      background: #0284c7; 
+    }
+
+    footer { 
+      background: #422ea1; 
+      color: #ffffff; 
+      text-align: center; 
+      padding: 15px; 
+      margin-top: auto; 
+    }
   </style>
 </head>
 <body>
 
+  <!-- ✅ Updated Header -->
   <header>
     <div class="logo-box">
       <img src="images/logo.jpg.jpg" class="logo" alt="Logo" />
     </div>
     <nav>
-      <a href="Homepage.html">Home</a>
-      <a href="CoursePage.html">Courses</a>
+      <a href="student.jsp">Home</a>
+      <a href="#CoursePage.html">Courses</a>
       <a href="Contact.html">Contact</a>
     </nav>
   </header>
@@ -66,12 +169,12 @@
     <div class="card">
       <img src="images/python.jpg.png" alt="Python Logo" class="card-image" />
       <h2>PYTHON</h2>
-      <p class="professor">Prof. Raghunandhan</p>
+      <p class="professor">Prof. Dheeraj</p>
       <p class="duration">Duration: 6 Months</p>
       <p class="rating">⭐ No rating yet</p>
       <button class="button" onclick="location.href='python.html'">Explore</button>
       <button class="button secondary"
-        onclick="location.href='feedback.html?course=PYTHON&prof=Prof.%20Raghunandhan'">
+        onclick="location.href='feedback.html?course=PYTHON&prof=Prof.%20Dheeraj'">
         Feedback
       </button>
     </div>
@@ -80,12 +183,12 @@
     <div class="card">
       <img src="images/aws.jpg.png" alt="AWS Logo" class="card-image" />
       <h2>AWS</h2>
-      <p class="professor">Prof. Prasad</p>
+      <p class="professor">Prof. Sandeep</p>
       <p class="duration">Duration: 6 Months</p>
       <p class="rating">⭐ No rating yet</p>
       <button class="button" onclick="location.href='aws.html'">Explore</button>
       <button class="button secondary"
-        onclick="location.href='feedback.html?course=AWS&prof=Prof.%20Prasad'">
+        onclick="location.href='feedback.html?course=AWS&prof=Prof.%20Sandeep'">
         Feedback
       </button>
     </div>
@@ -94,12 +197,12 @@
     <div class="card">
       <img src="images/aiml.jpg.png" alt="AI/ML Logo" class="card-image" />
       <h2>AI/ML</h2>
-      <p class="professor">Prof. Ramireddy</p>
+      <p class="professor">Prof. Dheeraj</p>
       <p class="duration">Duration: 6 Months</p>
       <p class="rating">⭐ No rating yet</p>
       <button class="button" onclick="location.href='aiml.html'">Explore</button>
       <button class="button secondary"
-        onclick="location.href='feedback.html?course=AI/ML&prof=Prof.%20Ramireddy'">
+        onclick="location.href='feedback.html?course=AI/ML&prof=Prof.%20Dheeraj'">
         Feedback
       </button>
     </div>
@@ -108,12 +211,12 @@
     <div class="card">
       <img src="images/frontend.jpg.png" alt="Frontend Logo" class="card-image" />
       <h2>FRONTEND</h2>
-      <p class="professor">Prof. Syam</p>
+      <p class="professor">Prof. Arun & Venkatesh</p>
       <p class="duration">Duration: 6 Months</p>
       <p class="rating">⭐ No rating yet</p>
       <button class="button" onclick="location.href='frontend.html'">Explore</button>
       <button class="button secondary"
-        onclick="location.href='feedback.html?course=FRONTEND&prof=Prof.%20Syam'">
+        onclick="location.href='feedback.html?course=FRONTEND&prof=Prof.%20Arun & Venkatesh'">
         Feedback
       </button>
     </div>
