@@ -1,170 +1,230 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Vtalent Login</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vtalent Dashboard</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background: #c8dafc; /* slightly darker pale blue */
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
       margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f7fa;
+      color: #333;
     }
-    .container {
-      background: #fff;
-      padding: 34px 42px 28px 42px;
-      border-radius: 18px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.13);
-      width: 460px;
-      text-align: center;
-    }
-    .logo-img {
-      width: 210px;
-      height: auto;
-      margin-bottom: 4px;
-      margin-top: 7px;
-    }
-    #loginHeading {
-      font-size: 2.2rem;
-      color: #1A237E;
-      margin: 10px 0 28px 0;
-      letter-spacing: 2px;
-      font-weight: bold;
-    }
-    .radio-group {
-      margin-bottom: 28px;
-      display: flex;
-      justify-content: center;
-      gap: 36px;
-    }
-    .radio-group label {
-      font-size: 18px;
-      cursor: pointer;
-    }
-    .form-row {
+
+    /* Navbar */
+    .navbar {
       display: flex;
       align-items: center;
-      margin-bottom: 22px;
-      text-align: left;
+      justify-content: space-between;
+      background: #ffffff;
+      padding: 12px 40px;
+      box-shadow: 0px 2px 6px rgba(0,0,0,0.1);
     }
-    .form-row label {
-      flex: 0 0 115px;
-      font-size: 18px;
-      color: #444;
-      margin-right: 11px;
-      text-align: right;
-      font-weight: 500;
+
+    .navbar img {
+      height: 60px;
     }
-    .form-row input[type="text"],
-    .form-row input[type="password"] {
-      flex: 1;
-      padding: 10px 12px;
-      border: 1px solid #d3d3d3;
-      border-radius: 6px;
-      font-size: 17px;
-      background: #fafbfc;
-      transition: border 0.3s;
-    }
-    .form-row input[type="text"]:focus,
-    .form-row input[type="password"]:focus {
-      border-color: #1976d2;
-      outline: none;
-    }
-    .btn-group {
+
+    .nav-links {
       display: flex;
-      gap: 23px;
-      margin-top: 12px;
+      gap: 20px;
     }
-    .btn-group button {
-      flex: 1 1 0;
-      padding: 12px 0;
-      border: none;
-      border-radius: 6px;
-      font-size: 15px;
+
+    .nav-links a {
+      text-decoration: none;
+      color: #004080;
+      font-size: 16px;
       font-weight: bold;
-      cursor: pointer;
-      transition: background 0.22s, transform 0.15s;
+      padding: 10px 18px;
+      border-radius: 6px;
+      transition: 0.3s;
     }
-    .btn-group .submit {
-      background: #4287f5;
-      color: #fff;
+
+    .nav-links a:hover {
+      background: #004080;
+      color: white;
     }
-    .btn-group .cancel {
-      background: #e0463e;
-      color: #fff;
+
+    /* Hero Section */
+    .hero {
+      text-align: center;
+      padding: 80px 20px;
+      background: linear-gradient(135deg, #f0f4ff, #d9e6ff);
     }
-    .btn-group .submit:hover {
-      background: #248c37;
-      transform: translateY(-2px) scale(1.03);
+
+    .hero h1 {
+      font-size: 36px;
+      color: #004080;
     }
-    .btn-group .cancel:hover {
-      background: #b3312a;
-      transform: translateY(-2px) scale(1.03);
+
+    .hero p {
+      font-size: 18px;
+      margin: 15px 0 30px;
+      color: #555;
     }
+
+    /* Highlights Section */
+    .highlights {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 25px;
+      padding: 50px 40px;
+      background: #fff;
+    }
+
+    .highlight-box {
+      background: #f9fbff;
+      border: 1px solid #e1e6f0;
+      border-radius: 10px;
+      padding: 25px;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      transition: 0.3s;
+    }
+
+    .highlight-box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    }
+
+    .highlight-box h3 {
+      color: #004080;
+      margin-bottom: 12px;
+    }
+
+    .highlight-box p {
+      font-size: 15px;
+      color: #555;
+    }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      padding: 15px;
+      background: #004080;
+      color: white;
+      margin-top: 50px;
+    }
+    .wrap {
+    max-width :2000px;
+    margin: 48px auto;
+    padding: 0 15px;
+  }
+
+  .slider {
+    position: relative;
+    overflow: hidden;               /* hide scrolling track edges */
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.35);
+    background: white;
+  }
+
+  /* The “track” is twice as wide because we duplicate slides for a perfect loop */
+  .track {
+    display: flex;
+    width: max-content;             /* shrink-wrap to slides */
+    animation: scroll 20s linear infinite;
+    /* Pause on hover (optional) */
+  }
+  .slider:hover .track { animation-play-state: paused; }
+
+  .slide {
+    flex: 0 0 auto;                 /* no shrinking, no growing */
+    width: 250px;                   /* each card’s width */
+    aspect-ratio: 16 / 9;           /* keeps slides proportional */
+    margin-right: 12px;             /* gap between slides */
+    border-radius: 12px;
+    overflow: hidden;
+    background: #000;
+    object-fit: cover;
+  }
+
+  .slide img {
+   
+      width: 100%;
+    height:100%;
+     object-fit: cover;
+ display: block;
+   
+  }
+
+  /* Keyframes: move the whole duplicated track left by 50% of its length,
+     which equals one full set of slides, then loop seamlessly. */
+  @keyframes scroll {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+
+  /* Optional: gradient edge masks for a nice fade in/out */
+  .slider::before,
+  .slider::after {
+    content: "";
+    position: absolute; z-index: 2; top: 0; bottom: 0;
+    width: 56px; pointer-events: none;
+  }
+  .slider::before { left: 0;  background: linear-gradient(to right, #000, transparent); }
+  .slider::after  { right: 0; background: linear-gradient(to left,    #000, transparent); }
+    
   </style>
 </head>
 <body>
-  <div class="container">
-    <!-- Logo at the top -->
-    <img src="https://vtalent.in/images/vtalentlogo.png" alt="Vtalent Logo" class="logo-img">
-    <div id="loginHeading">Student Login</div>
-    <form action="LoginServlet" method="post">
-      <div class="radio-group">
-        <input type="radio" id="student" name="userType" value="student" checked onclick="updateHeading(),rS"/>
-        <label for="student">Student</label>
-        <input type="radio" id="admin" name="userType" value="admin" onclick="updateHeading()"/>
-        <label for="admin">Admin</label>
-      </div>
-      <div class="form-row">
-        <label for="username">Username</label>
-        <input type="text" id="username" name="username" placeholder="Enter your username" required />
-      </div>
-      <div class="form-row">
-        <label for="password">Password</label>
-        <input type="password" id="password" name="password" placeholder="Enter your password" required />
-      </div>
-      <div class="btn-group">
-        <button type="submit" class="submit"><b>Submit</b></button>
-        <button type="reset" class="cancel"><b>Cancel</b></button>
-      </div>
-    </form>
+  <!-- Navbar -->
+  <div class="navbar">
+    <img src="https://vtalent.in/images/vtalentlogo.png" alt="Vtalent Logo">
+    <div class="nav-links">
+      <a href="ViewContactInformation.html">Contact</a>
+      <a href="Coursespage.html">Course</a>
+      <a href="Registration.jsp">Register</a>
+      <a href="LoginPage.jsp">Login</a>
+    </div>
   </div>
-  <script>
-    function updateHeading() {
-      const heading = document.getElementById("loginHeading");
-      if(document.getElementById("student").checked) {
-        heading.textContent = "Student Login";
-      } else if(document.getElementById("admin").checked) {
-        heading.textContent = "Admin Login";
-      }
-    }
-    document.addEventListener('DOMContentLoaded', updateHeading);
-    //
-      function validateLogin(event) {
-      event.preventDefault(); // prevent form submission so we can validate first
 
-      // Example hardcoded credentials
-      const validUsername = 'admin';
-      const validPassword = 'password123';
+  <!-- Hero Section -->
+  <div class="hero">
+  <h1>Welcome to Vtalent!</h1>
+   <div class="slider">
+      <div class="track">
+        <!-- Set A -->
+        <figure class="slide"><img src="VtalentScrollingImages/sir.jpg"  alt="Slide 1"></figure>
+        <figure class="slide"><img src="VtalentScrollingImages/frontend.jpg"  alt="Slide 2"></figure>
+        <figure class="slide"><img src="VtalentScrollingImages/prasadsir.jpg" alt="Slide 3"></figure>
+        <figure class="slide"><img src="VtalentScrollingImages/softskills.jpg" alt="Slide 4"></figure>
+        <figure class="slide"><img src="VtalentScrollingImages/aptitude.jpg" alt="Slide 5"></figure>
 
-      const enteredUsername = document.getElementById('username').value.trim();
-      const enteredPassword = document.getElementById('password').value;
+        <!-- Set B (duplicate Set A, same order) -->
+        <figure class="slide"><img src="VtalentScrollingImages/sir.jpg"   alt="Slide 1 duplicate"></figure>
+        <figure class="slide"><img src="VtalentScrollingImages/frontend.jpg"   alt="Slide 2 duplicate"></figure>
+        <figure class="slide"><img src="VtalentScrollingImages/prasadsir.jpg" alt="Slide 3 duplicate"></figure>
+        <figure class="slide"><img src="VtalentScrollingImages/softskills.jpg" alt="Slide 4 duplicate"></figure>
+        <figure class="slide"><img src="VtalentScrollingImages/aptitude.jpg" alt="Slide 5 duplicate"></figure>
+      </div>
+    </div>
+  </div>
 
-      if (enteredUsername === validUsername && enteredPassword === validPassword) {
-        alert('Login successful!');
-        // redirect to admin page or load dashboard here
-      } else {
-        alert('Invalid credentials');
-      }
+  <!-- Highlights Section -->
+  <div class="highlights">
+    <div class="highlight-box">
+      <h3>Expert Trainers</h3>
+      <p>Learn from industry experts with years of professional experience.</p>
+    </div>
+    <div class="highlight-box">
+      <h3>Career Guidance</h3>
+      <p>Get personalized support to build your career path successfully.</p>
+    </div>
+    <div class="highlight-box">
+      <h3>Live Projects</h3>
+      <p>Work on real-time projects to gain hands-on experience.</p>
+    </div>
+    <div class="highlight-box">
+      <h3>Placement Support</h3>
+      <p>Dedicated placement cell to connect you with top IT companies.</p>
+    </div>
+  </div>
 
-      return false; // prevent form submission
-    }
-    
-  </script>
+  <!-- Footer -->
+  <div class="footer">
+    © 2025 Vtalent. All Rights Reserved.
+  </div>
 </body>
 </html>

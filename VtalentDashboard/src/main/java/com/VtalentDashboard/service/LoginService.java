@@ -22,11 +22,11 @@ public class LoginService {
 	        	s.setSid(result.getString(3));
 	        	s.setCourse(result.getString(4));
 	        	
-	        	System.out.println(s.getCourse());
+	        	System.out.println("Hii"+s.getCourse());
 	        	
 	            return s;
 	        } else {
-	            
+	        	System.out.println("Hii");
 	            return s;
 	        }
 	    } catch (Exception e) {

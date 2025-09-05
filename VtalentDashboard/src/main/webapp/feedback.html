@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feedback Form</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f9f9f9; margin: 0; padding: 0; }
+    
+    /* ✅ Updated header */
+    header { 
+      background: #422ea1;   /* Blue from your image */
+      color: #fff; 
+      padding: 10px 30px; 
+      display: flex; 
+      align-items: center; 
+      justify-content: space-between; 
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1); 
+    }
+    
+    .logo img { height: 50px; width: auto; background: transparent; }
+    
+    nav ul { list-style: none; margin: 0; padding: 0; display: flex; }
+    nav ul li { margin: 0 15px; }
+    nav ul li a { 
+      color: #fff;              /* White text */
+      text-decoration: none; 
+      font-weight: bold; 
+      transition: 0.3s; 
+    }
+    nav ul li a:hover { 
+      color: #FFD700;           /* Gold on hover */
+      text-decoration: underline; 
+    }
+
+    .container { display: flex; flex-direction: column; align-items: center; padding: 40px 20px; }
+    h2 { color: #422ea1; }
+    
+    form { 
+      background: #fff; 
+      padding: 20px; 
+      border-radius: 12px; 
+      box-shadow: 0 4px 8px rgba(0,0,0,.1); 
+      width: 100%; 
+      max-width: 500px; 
+      margin-top: 20px; 
+    }
+    label { display: block; margin-top: 15px; font-weight: bold; }
+    input, textarea, select { 
+      width: 100%; 
+      padding: 10px; 
+      margin-top: 5px; 
+      border: 1px solid #ccc; 
+      border-radius: 8px; 
+      font-size: 1rem; 
+    }
+    button { 
+      margin-top: 20px; 
+      padding: 12px; 
+      background: #422ea1; 
+      color: #fff; 
+      border: none; 
+      border-radius: 8px; 
+      cursor: pointer; 
+      font-size: 1rem; 
+      width: 100%; 
+    }
+    button:hover { background: #3a2693; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <img src="images/logo.jpg.jpg" alt="logo">
+    </div>
+    <nav>
+      <ul>
+        <li><a href="Homepage.html">Home</a></li>
+        <li><a href="Coursespage.html">Courses</a></li>
+        <li><a href="Contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h2>Course Feedback Form</h2>
+    <form>
+      <label for="course">Course</label>
+      <input type="text" id="course" name="course" readonly>
+
+      <label for="prof">Professor</label>
+      <input type="text" id="prof" name="professor" readonly>
+
+      <label for="student">Your Name</label>
+      <input type="text" id="student" name="student" required>
+
+      <label for="rating">Rating </label>
+      <select id="rating" name="rating" required>
+        <option value="">--Select--</option>
+        <option value="5">⭐⭐⭐⭐⭐</option>
+        <option value="4">⭐⭐⭐⭐</option>
+        <option value="3">⭐⭐⭐</option>
+        <option value="2">⭐⭐</option>
+        <option value="1">⭐</option>
+      </select>
+
+      <label for="suggestion">Suggestions </label>
+      <textarea id="suggestion" name="suggestion" rows="4" placeholder="Your suggestions..." required></textarea>
+
+      <button type="submit">Submit Feedback</button>
+    </form>
+  </div>
+
+  <script>
+    // Pre-fill from URL
+    const params = new URLSearchParams(window.location.search);
+    const course = params.get('course') || '';
+    const prof = params.get('prof') || '';
+    document.getElementById('course').value = course;
+    document.getElementById('prof').value = prof;
+
+    // Handle submit
+    document.querySelector("form").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const student = document.getElementById("student").value;
+      const rating = parseInt(document.getElementById("rating").value);
+      const suggestion = document.getElementById("suggestion").value;
+
+      if (!rating) {
+        alert("Please select a rating!");
+        return;
+      }
+
+      let feedbackData = JSON.parse(localStorage.getItem("feedbackData")) || {};
+      if (!feedbackData[course]) {
+        feedbackData[course] = [];
+      }
+      feedbackData[course].push({ student, rating, suggestion, prof });
+
+      localStorage.setItem("feedbackData", JSON.stringify(feedbackData));
+
+      alert("✅ Thank you for your feedback!");
+      window.location.href = "Coursespage.html";
+    });
+  </script>
+
+</body>
+</html>

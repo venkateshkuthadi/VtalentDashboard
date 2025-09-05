@@ -65,10 +65,10 @@ public class LoginServlet extends HttpServlet {
 			}
 		}
 		else {
-			response.sendRedirect("index.jsp");
+			System.out.println(role);
+			response.sendRedirect("LoginPage.jsp");
 		}
 		System.out.println(output);
-		
 		doGet(request, response);
 	}
 
