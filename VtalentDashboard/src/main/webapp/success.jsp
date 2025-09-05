@@ -21,7 +21,7 @@
   <br>
  <hr style="width:80%; margin:auto; border:2px solid #0077c5;">
  
-  <button onclick ="window.location.href='Home.jsp'">Home</button>
+  <button onclick ="window.location.href='LoginPage.jsp'">login</button>
 </body>
 </html>
 

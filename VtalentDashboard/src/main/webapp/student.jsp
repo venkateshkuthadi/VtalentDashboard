@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="com.VtalentDashboard.entity.StudentEntity" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -137,9 +139,9 @@
       <div class="content">
         <h1>Student Dashboard</h1>
         <nav>
-          <a href="View.html">Home</a>
-          <a href="#">Courses</a>
-          <a href="View.html">Contact</a>
+          <a href="index.jsp">Home</a>
+          <a href="Coursespage.html">Courses</a>
+          <a href="ViewContactInformation.html">Contact</a>
         </nav>
       </div>
     </div>
@@ -150,9 +152,18 @@
     <div class="card student-card">
       <h2>Student Details</h2>
       <div class="student-info">
-        <p>SID: ${student.getId()}</p>
-        <p>Course: ${student.getCourse()}</p>
-        <p>Name: ${student.getName()}</p>
+      <%
+		  StudentEntity student = (StudentEntity) session.getAttribute("student");
+		  if (student != null) {
+		%>
+		    <p>Name: <%= student.getsName() %></p>
+		    <p>ID: <%= student.getSid() %></p>
+		    <p>Course: <%= student.getCourse() %></p>
+		<%
+		  }
+		%>
+      
+       
       </div>
     </div>
   
@@ -179,9 +190,9 @@
       <p>Extra study materials and guides.</p>
     </div>
     <div class="card">
-	  <h2>Resume</h2>
-	  <p>Upload and manage your resume.</p>
-	</div>
+  <h2>Resume</h2>
+  <p>Upload and manage your resume.</p>
+</div>
   </div>
 
 </body>

@@ -19,7 +19,7 @@ import com.mysql.cj.protocol.Resultset;
 /**
  * Servlet implementation class RegistrationServlet
  */
-//@WebServlet("/RegistrationServlet")
+@WebServlet("/RegistrationServlet")
 public class RegistrationServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
@@ -44,7 +44,9 @@ public class RegistrationServlet extends HttpServlet {
         String Technology = request.getParameter("technology");
         String Prefered_loc = request.getParameter("Prefered_loc");
         String Password = request.getParameter("password");
-
+        
+        
+        System.out.println("username");
         RegistrationEntity r = new RegistrationEntity();
         r.setName(Name);
         r.setQualification(Qualification);

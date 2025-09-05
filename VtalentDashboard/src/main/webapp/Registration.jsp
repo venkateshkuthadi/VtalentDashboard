@@ -205,7 +205,7 @@
 
         <div class="button-group">
           <button type="submit">Register</button>
-          <button type="button" onclick="window.location.href='login.jsp'">Cancel</button>
+          <button type="button" onclick="window.location.href='index.jsp'">Cancel</button>
         </div>
       </form>
     </div>

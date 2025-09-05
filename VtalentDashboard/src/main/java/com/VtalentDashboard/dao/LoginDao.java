@@ -21,10 +21,11 @@ public class LoginDao {
 		
 		if(l.getRole().equals("student")) {
 		try {
-			String sql="select * from student where Name = ? and Password = ?";
+			String sql="select * from student where Name = ? or Email_id=? and Password = ?";
 			p=con.prepareStatement(sql);
 			p.setString(1, l.getUsername());
-			p.setString(2, l.getPassword());
+			p.setString(2, l.getUsername());
+			p.setString(3, l.getPassword());
 			result = p.executeQuery();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
