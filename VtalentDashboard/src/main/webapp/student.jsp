@@ -170,7 +170,7 @@
 
   <!-- Other Cards with spacing -->
   <div class="card-container section">
-    <div class="card"><a href="profile.jsp">
+    <div class="card"><a href="Weeklytest.html">
       <h2>Assessments</h2>
       <p>Check quizzes, tests, and assignments.</p>
       </a>
@@ -183,9 +183,10 @@
       </a>
     </div>
 
-    <div class="card">
+    <div class="card"><a href="practicehome.html">
       <h2>Sample Programs</h2>
       <p>View and practice programming examples.</p>
+      </a>
     </div>
 
     <div class="card">
