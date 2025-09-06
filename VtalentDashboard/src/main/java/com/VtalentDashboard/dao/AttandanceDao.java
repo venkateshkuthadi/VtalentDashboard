@@ -69,7 +69,7 @@ public class AttandanceDao {
         }
 
         // 🔹 Fetch SID from student table
-        String sidQuery = "SELECT SID FROM student WHERE username = ?";
+        String sidQuery = "SELECT SID FROM student WHERE Name = ?";
         int sid = -1;
         try (PreparedStatement ps = con.prepareStatement(sidQuery)) {
             ps.setString(1, username);

@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" isELIgnored="false"%>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -8,7 +8,7 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-       background: #c8dafc; /* slightly darker pale blue */
+      background: #c8dafc; /* slightly darker pale blue */
       display: flex;
       justify-content: center;
       align-items: center;
@@ -46,6 +46,12 @@
       font-size: 18px;
       cursor: pointer;
     }
+     .error-message {
+            color: #d9534f;
+            text-align: center;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
     .form-row {
       display: flex;
       align-items: center;
@@ -113,58 +119,77 @@
     <!-- Logo at the top -->
     <img src="https://vtalent.in/images/vtalentlogo.png" alt="Vtalent Logo" class="logo-img">
     <div id="loginHeading">Student Login</div>
-    <form action="LoginServlet" method="post">
+     <div class="error-message">
+            <%
+                String errorMessage = (String) request.getAttribute("errorMessage");
+                if (errorMessage != null) {
+                    out.print(errorMessage);
+                }
+            %>
+        </div>
+    
+    <!-- Fixed: Correct form action -->
+    <form id="loginForm" action="LoginServlet" method="post" onsubmit="return validateForm(event)">
+
       <div class="radio-group">
-        <input type="radio" id="student" name="userType" value="student" checked onclick="updateHeading(),rS"/>
+        <input type="radio" id="student" name="userType" value="student" checked onclick="updateHeading()" />
         <label for="student">Student</label>
-        <input type="radio" id="admin" name="userType" value="admin" onclick="updateHeading()"/>
+        <input type="radio" id="admin" name="userType" value="admin" onclick="updateHeading()" />
         <label for="admin">Admin</label>
       </div>
       <div class="form-row">
-        <label for="username">Username or email</label>
-        <input type="text" id="username" name="username" placeholder="Enter your username or email" required />
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" placeholder="Enter your username" required />
       </div>
       <div class="form-row">
         <label for="password">Password</label>
         <input type="password" id="password" name="password" placeholder="Enter your password" required />
       </div>
+       <input type="hidden" id="latitude" name="latitude">
+            <input type="hidden" id="longitude" name="longitude">
       <div class="btn-group">
         <button type="submit" class="submit"><b>Submit</b></button>
         <button type="reset" class="cancel"><b>Cancel</b></button>
       </div>
     </form>
   </div>
+  
   <script>
-    function updateHeading() {
-      const heading = document.getElementById("loginHeading");
-      if(document.getElementById("student").checked) {
-        heading.textContent = "Student Login";
-      } else if(document.getElementById("admin").checked) {
-        heading.textContent = "Admin Login";
-      }
+  // Update heading when switching between Student and Admin
+  function updateHeading() {
+    const heading = document.getElementById("loginHeading");
+    if (document.getElementById("student").checked) {
+      heading.textContent = "Student Login";
+    } else if (document.getElementById("admin").checked) {
+      heading.textContent = "Admin Login";
     }
-    document.addEventListener('DOMContentLoaded', updateHeading);
-    //
-      function validateLogin(event) {
-      event.preventDefault(); // prevent form submission so we can validate first
+  }
 
-      // Example hardcoded credentials
-      const validUsername = 'admin';
-      const validPassword = 'password123';
+  document.addEventListener('DOMContentLoaded', updateHeading);
 
-      const enteredUsername = document.getElementById('username').value.trim();
-      const enteredPassword = document.getElementById('password').value;
+  // Validate form and capture geolocation before submitting
+  function validateForm(event) {
+    event.preventDefault();
 
-      if (enteredUsername === validUsername && enteredPassword === validPassword) {
-        alert('Login successful!');
-        // redirect to admin page or load dashboard here
-      } else {
-        alert('Invalid credentials');
-      }
-
-      return false; // prevent form submission
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        function (position) {
+          document.getElementById("latitude").value = position.coords.latitude;
+          document.getElementById("longitude").value = position.coords.longitude;
+          document.getElementById('loginForm').submit(); // submit after getting location
+        },
+        function (error) {
+          console.log("Location access denied, falling back to IP");
+          document.getElementById('loginForm').submit(); // submit anyway
+        }
+      );
+    } else {
+      document.getElementById('loginForm').submit();
     }
-    
-  </script>
+
+    return false;
+  }
+</script>
+
 </body>
 </html>

@@ -138,7 +138,7 @@
                         ? (String) sessionObj.getAttribute("username") : null;
 
                 if (username == null) {
-                    response.sendRedirect("index.jsp");
+                    response.sendRedirect("student.jsp");
                 } else {
                     AttandanceDao adao = new AttandanceDao();
                     ArrayList<String[]> attendanceList = new ArrayList<>();
@@ -207,7 +207,7 @@
             %>
 
             <div class="actions">
-                <a href="index.jsp">Home</a>
+                <a href="student.jsp">Home</a>
                 <a href="logout.jsp">Sign Out</a>
             </div>
             <div class="timestamp">Last updated: <%= new Date() %></div>

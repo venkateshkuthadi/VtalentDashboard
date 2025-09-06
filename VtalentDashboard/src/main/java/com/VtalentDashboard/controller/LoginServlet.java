@@ -36,7 +36,7 @@ public class LoginServlet extends HttpServlet {
 
         if (username == null || username.trim().isEmpty() || password == null || password.trim().isEmpty() || role == null || role.trim().isEmpty()) {
             request.setAttribute("errorMessage", "All fields are required.");
-            request.getRequestDispatcher("index.jsp").forward(request, response);
+            request.getRequestDispatcher("LoginPage.jsp").forward(request, response);
             return;
         }
 
@@ -47,7 +47,7 @@ public class LoginServlet extends HttpServlet {
             }
         } catch (NumberFormatException e) {
             request.setAttribute("errorMessage", "Invalid geolocation data.");
-            request.getRequestDispatcher("index.jsp").forward(request, response);
+            request.getRequestDispatcher("LoginPage.jsp").forward(request, response);
             return;
         }
 
@@ -65,32 +65,34 @@ public class LoginServlet extends HttpServlet {
 
         if (isAuthenticated) {
             if (role.equalsIgnoreCase("student")) {
+            	System.out.println("student login..!!");
+            	
                 AttandanceDao attendanceDao = new AttandanceDao();
                 try {
                     if (attendanceDao.hasLoggedInToday(username)) {
-                        request.setAttribute("errorMessage", "You have already logged in today.");
-                        request.getRequestDispatcher("index.jsp").forward(request, response);
+                    	session.setAttribute("username", username);
+                         request.getRequestDispatcher("profile.jsp").forward(request, response);
                     } else {
                         session.setAttribute("username", username);
                         attendanceDao.saveLogInTime(username, ipAddress, latitude, longitude);
-                        response.sendRedirect("student.jsp");
+                        response.sendRedirect("profile.jsp");
                     }
                 } catch (SQLException e) {
                     request.setAttribute("errorMessage", "Database error occurred. Please try again later.");
-                    request.getRequestDispatcher("index.jsp").forward(request, response);
+                    request.getRequestDispatcher("LoginPage.jsp").forward(request, response);
                 } catch (Exception e) {
                     request.setAttribute("errorMessage", "An unexpected error occurred.");
-                    request.getRequestDispatcher("index.jsp").forward(request, response);
+                    request.getRequestDispatcher("LoginPage.jsp").forward(request, response);
                 }
             } else if (role.equalsIgnoreCase("admin")) {
                 response.sendRedirect("admin.html");
             } else {
                 request.setAttribute("errorMessage", "Invalid role specified.");
-                request.getRequestDispatcher("index.jsp").forward(request, response);
+                request.getRequestDispatcher("LoginPage.jsp").forward(request, response);
             }
         } else {
             request.setAttribute("errorMessage", "Invalid username or password.");
-            request.getRequestDispatcher("index.jsp").forward(request, response);
+            request.getRequestDispatcher("LoginPage.jsp").forward(request, response);
         }
     }
 }
