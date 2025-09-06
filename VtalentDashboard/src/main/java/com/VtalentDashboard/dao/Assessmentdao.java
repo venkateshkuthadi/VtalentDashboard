@@ -33,5 +33,23 @@ package com.VtalentDashboard.dao;
 			return result;
 			
 		}
+		
+		public int addAssessment(String course, String concept, String link,String type) {
+			int r = 0;
+			try {
+				p = con.prepareStatement("insert into test(course,concept,link,type) values(?,?,?,?)");
+				p.setString(1, course);
+				p.setString(2, concept);
+				p.setString(3, link);
+				p.setString(4, type);
+				r=p.executeUpdate();
+				
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			return r;
+			
+		}
 
 }

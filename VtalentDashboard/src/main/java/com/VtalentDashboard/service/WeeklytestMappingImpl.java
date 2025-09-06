@@ -25,13 +25,19 @@ import com.VtalentDashboard.dao.WeeklytestDao;
 		}
 		
 	
-
+		Assessmentdao dao= new Assessmentdao();
 		public ResultSet fatchAssessmentLinks(String course,String type) {
-			Assessmentdao dao= new Assessmentdao();
+			
 			ResultSet data=dao.fatchdata(course,type);
 			return data;
 		}
 		
+		public int addAssessment(String course, String concept, String link,String type) {
+			
+			int result=dao.addAssessment(course,concept,link,type);
+			return result;
+			
+		}
 
 	}
 
