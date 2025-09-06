@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spellings</title>
+    <style>
+        .main_box {
+            border: 0.5px solid black;
+            margin-top: 20px;
+        }
+        .main_box:hover {
+            border: 0;
+            box-shadow: 0px 2px 7px rgb(0, 0, 0);
+        }
+        .container {
+            box-shadow: 0px 0px 7px white;
+            margin: 12px;
+            padding: 15px;
+            border-radius: 10px;
+            background-color: aliceblue;
+        }
+        .question {
+            border: 1px solid;
+            font-size: large;
+            background-color: rgb(39, 39, 39);
+            color: white;
+            box-shadow: inset 0px 0px 5px rgb(0, 0, 0);
+        }
+        .hidden { display: none; }
+        .option-text {
+            position: relative;
+            padding-right: 25px;
+        }
+        .option-text.correct::after {
+            content: "✔";
+            color: green;
+            font-weight: bold;
+            position: absolute;
+            right: 0;
+        }
+        .option-text.wrong::after {
+            content: "✖";
+            color: red;
+            font-weight: bold;
+            position: absolute;
+            right: 0;
+        }
+        .explanation {
+            display: none;
+            margin-top: 10px;
+            color: #22b435;
+        }
+        .explanation .label {
+            font-weight: bold;
+            font-size: large;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Question 1 -->
+    <div class="container main_box">
+        <div class="container question">
+            1) Choose the correctly spelled word:
+        </div>
+        <div class="container options">
+            <label><input type="radio" name="Q1" onchange="fun(this,'A','A','explanationQ1')"> <span class="option-text">Efficient</span></label><br>
+            <label><input type="radio" name="Q1" onchange="fun(this,'B','A','explanationQ1')"> <span class="option-text">Treatmeant</span></label><br>
+            <label><input type="radio" name="Q1" onchange="fun(this,'C','A','explanationQ1')"> <span class="option-text">Beterment</span></label><br>
+            <label><input type="radio" name="Q1" onchange="fun(this,'D','A','explanationQ1')"> <span class="option-text">Employd</span></label>
+
+            <div id="explanationQ1" class="explanation">
+                <div class="label">Explanation:</div>
+                <p>Option A</p>
+               
+            </div>
+        </div>
+    </div>
+
+    <!-- Question 2 -->
+    <div class="container main_box">
+        <div class="container question">
+            2) Choose the correctly spelled word:
+        </div>
+        <div class="container options">
+            <label><input type="radio" name="Q2" onchange="fun(this,'A','B','explanationQ2')"> <span class="option-text">Foreine</span></label><br>
+            <label><input type="radio" name="Q2" onchange="fun(this,'B','B','explanationQ2')"> <span class="option-text">Foreign</span></label><br>
+            <label><input type="radio" name="Q2" onchange="fun(this,'C','B','explanationQ2')"> <span class="option-text">Fariegn</span></label><br>
+            <label><input type="radio" name="Q2" onchange="fun(this,'D','B','explanationQ2')"> <span class="option-text">Forein</span></label>
+
+            <div id="explanationQ2" class="explanation">
+                <div class="label">Explanation:</div>
+                <p>Option B</p>
+               
+            </div>
+        </div>
+    </div>
+    <!--Question 3--->
+     <div class="container main_box">
+        <div class="container question">
+            3) Choose the correctly spelled word:
+        </div>
+        <div class="container options">
+            <label><input type="radio" name="Q3" onchange="fun(this,'A','C','explanationQ3')"> <span class="option-text">Ommineous</span></label><br>
+            
+            
+            <label><input type="radio" name="Q3" onchange="fun(this,'B','C','explanationQ3')"> <span class="option-text">Omineous</span></label><br>
+            <label><input type="radio" name="Q3" onchange="fun(this,'C','C','explanationQ3')"> <span class="option-text">Ominous</span></label><br>
+            <label><input type="radio" name="Q3" onchange="fun(this,'D','C','explanationQ3')"> <span class="option-text">Omenous</span></label>
+
+            <div id="explanationQ3" class="explanation">
+                <div class="label">Explanation:</div>
+                <p>Option C</p>
+                
+
+            </div>
+        </div>
+    </div>
+    <!--Q4-->
+    <div class="container main_box">
+        <div class="container question">
+            4) Choose the correctly spelled word:
+        </div>
+        <div class="container options">
+            <label><input type="radio" name="Q4" onchange="fun(this,'A','C','explanationQ4')"> <span class="option-text">Pessenger</span></label><br>
+            <label><input type="radio" name="Q4" onchange="fun(this,'B','C','explanationQ4')"> <span class="option-text">Pasanger</span></label><br>
+            <label><input type="radio" name="Q4" onchange="fun(this,'C','C','explanationQ4')"> <span class="option-text">Passenger</span></label><br>
+            <label><input type="radio" name="Q4" onchange="fun(this,'D','C','explanationQ4')"> <span class="option-text">Pesanger</span></label>
+
+            <div id="explanationQ4" class="explanation">
+                <div class="label">Explanation:</div>
+                <p>Option C</p>
+                
+            </div>
+        </div>
+    </div>
+    <!--Q5-->
+     <div class="container main_box">
+        <div class="container question">
+            5) Choose the correctly spelled word:
+        </div>
+        <div class="container options">
+            <label><input type="radio" name="Q5" onchange="fun(this,'A','B','explanationQ5')"> <span class="option-text">Benefitted</span></label><br>
+            <label><input type="radio" name="Q5" onchange="fun(this,'B','B','explanationQ5')"> <span class="option-text">Benefited</span></label><br>
+            <label><input type="radio" name="Q5" onchange="fun(this,'C','B','explanationQ5')"> <span class="option-text">Benifited</span></label><br>
+            <label><input type="radio" name="Q5" onchange="fun(this,'D','B','explanationQ5')"> <span class="option-text">Benefeted</span></label>
+
+            <div id="explanationQ5" class="explanation">
+                <div class="label">Explanation:</div>
+                <p>Option B</p>
+                
+
+            </div>
+        </div>
+    </div>
+    <!--Q6-->
+    <div class="container main_box">
+        <div class="container question">
+            
+            6) Choose the correctly spelled word:
+        </div>
+        <div class="container options">
+            <label><input type="radio" name="Q6" onchange="fun(this,'A','C','explanationQ6')"> <span class="option-text">Treacherous</span></label><br>
+            <label><input type="radio" name="Q6" onchange="fun(this,'B','C','explanationQ6')"> <span class="option-text">Treacherous</span></label><br>
+            <label><input type="radio" name="Q6" onchange="fun(this,'C','C','explanationQ6')"> <span class="option-text">Treacherous</span></label><br>
+            <label><input type="radio" name="Q6" onchange="fun(this,'D','C','explanationQ6')"> <span class="option-text">Trechearous</span></label>
+
+            <div id="explanationQ6" class="explanation">
+                <div class="label">Explanation:</div>
+                <p>Option C</p>
+               
+
+            </div>
+        </div>
+    </div>
+    <!--Q4-->
+    <div class="container main_box">
+        <div class="container question">
+            7) Choose the correctly spelled word:
+        </div>
+        <div class="container options">
+            <label><input type="radio" name="Q7" onchange="fun(this,'A','D','explanationQ7')"> <span class="option-text">Forcast</span></label><br>
+            <label><input type="radio" name="Q7" onchange="fun(this,'B','D','explanationQ7')"> <span class="option-text">Forecaste</span></label><br>
+            <label><input type="radio" name="Q7" onchange="fun(this,'C','D','explanationQ7')"> <span class="option-text">Forcaust</span></label><br>
+            <label><input type="radio" name="Q7" onchange="fun(this,'D','D','explanationQ7')"> <span class="option-text">Forecast</span></label>
+
+            <div id="explanationQ7" class="explanation">
+                <div class="label">Explanation:</div>
+                <p>Option D</p>
+                
+                  
+                
+
+            </div>
+        </div>
+    </div>
+    <!--Q8-->
+    <div class="container main_box">
+        <div class="container question">
+            
+     
+            8) Choose the correctly spelled word:
+        </div>
+        <div class="container options">
+            <label><input type="radio" name="Q8" onchange="fun(this,'A','A','explanationQ8')"> <span class="option-text">Rigorous</span></label><br>
+            <label><input type="radio" name="Q8" onchange="fun(this,'B','A','explanationQ8')"> <span class="option-text">Rigerous</span></label><br>
+            <label><input type="radio" name="Q8" onchange="fun(this,'C','A','explanationQ8')"> <span class="option-text">Rigourous</span></label><br>
+            <label><input type="radio" name="Q8" onchange="fun(this,'D','A','explanationQ8')"> <span class="option-text">Regerous</span></label>
+
+            <div id="explanationQ8" class="explanation">
+                <div class="label">Explanation:</div>
+                <p>Option A</p>
+               
+               
+
+            </div>
+        </div>
+    </div>
+    <!--Q9-->
+    <div class="container main_box">
+        <div class="container question">
+            
+     
+            9) Choose the correctly spelled word:
+        </div>
+        <div class="container options">
+            <label><input type="radio" name="Q9" onchange="fun(this,'A','D','explanationQ9')"> <span class="option-text">Palete</span></label><br>
+            <label><input type="radio" name="Q9" onchange="fun(this,'B','D','explanationQ9')"> <span class="option-text">Palet</span></label><br>
+            <label><input type="radio" name="Q9" onchange="fun(this,'C','D','explanationQ9')"> <span class="option-text">Pelate</span></label><br>
+            <label><input type="radio" name="Q9" onchange="fun(this,'D','D','explanationQ9')"> <span class="option-text">Palate</span></label>
+
+            <div id="explanationQ9" class="explanation">
+                <div class="label">Explanation:</div>
+                <p>Option D</p>
+                
+               
+
+            </div>
+        </div>
+    </div>
+    <!--Q10-->
+     <div class="container main_box">
+        <div class="container question">
+            10) Choose the correctly spelled word:
+        </div>
+        <div class="container options">
+            <label><input type="radio" name="Q10" onchange="fun(this,'A','A','explanationQ10')"> <span class="option-text">Bouquet</span></label><br>
+            <label><input type="radio" name="Q10" onchange="fun(this,'B','A','explanationQ10')"> <span class="option-text">Boqquet</span></label><br>
+            <label><input type="radio" name="Q10" onchange="fun(this,'C','A','explanationQ10')"> <span class="option-text">Bouquette</span></label><br>
+            <label><input type="radio" name="Q10" onchange="fun(this,'D','A','explanationQ10')"> <span class="option-text">Bouquete</span></label>
+
+            <div id="explanationQ10" class="explanation">
+                <div class="label">Explanation:</div>
+                <p>Option A</p>
+               
+               
+               
+
+            </div>
+        </div>
+    </div>
+    
+
+
+    <script>
+        function fun(input, user_ans, right_ans, expId) {
+            const span = input.nextElementSibling;
+            if (user_ans === right_ans) {
+                span.classList.add("correct");
+            } else {
+                span.classList.add("wrong");
+            }
+            document.getElementById(expId).style.display = "block";
+        }
+    </script>
+
+</body>
+</html>

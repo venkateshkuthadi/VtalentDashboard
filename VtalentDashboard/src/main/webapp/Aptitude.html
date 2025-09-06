@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aptitude</title>
+  <style>
+    body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: linear-gradient(135deg,#f5f7fa 0%,#e4e8f0 100%);
+  min-height: 100vh;
+}
+
+    /* body {
+      font-family: Arial, sans-serif; */
+      /* background: #f3f4f6; */
+      /* margin: 0;
+      padding: 20px;
+      background: linear-gradient(135deg, #1a2a6c 0%, #b21f1f 50%, #fdbb2d 100%);
+    } */
+
+    /* Centered Container */
+    .container {
+      max-width: 1200px;   /* limits content width */
+      margin: 0 auto;      /* centers horizontally */
+    }
+
+    /* Header Section */
+    .header {
+      background: #1a2238;
+      color: white;
+      padding: 10px;
+      border-radius: 12px;
+      margin-bottom: 0px;
+    }
+    .header h1 {
+      margin: 0;
+      font-size: 32px;
+    }
+    .tag {
+      display: inline-block;
+      margin-top: 12px;
+      background: #166534;
+      color: white;
+      padding: 6px 14px;
+      border-radius: 6px;
+      font-size: 15px;
+    }
+
+    /* Grid Section */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr); /* Fixed 4 columns */
+      gap: 25px;
+    }
+
+    /* Card Styling */
+    .card {
+      background: white;
+      padding: 40px 20px;
+      border-radius: 14px;
+      text-align: center;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+      transition: 0.3s;
+      min-height: 200px; /* Bigger card height */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .card:hover {
+      box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+    }
+    .card h2 {
+      font-size: 22px;
+      margin-bottom: 25px;
+      color: #333;
+    }
+    .btn {
+      border: 1px solid #999;
+      padding: 12px 24px;
+      border-radius: 8px;
+      background: white;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    .btn:hover {
+      background: #e5e7eb;
+    }
+    .tab-content {
+      display: none;
+    }
+    .tab-content.active {
+      display: block;
+    }
+    .tab-bar {
+      width: 100%;
+      /* background: #7190f5; */
+      background: linear-gradient(#422ea1);
+      border-bottom: 1px solid #f5f4f3;
+      padding: 16px 0;
+      box-sizing: border-box;
+      border-radius: 10px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .tab-menu {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+    }
+    .tab-button {
+      padding: 10px 22px;
+      border: 2px solid #e0e0e0;
+      background: white;
+      color: #222;
+      font-weight: bold;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: border-color 0.2s, background 0.2s;
+      outline: none;
+    }
+    .tab-button.active {
+      border-color: #2a62e7;
+      background: #edeffc;
+      color: #2a62e7;
+    }
+    .tab-button:hover {
+  background: #e7922a;
+  color: white;
+  border-color: #2a62e7;
+}
+  
+
+    /* Responsive: on small screens make it 2 columns, then 1 */
+    @media (max-width: 900px) {
+      .grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (max-width: 500px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    } 
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Header -->
+     <div class="tab-bar">
+      
+  <div class="tab-menu">
+    <img src="vtalentLogo.png" alt="Logo" class="logo" style="height: 50px; margin-right: 300px;"/>
+    <!-- <button class="tab-button active" onclick="setActiveTab(event, 'all')">All</button> -->
+    <!-- <button class="tab-button" onclick="setActiveTab(event, 'aptitude')">Aptitude</button> -->
+    <!-- <button class="tab-button" onclick="setActiveTab(event, 'coding')">Coding</button> -->
+      <!-- <img src="homeLogo.png" alt="HomeLogo" class="logo" style="height: 50px; border-radius: 10px; "/> -->
+       <a href="index.html" class="logo" >
+        <img src="homeLogo.png" alt="HomeLogo" class="logo" style="height: 50px; border-radius: 10px; "/>
+       </a>
+    <a href="Aptitude.html" class="tab-button"  style="text-decoration: none; font-size: 18px;">Aptitude</a>
+    <a href="Communication.html" class="tab-button" style="text-decoration: none; font-size: 18px;">Verbal Ability</a>
+    <a href="Coding.html" class="tab-button"style="text-decoration: none;font-size: 18px;">Coding</a>
+    <a href="ai-9.html" class="tab-button"  style="text-decoration: none; font-size: 18px;">Ai MCQ</a>
+
+
+    <!-- <button class="tab-button" onclick="setActiveTab(event, 'verbal')">Coding</button> -->
+    
+  </div>
+      <!-- <span class="tag">Coding</span> -->
+    </div>
+    <div class="header">
+      <h1 style="text-align: center;">Aptitude Practice</h1>
+      <!-- <span class="tag">Coding</span> -->
+    </div>
+
+    <!-- Grid of Cards -->
+    <div class="grid">
+      <div class="card">
+        <h2>Blood Relation</h2>
+        <!-- <button class="btn">Open</button> -->
+        <a href="BloodRelation.html" class="btn" style="text-decoration: none; color: #000;">Open</style></a>
+
+      </div>
+      <div class="card">
+        <h2>Simple & Compund Interest</h2>
+        <!-- <button class="btn">Open</button> -->
+        <a href="SimpleAndCompound.html" class="btn" style="text-decoration: none; color: #000;">Open</a>
+
+      </div>
+      <div class="card">
+        <h2>Calendar</h2>
+        <!-- <button class="btn">Open</button> -->
+        <a href="Calendar.html" class="btn" style="text-decoration: none; color: #000;">Open</a>
+
+      </div>
+      <div class="card">
+        <h2>Number Series</h2>
+        <!-- <button class="btn">Open</button> -->
+        <a href="NumberSeries.html" class="btn" style="text-decoration: none; color: #000;">Open</a>
+
+      </div>
+      <div class="card">
+        <h2>Profit & Loss</h2>
+        <!-- <button class="btn">Open</button> -->
+        <a href="ProfitandLoss.html" class="btn" style="text-decoration: none; color: #000;">Open</a>
+
+      </div>
+      <div class="card">
+        <h2>Ratio & Proportion</h2>
+        <!-- <button class="btn">Open</button> -->
+        <a href="RatioAndProportion.html" class="btn" style="text-decoration: none; color: #000;">Open</a>
+
+      </div>
+      <div class="card">
+        <h2>Speed & Distance</h2>
+        <!-- <button class="btn">Open</button> -->
+        <a href="SpeedAndDistance.html" class="btn" style="text-decoration: none; color: #000;">Open</a>
+
+      </div>
+      <div class="card">
+        <h2>Time & Work</Time></h2>
+        <!-- <button class="btn">Open</button> -->
+        <a href="TimeAndWork.html" class="btn" style="text-decoration: none; color: #000;">Open</a>
+
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
+

@@ -170,14 +170,17 @@
 
   <!-- Other Cards with spacing -->
   <div class="card-container section">
-    <div class="card">
+    <div class="card"><a href="profile.jsp">
       <h2>Assessments</h2>
       <p>Check quizzes, tests, and assignments.</p>
+      </a>
     </div>
 
     <div class="card">
+    	<a href="profile.jsp">
       <h2>Attendance</h2>
       <p>Track class attendance and records.</p>
+      </a>
     </div>
 
     <div class="card">

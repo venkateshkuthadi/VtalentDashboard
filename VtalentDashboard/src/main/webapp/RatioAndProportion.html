@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ratio and Proportion </title>
+    <style>
+        .main_box {
+            border: 0.5px solid black;
+            margin-top: 20px;
+        }
+        .main_box:hover {
+            border: 0;
+            box-shadow: 0px 2px 7px rgb(0, 0, 0);
+        }
+        .container {
+            box-shadow: 0px 0px 7px white;
+            margin: 12px;
+            padding: 15px;
+            border-radius: 10px;
+            background-color: aliceblue;
+        }
+        .question {
+            border: 1px solid;
+            font-size: large;
+            background-color: rgb(39, 39, 39);
+            color: white;
+            box-shadow: inset 0px 0px 5px rgb(0, 0, 0);
+        }
+        .hidden { display: none; }
+        .option-text {
+            position: relative;
+            padding-right: 25px;
+        }
+        .option-text.correct::after {
+            content: "✔";
+            color: green;
+            font-weight: bold;
+            position: absolute;
+            right: 0;
+        }
+        .option-text.wrong::after {
+            content: "✖";
+            color: red;
+            font-weight: bold;
+            position: absolute;
+            right: 0;
+        }
+        .explanation {
+            display: none;
+            margin-top: 10px;
+            color: #22b435;
+        }
+        .explanation .label {
+            font-weight: bold;
+            font-size: large;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Question 1 -->
+    <div class="container main_box">
+        <div class="container question">
+            1) A batsman scored 110 runs which included 3 boundaries and 8 sixes. What percent of his total score did he make by running between the wickets?
+        </div>
+        
+        <div class="container options">
+            <label><input type="radio" name="Q1" onchange="fun(this,'A','C','explanationQ1')"> <span class="option-text">45%</span></label><br>
+            <label><input type="radio" name="Q1" onchange="fun(this,'B','C','explanationQ1')"> <span class="option-text">54(5/11)%</span></label><br>
+            <label><input type="radio" name="Q1" onchange="fun(this,'C','C','explanationQ1')"> <span class="option-text">45(5/11)%</span></label><br>
+            <label><input type="radio" name="Q1" onchange="fun(this,'D','C','explanationQ1')"> <span class="option-text">55%</span></label>
+
+            <div id="explanationQ1" class="explanation">
+                <div class="label">Explanation:</div>
+                <p>Option C</p>
+                <p>Number of runs made by running = 110 - (3 x 4 + 8 x 6)</p>
+                <p>= 110 - (60)</p>
+                <p>=50</p>
+                <p>required percentage = ((50/110)*100)%=45(5/11)%</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Question 2 -->
+    <div class="container main_box">
+        <div class="container question">
+            2)Two students appeared at an examination. One of them secured 9 marks more than the other and his marks was 56% of the sum of their marks. The marks obtained by them are:?
+        </div>
+        <div class="container options">
+            <label><input type="radio" name="Q2" onchange="fun(this,'A','C','explanationQ2')"> <span class="option-text">39,30</span></label><br>
+            <label><input type="radio" name="Q2" onchange="fun(this,'B','C','explanationQ2')"> <span class="option-text">42,32</span></label><br>
+            <label><input type="radio" name="Q2" onchange="fun(this,'C','C','explanationQ2')"> <span class="option-text">42,33</span></label><br>
+            <label><input type="radio" name="Q2" onchange="fun(this,'D','C','explanationQ2')"> <span class="option-text">43,34</span></label>
+
+            <div id="explanationQ2" class="explanation">
+                <div class="label">Explanation:</div>
+                <p>Option C</p>
+                <p>Let their marks be(x+9)and x.</p>
+                <p>Then,x+9 = 56/100(x+9+x)</p>
+                <p>25(x+9) = 14(2x+9)</p>
+                <p>3x = 99</p>
+                <p>x = 33</p>
+                <p>So,their marks are 42 and 33.</p>
+            </div>
+        </div>
+    </div>
+    <!--Question3--->
+     <div class="container main_box">
+        <div class="container question">
+            3) A fruit seller had some apples. He sells 40% apples and still has 420 apples. Originally, he had:
+        </div>
+        <div class="container options">
+            <label><input type="radio" name="Q3" onchange="fun(this,'A','B','explanationQ3')"> <span class="option-text">588 apples </span></label><br>
+            <label><input type="radio" name="Q3" onchange="fun(this,'B','B','explanationQ3')"> <span class="option-text">700 apples </span></label><br>
+            <label><input type="radio" name="Q3" onchange="fun(this,'C','B','explanationQ3')"> <span class="option-text">673 apples </span></label><br>
+            <label><input type="radio" name="Q3" onchange="fun(this,'D','B','explanationQ3')"> <span class="option-text">600 apples </span></label>
+
+            <div id="explanationQ3" class="explanation">
+                <div class="label">Explanation:</div>
+                <p>Option B</p>
+                <p>Suppose originally he had x apples</p>
+                <p>Then, (100 - 40)% of x = 420</p>
+                <p>60/100*x = 420</p>
+                <p>x = (420*100/60)=700</p>
+            </div>
+        </div>
+    </div>
+    <!--Q4-->
+    <div class="container main_box">
+        <div class="container question">
+            4)What percentage of numbers from 1 to 70 have 1 or 9 in the unit's digit?
+        </div>
+        <div class="container options">
+            <label><input type="radio" name="Q4" onchange="fun(this,'A','C','explanationQ4')"> <span class="option-text">1</span></label><br>
+            <label><input type="radio" name="Q4" onchange="fun(this,'B','C','explanationQ4')"> <span class="option-text">14</span></label><br>
+            <label><input type="radio" name="Q4" onchange="fun(this,'C','C','explanationQ4')"> <span class="option-text">20</span></label><br>
+            <label><input type="radio" name="Q4" onchange="fun(this,'D','C','explanationQ4')"> <span class="option-text">21</span></label>
+
+            <div id="explanationQ4" class="explanation">
+                <div class="label">Explanation:</div>
+                <p>Option C</p>
+                <p>Clearly, the numbers which have 1 or 9 in the unit's digit</p>
+                <p> have squares that end in the digit 1. Such numbers from 1 to 70 are</p>
+                <p>1, 9, 11, 19, 21, 29, 31, 39, 41, 49, 51, 59, 61, 69.</p>
+                <p>Number of such number =14</p>
+                <p> Required percentage = ((14/70)*100)% = 20%.</p>
+            </div>
+        </div>
+    </div>
+    <!--Q5-->
+    <div class="container main_box">
+        <div class="container question">
+            5)If A = x% of y and B = y% of x, then which of the following is true?
+        </div>
+        <div class="container options">
+            <label><input type="radio" name="Q5" onchange="fun(this,'A','D','explanationQ5')"> <span class="option-text">A is smaller than B</span></label><br>
+            <label><input type="radio" name="Q5" onchange="fun(this,'B','D','explanationQ5')"> <span class="option-text">Relationship between A and B cannot be determined</span></label><br>
+            <label><input type="radio" name="Q5" onchange="fun(this,'C','D','explanationQ5')"> <span class="option-text">A is greater than B</span></label><br>
+            <label><input type="radio" name="Q5" onchange="fun(this,'D','D','explanationQ5')"> <span class="option-text">None of these</span></label>
+
+            <div id="explanationQ5" class="explanation">
+                <div class="label">Explanation:</div>
+                <p>Option D</p>
+                <p>x% of y=((x/100)*y)=((y/100)*x)=y% of x</p>
+                <p>A=B.</p>
+             
+            </div>
+        </div>
+    </div>
+      <!--Q6-->
+    <div class="container main_box">
+        <div class="container question">
+            6)If 20% of a = b, then b% of 20 is the same as:
+        </div>
+        <div class="container options">
+            <label><input type="radio" name="Q6" onchange="fun(this,'A','A','explanationQ6')"> <span class="option-text">4% of a</span></label><br>
+            <label><input type="radio" name="Q6" onchange="fun(this,'B','A','explanationQ6')"> <span class="option-text">5% of a</span></label><br>
+            <label><input type="radio" name="Q6" onchange="fun(this,'C','A','explanationQ6')"> <span class="option-text">20% of a</span></label><br>
+            <label><input type="radio" name="Q6" onchange="fun(this,'D','A','explanationQ6')"> <span class="option-text">None of these</span></label>
+
+            <div id="explanationQ6" class="explanation">
+                <div class="label">Explanation:</div>
+                <p>Option A</p>
+                <p>20% of a = b</p>
+                <P>(20/100)a=b.</P>
+                <p>b% of 20=((b/100)*20)=((20/100)a*(1/100)*20)</p>
+                <p>(4/100)a=4% of a.</p>
+                
+            </div>
+        </div>
+    </div>
+
+    <!--Q7-->
+    <div class="container main_box">
+        <div class="container question">
+            7)In a certain school, 20% of students are below 8 years of age. The number of students above 8 years of age is  of the number of students of 8 years of age which is 48. What is the total number of students in the school?
+        </div>
+        <div class="container options">
+            <label><input type="radio" name="Q7" onchange="fun(this,'A','A','explanationQ7')"> <span class="option-text">100</span></label><br>
+            <label><input type="radio" name="Q7" onchange="fun(this,'B','A','explanationQ7')"> <span class="option-text">72</span></label><br>
+            <label><input type="radio" name="Q7" onchange="fun(this,'C','A','explanationQ7')"> <span class="option-text">120</span></label><br>
+            <label><input type="radio" name="Q7" onchange="fun(this,'D','A','explanationQ7')"> <span class="option-text">80</span></label>
+
+            <div id="explanationQ7" class="explanation">
+                <div class="label">Explanation:</div>
+                <p>Option A</p>
+                <p>Let the number of students be x. Then</p>
+                <p>Number of students above 8 years of age = (100 - 20)% of x = 80% of x.</p>
+                <p>80% of x = 48=(2/3)of 48</p>
+                <p>(80/100)x = 80</p>
+                <p>x=100.</p>
+              
+                
+            </div>
+        </div>
+    </div>
+
+          <!--Q8-->
+    <div class="container main_box">
+        <div class="container question">
+            8)In an election between two candidates, one got 55% of the total valid votes, 20% of the votes were invalid. If the total number of votes was 7500, the number of valid votes that the other candidate got, was
+        </div>
+        <div class="container options">
+            <label><input type="radio" name="Q8" onchange="fun(this,'A','A','explanationQ8')"> <span class="option-text">2700</span></label><br>
+            <label><input type="radio" name="Q8" onchange="fun(this,'B','A','explanationQ8')"> <span class="option-text">2900</span></label><br>
+            <label><input type="radio" name="Q8" onchange="fun(this,'C','A','explanationQ8')"> <span class="option-text">3000</span></label><br>
+            <label><input type="radio" name="Q8" onchange="fun(this,'D','A','explanationQ8')"> <span class="option-text">3100</span></label>
+
+            <div id="explanationQ8" class="explanation">
+                <div class="label">Explanation:</div>
+                <p>Option A</p>
+                <p>Number of valid votes = 80% of 7500 = 6000.</p>
+                <P> Valid votes polled by other candidate = 45% of 6000</P>
+                <p>((45/100)*6000)=2700</p>
+
+                
+                
+            </div>
+        </div>
+    </div>
+
+    <!--Q9-->
+    <div class="container main_box">
+        <div class="container question">
+            9)Three candidates contested an election and received 1136, 7636 and 11628 votes respectively. What percentage of the total votes did the winning candidate get?
+        </div>
+        <div class="container options">
+            <label><input type="radio" name="Q9" onchange="fun(this,'A','C','explanationQ9')"> <span class="option-text">60%</span></label><br>
+            <label><input type="radio" name="Q9" onchange="fun(this,'B','C','explanationQ9')"> <span class="option-text">70%</span></label><br>
+            <label><input type="radio" name="Q9" onchange="fun(this,'C','C','explanationQ9')"> <span class="option-text">57%</span></label><br>
+            <label><input type="radio" name="Q9" onchange="fun(this,'D','C','explanationQ9')"> <span class="option-text">90%</span></label>
+
+            <div id="explanationQ9" class="explanation">
+                <div class="label">Explanation:</div>
+                <p>Option C</p>
+                <p>total number of votes polled = (1136 + 7636 + 11628) = 20400.</p>
+                <P> Required percentage = ((11628/20400)*100)%=57%</P>
+
+                
+                
+            </div>
+        </div>
+    </div>
+
+    
+    <!--Q10-->
+    <div class="container main_box">
+        <div class="container question">
+            10)Gauri went to the stationers and bought things worth Rs. 25, out of which 30 paise went on sales tax on taxable purchases. If the tax rate was 6%, then what was the cost of the tax free items
+        </div>
+        <div class="container options">
+            <label><input type="radio" name="Q10" onchange="fun(this,'A','D','explanationQ10')"> <span class="option-text">15</span></label><br>
+            <label><input type="radio" name="Q10" onchange="fun(this,'B','D','explanationQ10')"> <span class="option-text">15.70</span></label><br>
+            <label><input type="radio" name="Q10" onchange="fun(this,'C','D','explanationQ10')"> <span class="option-text">16.70</span></label><br>
+            <label><input type="radio" name="Q10" onchange="fun(this,'D','D','explanationQ10')"> <span class="option-text">19.70</span></label>
+
+            <div id="explanationQ10" class="explanation">
+                <div class="label">Explanation:</div>
+                <p>Option D</p>
+                <p>Let the amount taxable purchases be Rs. x.</p>
+                <p>Then, 6% of x =	30/100</p>
+                <p>x=((30/100)*(100/6))=5.</p>
+                <p>Cost of tax free items = Rs.[25-(5+0.30)]=Rs.19.70</p>
+
+                
+                
+            </div>
+        </div>
+    </div>
+
+
+
+    <script>
+        function fun(input, user_ans, right_ans, expId) {
+            const span = input.nextElementSibling;
+            if (user_ans === right_ans) {
+                span.classList.add("correct");
+            } else {
+                span.classList.add("wrong");
+            }
+            document.getElementById(expId).style.display = "block";
+        }
+    </script>
+
+</body>
+</html>

@@ -1,128 +1,102 @@
+<%@page import="java.util.ArrayList"%>
+<%@ page import="com.VtalentDashboard.dao.AttandanceDao" %>
+<%@ page import="com.VtalentDashboard.utils.Location" %>
+<%@page import="java.sql.Timestamp"%>
+<%@page import="java.util.Date"%>
+<%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>View Attendance</title>
-  <style>
-    body { font-family: Arial, sans-serif; background: #f9f9f9; margin:0; padding:20px; max-width: 900px; margin:auto; }
-    h1 { text-align: center; }
-     header {
-      background: #422ea1;
-      color: #ffffff;
-      padding: 20px;
-    }
-
-    .header-container {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-    }
-
-    .logo-box {
-      position: absolute;
-      left: 20px;
-    }
-
-    .logo {
-      height: 60px;
-      width: auto;
-    }
-
-    .content {
-      text-align: center;
-    }
-
-    .content h1 {
-      margin: 0;
-      font-size: 2em;
-    }
-
-    nav {
-      margin-top: 10px;
-    }
-
-    nav a {
-      color: white;
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    nav a:hover {
-      text-decoration: underline;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      background: white;
-      border-radius: 8px;
-      overflow: hidden;
-    }
-    th, td {
-      padding: 12px;
-      border-bottom: 1px solid #ddd;
-      text-align: left;
-    }
-    th { background: #422ea1; color: white; }
-    tr:hover { background-color: #f1f1f1; }
-    a.back-link {
-      display: block;
-      margin-top: 20px;
-      text-align: center;
-      color: #422ea1;
-      text-decoration: none;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <title>Admin - User Attendance</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #eef2f7; }
+        .container { max-width: 900px; margin: 30px auto; background: #fff; padding: 20px; border-radius: 10px; }
+        h1 { text-align: center; color: #333; }
+        form { text-align: center; margin-bottom: 20px; }
+        input[type=text] { padding: 8px; width: 250px; border: 1px solid #ccc; border-radius: 5px; }
+        button { padding: 8px 15px; background: #3498db; border: none; color: #fff; border-radius: 5px; cursor: pointer; }
+        button:hover { background: #2980b9; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { padding: 10px; border: 1px solid #ddd; text-align: left; }
+        th { background: #3498db; color: #fff; }
+        tr:hover { background: #f1f1f1; }
+        .error { color: red; text-align: center; }
+    </style>
 </head>
 <body>
-<header>
-    <div class="header-container">
-      <!-- Logo at left -->
-      <div class="logo-box">
-        <img src="https://vtalent.in/images/vtalentlogo.png" class="logo" alt="Logo" />
-      </div>
+<div class="container">
+    <h1>Admin - Search User Attendance</h1>
 
-      <!-- Content at center -->
-      <div class="content">
-        <h1>Admin Panel</h1>
-        <nav>
-          <a href="View.html">Home</a>
-          <a href="#">Courses</a>
-          <a href="View.html">Contact</a>
-        </nav>
-      </div>
-    </div>
-  </header>
-  <h1>View Attendance</h1>
-  <table>
-    <thead>
-      <tr>
-        <th>Student ID</th>
-        <th>Student Name</th>
-        <th>Course</th>
-        <th>Days Present</th>
-        <th>Days Absent</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>101</td>
-        <td>dinesh</td>
-        <td>Java</td>
-        <td>18</td>
-        <td>2</td>
-      </tr>
-      <tr>
-        <td>102</td>
-        <td>purna</td>
-        <td>Python</td>
-        <td>20</td>
-        <td>0</td>
-      </tr>
-      <!-- Dynamic data here -->
-    </tbody>
-  </table>
-  <a href="admin.html" class="back-link">Back to Dashboard</a>
+    <!-- Search Form -->
+    <form method="post">
+        <input type="text" name="searchUser" placeholder="Enter username or SID..." required />
+        <button type="submit">Search</button>
+    </form>
+
+    <%
+        String searchUser = request.getParameter("searchUser");
+        if (searchUser != null && !searchUser.trim().isEmpty()) {
+            AttandanceDao adao = new AttandanceDao();
+            ArrayList<String[]> attendanceList = null;
+
+            try {
+                // 🔹 Check if input is a number (SID) or text (username)
+                boolean isNumeric = searchUser.matches("\\d+");
+
+                if (isNumeric) {
+                    int sid = Integer.parseInt(searchUser);
+                    attendanceList = adao.showAttandanceBySID(sid);
+                } else {
+                    attendanceList = adao.showAttandance(searchUser);
+                }
+
+            } catch (Exception e) {
+                e.printStackTrace();
+                out.println("<p class='error'>Error fetching data: " + e.getMessage() + "</p>");
+            }
+
+            if (attendanceList != null && !attendanceList.isEmpty()) {
+    %>
+                <h2>Attendance Records for <%= searchUser %></h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Login Time</th>
+                            <th>Logout Time</th>
+                            <th>Active Time</th>
+                            <th>Location</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <%
+                        for (String[] record : attendanceList) {
+                            String loginTime = record[0];
+                            String logoutTime = record[1];
+                            String location = record[2];
+                            String activeTime = record[3];
+
+                            if (activeTime == null || activeTime.trim().isEmpty()) {
+                                activeTime = (logoutTime != null && !"null".equals(logoutTime)) 
+                                    ? ((Timestamp.valueOf(logoutTime).getTime() - Timestamp.valueOf(loginTime).getTime()) / 1000 / 60 + " mins") 
+                                    : "Active";
+                            }
+                    %>
+                        <tr>
+                            <td><%= loginTime %></td>
+                            <td><%= (logoutTime != null ? logoutTime : "Active") %></td>
+                            <td><%= activeTime %></td>
+                            <td><%= (location != null ? location : "Unknown") %></td>
+                        </tr>
+                    <% } %>
+                    </tbody>
+                </table>
+    <%
+            } else {
+                out.println("<p class='error'>No records found for: " + searchUser + "</p>");
+            }
+        }
+    %>
+</div>
 </body>
 </html>

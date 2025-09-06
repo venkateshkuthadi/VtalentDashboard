@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Numbers Quiz</title>
+    <style>
+        .main_box {
+            border: 0.5px solid black;
+            margin-top: 20px;
+        }
+        .main_box:hover {
+            border: 0;
+            box-shadow: 0px 2px 7px rgb(0, 0, 0);
+        }
+        .container {
+            box-shadow: 0px 0px 7px white;
+            margin: 12px;
+            padding: 15px;
+            border-radius: 10px;
+            background-color: aliceblue;
+        }
+        .question {
+            border: 1px solid;
+            font-size: large;
+            background-color: rgb(39, 39, 39);
+            color: white;
+            box-shadow: inset 0px 0px 5px rgb(0, 0, 0);
+        }
+        .hidden { display: none; }
+        .option-text {
+            position: relative;
+            padding-right: 25px;
+        }
+        .option-text.correct::after {
+            content: "✔";
+            color: green;
+            font-weight: bold;
+            position: absolute;
+            right: 0;
+        }
+        .option-text.wrong::after {
+            content: "✖";
+            color: red;
+            font-weight: bold;
+            position: absolute;
+            right: 0;
+        }
+        .explanation {
+            display: none;
+            margin-top: 10px;
+            color: #22b435;
+        }
+        .explanation .label {
+            font-weight: bold;
+            font-size: large;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Question 1 -->
+    <div class="container main_box">
+        <div class="container question">
+            1) In dividing a number by 585, a student employed the method of short division. He divided the number successively by 5, 9 and 13 (factors 585) and got the remainders 4, 8, 12 respectively. If he had divided the number by 585, the remainder would have been:
+        </div>
+        <div class="container options">
+            <label><input type="radio" name="Q1" onchange="fun(this,'A','D','explanationQ1')"> <span class="option-text">24</span></label><br>
+            <label><input type="radio" name="Q1" onchange="fun(this,'B','D','explanationQ1')"> <span class="option-text">144</span></label><br>
+            <label><input type="radio" name="Q1" onchange="fun(this,'C','D','explanationQ1')"> <span class="option-text">296</span></label><br>
+            <label><input type="radio" name="Q1" onchange="fun(this,'D','D','explanationQ1')"> <span class="option-text">584</span></label>
+
+            <div id="explanationQ1" class="explanation">
+                <div class="label">Explanation:</div>
+                <p>Option D</p>
+                <pre style="font-size: 14px;">
+    5 | x                 z = 13 x 1 + 12  = 25
+ --------------
+     9 | y - 4            y = 9 x z + 8  = 9 x 25 + 8  = 233
+ --------------
+     13| z - 8            x = 5 x y + 4  = 5 x 233 + 4  = 1169
+ --------------
+   | 1 -12
+  
+  585) 1169 (1
+       585
+       ---
+       584
+       ---
+       
+  Therefore, on dividing the number by 585, remainder = 584  
+                </pre>
+            </div>
+        </div>
+    </div>
+
+    <!-- Question 2 -->
+    <div class="container main_box">
+        <div class="container question">
+            2)What least number must be added to 1056, so that the sum is completely divisible by 23 ?
+        </div>
+        <div class="container options">
+            <label><input type="radio" name="Q2" onchange="fun(this,'A','A','explanationQ2')"> <span class="option-text">15</span></label><br>
+            <label><input type="radio" name="Q2" onchange="fun(this,'B','A','explanationQ2')"> <span class="option-text">16</span></label><br>
+            <label><input type="radio" name="Q2" onchange="fun(this,'C','A','explanationQ2')"> <span class="option-text">18</span></label><br>
+            <label><input type="radio" name="Q2" onchange="fun(this,'D','A','explanationQ2')"> <span class="option-text">25</span></label>
+
+            <div id="explanationQ2" class="explanation">
+                <div class="label">Explanation:</div>
+                <p>Option A</p>
+                <pre style="font-size: 14px;">
+                    23) 1056 (45
+                         92
+                         ---
+                         136
+                         115
+                         ---
+                         21
+                         ---
+
+                Required number = (23 - 21)
+                                = 2
+                </pre>
+            </div>
+        </div>
+    </div>
+    <!--Question3--->
+     <div class="container main_box">
+        <div class="container question">
+            3) How many of the following numbers are divisible by 132 ?
+" 264, 396, 462, 792, 968, 2178, 5184, 6336 "
+        </div>
+        <div class="container options">
+            <label><input type="radio" name="Q3" onchange="fun(this,'A','A','explanationQ3')"> <span class="option-text">4</span></label><br>
+            <label><input type="radio" name="Q3" onchange="fun(this,'B','A','explanationQ3')"> <span class="option-text">3</span></label><br>
+            <label><input type="radio" name="Q3" onchange="fun(this,'C','A','explanationQ3')"> <span class="option-text">6</span></label><br>
+            <label><input type="radio" name="Q3" onchange="fun(this,'D','A','explanationQ3')"> <span class="option-text">7</span></label>
+
+            <div id="explanationQ3" class="explanation">
+                <div class="label">Explanation:</div>
+                <p>Option A</p>
+                <pre style="font-size: 14px;">
+132 = 4 x 3 x 11
+
+So, if the number divisible by all the three number 4, 3 and 11,
+then the number is divisible by 132 also.
+
+264 => 11,3,4 (/)
+
+396 => 11,3,4 (/)
+
+462 => 11,3 (X)
+
+792 => 11,3,4 (/)
+
+968 => 11,4 (X)
+
+2178 => 11,3 (X)
+
+5184 => 3,4 (X)
+
+6336 => 11,3,4 (/)
+
+Therefore the following numbers are divisible by 132 :
+ 264, 396, 792 and 6336.
+
+Required number of number = 4.</pre>
+            </div>
+        </div>
+    </div>
+    <!--Q4-->
+    <div class="container main_box">
+        <div class="container question">
+            4) What is the unit digit in {(6374)1793 x (625)317 x (341491)}?
+        </div>
+        <div class="container options">
+            <label><input type="radio" name="Q4" onchange="fun(this,'A','B','explanationQ4')"> <span class="option-text">2</span></label><br>
+            <label><input type="radio" name="Q4" onchange="fun(this,'B','B','explanationQ4')"> <span class="option-text">0</span></label><br>
+            <label><input type="radio" name="Q4" onchange="fun(this,'C','B','explanationQ4')"> <span class="option-text">3</span></label><br>
+            <label><input type="radio" name="Q4" onchange="fun(this,'D','B','explanationQ4')"> <span class="option-text">5</span></label>
+
+            <div id="explanationQ4" class="explanation">
+                <div class="label">Explanation:</div>
+                <p>Option B</p>
+                 <pre style="font-size: 14px;">
+ Unit digit in (6374)1793 = Unit digit in (4)1793
+
+    = Unit digit in [(42)896 x 4]
+
+    = Unit digit in (6 x 4) = 4
+
+Unit digit in (625)317 = Unit digit in (5)317 = 5
+
+Unit digit in (341)491 = Unit digit in (1)491 = 1
+
+Required digit = Unit digit in (4 x 5 x 1) = 0.
+                 </pre>
+            </div>
+        </div>
+    </div>
+
+<!-- Question 5 -->
+    <div class="container main_box">
+        <div class="container question">
+            5) The difference of two numbers is 1365. On dividing the larger number by the smaller, we get 6 as quotient and the 15 as remainder. What is the smaller number ?
+        </div>
+        <div class="container options">
+            <label><input type="radio" name="Q5" onchange="fun(this,'A','B','explanationQ5')"> <span class="option-text">240</span></label><br>
+            <label><input type="radio" name="Q5" onchange="fun(this,'B','B','explanationQ5')"> <span class="option-text">270</span></label><br>
+            <label><input type="radio" name="Q5" onchange="fun(this,'C','B','explanationQ5')"> <span class="option-text">295</span></label><br>
+            <label><input type="radio" name="Q5" onchange="fun(this,'D','B','explanationQ5')"> <span class="option-text">360</span></label>
+
+            <div id="explanationQ5" class="explanation">
+                <div class="label">Explanation:</div>
+                <p>Option B</p>
+                <pre style="font-size: 14px;">
+Let the smaller number be x. Then larger number = (x + 1365).
+
+ x + 1365 = 6x + 15
+
+ 5x = 1350
+
+ x = 270
+
+Smaller number = 270.</pre>
+            </div>
+        </div>
+    </div>
+
+    <!-- Question 6 -->
+    <div class="container main_box">
+        <div class="container question">
+            6) (12345679 x 72) = ?
+        </div>
+        <div class="container options">
+            <label><input type="radio" name="Q6" onchange="fun(this,'A','B','explanationQ6')"> <span class="option-text">88888888</span></label><br>
+            <label><input type="radio" name="Q6" onchange="fun(this,'B','B','explanationQ6')"> <span class="option-text">888888888</span></label><br>
+            <label><input type="radio" name="Q6" onchange="fun(this,'C','B','explanationQ6')"> <span class="option-text">898989898</span></label><br>
+            <label><input type="radio" name="Q6" onchange="fun(this,'D','B','explanationQ6')"> <span class="option-text">9999999998</span></label>
+
+            <div id="explanationQ6" class="explanation">
+                <div class="label">Explanation:</div>
+                <p>Option B</p>
+                <pre style="font-size: 14px;">
+12345679 x 72	= 12345679 x (70 +2)
+                = 12345679 x 70 + 12345679 x 2
+                = 864197530 + 24691358
+                = 888888888
+                </pre>
+            </div>
+        </div>
+    </div>
+
+    <!-- Question 7 -->
+    <div class="container main_box">
+        <div class="container question">
+            7) Find a positive number which when increased by 17 is equal to 60 times the reciprocal of the number.
+        </div>
+        <div class="container options">
+            <label><input type="radio" name="Q7" onchange="fun(this,'A','A','explanationQ7')"> <span class="option-text">3</span></label><br>
+            <label><input type="radio" name="Q7" onchange="fun(this,'B','A','explanationQ7')"> <span class="option-text">10</span></label><br>
+            <label><input type="radio" name="Q7" onchange="fun(this,'C','A','explanationQ7')"> <span class="option-text">17</span></label><br>
+            <label><input type="radio" name="Q7" onchange="fun(this,'D','A','explanationQ7')"> <span class="option-text">20</span></label>
+
+            <div id="explanationQ7" class="explanation">
+                <div class="label">Explanation:</div>
+                <p>Option A</p>
+                <pre style="font-size: 14px;">
+Let the number be x.
+
+Then, x + 17 =	(60/x)
+
+=>    x<sup>2</sup> + 17x - 60 = 0
+
+=>   (x + 20)(x - 3) = 0
+
+=>    x = 3
+                </pre>
+            </div>
+        </div>
+    </div>
+
+    <!-- Question 8 -->
+    <div class="container main_box">
+        <div class="container question">
+            8) A number consists of two digits. If the digits interchange places and the new number is added to the original number, then the resulting number will be divisible by:
+        </div>
+        <div class="container options">
+            <label><input type="radio" name="Q8" onchange="fun(this,'A','D','explanationQ8')"> <span class="option-text">3</span></label><br>
+            <label><input type="radio" name="Q8" onchange="fun(this,'B','D','explanationQ8')"> <span class="option-text">5</span></label><br>
+            <label><input type="radio" name="Q8" onchange="fun(this,'C','D','explanationQ8')"> <span class="option-text">9</span></label><br>
+            <label><input type="radio" name="Q8" onchange="fun(this,'D','D','explanationQ8')"> <span class="option-text">11</span></label>
+
+            <div id="explanationQ8" class="explanation">
+                <div class="label">Explanation:</div>
+                <p>Option D</p>
+                <pre style="font-size: 14px;">
+Let the ten's digit be x and unit's digit be y.
+
+Then, number = 10x + y.
+
+Number obtained by interchanging the digits = 10y + x.
+
+Hence, (10x + y) + (10y + x) = 11(x + y), which is divisible by 11
+                </pre>
+            </div>
+        </div>
+    </div>
+
+    <!-- Question 9 -->
+    <div class="container main_box">
+        <div class="container question">
+            9) If one-third of one-fourth of a number is 15, then three-tenth of that number is:
+        </div>
+        <div class="container options">
+            <label><input type="radio" name="Q9" onchange="fun(this,'A','D','explanationQ9')"> <span class="option-text">35</span></label><br>
+            <label><input type="radio" name="Q9" onchange="fun(this,'B','D','explanationQ9')"> <span class="option-text">36</span></label><br>
+            <label><input type="radio" name="Q9" onchange="fun(this,'C','D','explanationQ9')"> <span class="option-text">45</span></label><br>
+            <label><input type="radio" name="Q9" onchange="fun(this,'D','D','explanationQ9')"> <span class="option-text">54</span></label>
+
+            <div id="explanationQ9" class="explanation">
+                <div class="label">Explanation:</div>
+                <p>Option D</p>
+                <pre>
+Let the number be x.
+
+Then,	(1/3) of (1/4) of x = 15  <=>  x = 15 x 3 x 4 = 180.
+
+So, required number =	{(3/10)	x 180}	= 54
+                </pre>
+            </div>
+        </div>
+    </div>
+
+    <!-- Question 10 -->
+    <div class="container main_box">
+        <div class="container question">
+            10) The difference between a two-digit number and the number obtained by interchanging the digits is 36. What is the difference between the sum and the difference of the digits of the number if the ratio between the digits of the number is 1 : 2 ?
+        </div>
+        <div class="container options">
+            <label><input type="radio" name="Q10" onchange="fun(this,'A','D','explanationQ10')"> <span class="option-text">12</span></label><br>
+            <label><input type="radio" name="Q10" onchange="fun(this,'B','D','explanationQ10')"> <span class="option-text">4</span></label><br>
+            <label><input type="radio" name="Q10" onchange="fun(this,'C','D','explanationQ10')"> <span class="option-text">16</span></label><br>
+            <label><input type="radio" name="Q10" onchange="fun(this,'D','D','explanationQ10')"> <span class="option-text">8</span></label>
+
+            <div id="explanationQ10" class="explanation">
+                <div class="label">Explanation:</div>
+                <p>Option D</p>
+                <pre style="font-size: 14px;">
+Since the number is greater than the number obtained on reversing the digits, 
+so the ten's digit is greater than the unit's digit.
+
+Let ten's and unit's digits be 2x and x respectively.
+
+Then, (10 x 2x + x) - (10x + 2x) = 36
+
+ 9x = 36
+
+ x = 4.
+
+ Required difference = (2x + x) - (2x - x) = 2x = 8.
+                </pre>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        function fun(input, user_ans, right_ans, expId) {
+            const span = input.nextElementSibling;
+            if (user_ans === right_ans) {
+                span.classList.add("correct");
+            } else {
+                span.classList.add("wrong");
+            }
+            document.getElementById(expId).style.display = "block";
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorting & Searching Problems Compiler</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background: linear-gradient(135deg, #1a2a6c 0%, #b21f1f 50%, #fdbb2d 100%); color: #333; min-height: 100vh; display: flex; flex-direction: column; padding: 20px; }
+        header { text-align: center; margin-bottom: 20px; color: white; text-shadow: 0 2px 4px rgba(0,0,0,0.3); }
+        h1 { font-size: 2.5rem; margin-bottom: 10px; }
+        .subtitle { font-size: 1.2rem; opacity: 0.9; }
+        .container { display: flex; height: 80vh; background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); flex-grow: 1; }
+        .panel { padding: 20px; overflow: auto; display: flex; flex-direction: column; }
+        .left-panel { flex: 1; background: #f8f9fa; }
+        .right-panel { flex: 1; background: #2d2d2d; }
+        .divider { width: 8px; background: #3498db; cursor: col-resize; position: relative; }
+        .divider::after { content: ""; position: absolute; top: 50%; left: 1px; right: 1px; height: 50px; background: #2c5364; border-radius: 4px; }
+        .panel-title { color: #2c5364; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid #eaeaea; }
+        .right-panel .panel-title { color: #3498db; border-bottom: 2px solid #444; }
+        .content { flex-grow: 1; line-height: 1.6; }
+        .content h3 { color: #2c5364; margin: 15px 0 10px; }
+        .content p { margin-bottom: 15px; }
+        .content ul { padding-left: 20px; margin-bottom: 15px; }
+        .content li { margin-bottom: 8px; }
+        .content code { background: #e8e8e8; padding: 2px 6px; border-radius: 4px; font-family: 'Courier New', monospace; }
+        .problem-info { background: #e8f4fc; border-left: 4px solid #3498db; padding: 15px; border-radius: 4px; margin: 15px 0; }
+        .problem-nav { display: flex; justify-content: space-between; margin-top: 20px; padding-top: 15px; border-top: 1px solid #ddd; }
+        .nav-btn { padding: 10px 20px; border: none; border-radius: 6px; background: #2c5364; color: white; cursor: pointer; transition: all 0.3s; }
+        .nav-btn:hover { background: #3a6b80; transform: translateY(-2px); }
+        .nav-btn:disabled { background: #95a5a6; cursor: not-allowed; transform: none; }
+        footer { text-align: center; color: white; margin-top: 20px; opacity: 0.8; font-size: 0.9rem; }
+        .programiz-frame { width: 100%; height: 100%; border: none; border-radius: 8px; }
+        .compiler-container { display: flex; flex-direction: column; height: 100%; }
+        .compiler-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+        .compiler-title { color: #3498db; font-weight: bold; }
+        @media (max-width: 768px) {
+            .container { flex-direction: column; }
+            .divider { width: 100%; height: 8px; cursor: row-resize; }
+            .divider::after { width: 50px; height: 100%; top: 0; left: 50%; transform: translateX(-50%); }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Sorting & Searching Problems Compiler</h1>
+        <p class="subtitle">Left: Problem Description | Right: Online Java Compiler</p>
+    </header>
+    
+    <div class="container">
+        <div class="panel left-panel">
+            <h2 class="panel-title" id="problem-title">Problem 1: Binary Search</h2>
+            
+            <div class="content" id="problem-content">
+                <h3>Description</h3>
+                <p>Write a Java function to implement binary search on a sorted integer array.</p>
+                
+                <div class="problem-info">
+                    <h4>Function Signature</h4>
+                    <code>public static int binarySearch(int[] arr, int target)</code>
+                </div>
+                
+                <h3>Requirements:</h3>
+                <ul>
+                    <li>Return the index of the target element if found</li>
+                    <li>Return -1 if the target is not in the array</li>
+                    <li>Assume the input array is sorted in ascending order</li>
+                </ul>
+                
+                <h3>Example:</h3>
+                <pre><code>Input: [1, 3, 5, 7, 9, 11, 13, 15], target = 9
+Output: 4</code></pre>
+                
+                <h3>How to use the compiler:</h3>
+                <ol>
+                    <li>Write your solution in the code editor on the right</li>
+                    <li>Click the "Run" button in the Programiz compiler to execute your code</li>
+                    <li>Check the output in the compiler's output panel</li>
+                </ol>
+            </div>
+            
+            <div class="problem-nav">
+                <button class="nav-btn" id="prev-btn" disabled><i class="fas fa-arrow-left"></i> Previous</button>
+                <span id="problem-counter">Problem 1 of 5</span>
+                <button class="nav-btn" id="next-btn">Next <i class="fas fa-arrow-right"></i></button>
+            </div>
+        </div>
+        
+        <div class="divider" id="divider"></div>
+        
+        <div class="panel right-panel">
+            <h2 class="panel-title">Online Java Compiler</h2>
+            
+            <div class="compiler-container">
+                <iframe id="programiz-compiler" class="programiz-frame" src="https://www.programiz.com/java-programming/online-compiler/" title="Online Java Compiler"></iframe>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>Sorting & Searching Problems Compiler - Integrated with Programiz Online Java Compiler</p>
+    </footer>
+
+    <script>
+        // Problem data
+        var problems = [
+            {
+                title: "Problem 1: Binary Search",
+                content: `<h3>Description</h3><p>Write a Java function to implement binary search on a sorted integer array.</p>
+                <div class="problem-info"><h4>Function Signature</h4><code>public static int binarySearch(int[] arr, int target)</code></div>
+                <h3>Requirements:</h3><ul><li>Return the index of the target element if found</li><li>Return -1 if the target is not in the array</li><li>Assume the input array is sorted in ascending order</li></ul>
+                <h3>Example:</h3><pre><code>Input: [1, 3, 5, 7, 9, 11, 13, 15], target = 9\nOutput: 4</code></pre>
+                <h3>How to use the compiler:</h3>
+                <ol>
+                    <li>Write your solution in the code editor on the right</li>
+                    <li>Click the "Run" button in the Programiz compiler to execute your code</li>
+                    <li>Check the output in the compiler's output panel</li>
+                </ol>`
+            },
+            {
+                title: "Problem 2: Bubble Sort",
+                content: `<h3>Description</h3><p>Write a Java function to implement bubble sort on an integer array.</p>
+                <div class="problem-info"><h4>Function Signature</h4><code>public static void bubbleSort(int[] arr)</code></div>
+                <h3>Requirements:</h3><ul><li>Sort the array in ascending order</li><li>Implement the bubble sort algorithm</li><li>Sort the array in-place</li></ul>
+                <h3>Example:</h3><pre><code>Input: [64, 34, 25, 12, 22, 11, 90]\nOutput: [11, 12, 22, 25, 34, 64, 90]</code></pre>
+                <h3>How to use the compiler:</h3>
+                <ol>
+                    <li>Write your solution in the code editor on the right</li>
+                    <li>Click the "Run" button in the Programiz compiler to execute your code</li>
+                    <li>Check the output in the compiler's output panel</li>
+                </ol>`
+            },
+            {
+                title: "Problem 3: Quick Sort",
+                content: `<h3>Description</h3><p>Write a Java function to implement quick sort on an integer array.</p>
+                <div class="problem-info"><h4>Function Signature</h4><code>public static void quickSort(int[] arr, int low, int high)</code></div>
+                <h3>Requirements:</h3><ul><li>Sort the array in ascending order</li><li>Implement the quick sort algorithm recursively</li><li>Use the last element as the pivot</li></ul>
+                <h3>Example:</h3><pre><code>Input: [10, 7, 8, 9, 1, 5]\nOutput: [1, 5, 7, 8, 9, 10]</code></pre>
+                <h3>How to use the compiler:</h3>
+                <ol>
+                    <li>Write your solution in the code editor on the right</li>
+                    <li>Click the "Run" button in the Programiz compiler to execute your code</li>
+                    <li>Check the output in the compiler's output panel</li>
+                </ol>`
+            },
+            {
+                title: "Problem 4: Find First and Last Position",
+                content: `<h3>Description</h3><p>Write a Java function to find the first and last position of a target value in a sorted array.</p>
+                <div class="problem-info"><h4>Function Signature</h4><code>public static int[] searchRange(int[] arr, int target)</code></div>
+                <h3>Requirements:</h3><ul><li>Return an array with the first and last index of the target</li><li>Return [-1, -1] if the target is not found</li><li>Your algorithm should run in O(log n) time complexity</li></ul>
+                <h3>Example:</h3><pre><code>Input: [5, 7, 7, 8, 8, 10], target = 8\nOutput: [3, 4]</code></pre>
+                <h3>How to use the compiler:</h3>
+                <ol>
+                    <li>Write your solution in the code editor on the right</li>
+                    <li>Click the "Run" button in the Programiz compiler to execute your code</li>
+                    <li>Check the output in the compiler's output panel</li>
+                </ol>`
+            },
+            {
+                title: "Problem 5: Merge Sorted Arrays",
+                content: `<h3>Description</h3><p>Write a Java function to merge two sorted arrays into one sorted array.</p>
+                <div class="problem-info"><h4>Function Signature</h4><code>public static int[] mergeSortedArrays(int[] arr1, int[] arr2)</code></div>
+                <h3>Requirements:</h3><ul><li>Return a new sorted array containing all elements from both arrays</li><li>Your solution should be efficient (O(n+m) time complexity)</li><li>Do not use built-in sort functions</li></ul>
+                <h3>Example:</h3><pre><code>Input: [1, 3, 5, 7], [2, 4, 6, 8]\nOutput: [1, 2, 3, 4, 5, 6, 7, 8]</code></pre>
+                <h3>How to use the compiler:</h3>
+                <ol>
+                    <li>Write your solution in the code editor on the right</li>
+                    <li>Click the "Run" button in the Programiz compiler to execute your code</li>
+                    <li>Check the output in the compiler's output panel</li>
+                </ol>`
+            }
+        ];
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const divider = document.getElementById('divider');
+            const container = document.querySelector('.container');
+            const leftPanel = document.querySelector('.left-panel');
+            const rightPanel = document.querySelector('.right-panel');
+            const prevBtn = document.getElementById('prev-btn');
+            const nextProbBtn = document.getElementById('next-btn');
+            const problemTitle = document.getElementById('problem-title');
+            const problemContent = document.getElementById('problem-content');
+            const problemCounter = document.getElementById('problem-counter');
+            const programizFrame = document.getElementById('programiz-compiler');
+            
+            let currentProblem = 0;
+            
+            // Initialize the first problem
+            updateProblem();
+            
+            // Divider functionality
+            divider.addEventListener('mousedown', function(e) {
+                e.preventDefault();
+                document.addEventListener('mousemove', resize);
+                document.addEventListener('mouseup', stopResize);
+                
+                function resize(e) {
+                    const containerRect = container.getBoundingClientRect();
+                    const percent = (e.clientX - containerRect.left) / containerRect.width * 100;
+                    leftPanel.style.flex = `1 1 ${percent}%`;
+                    rightPanel.style.flex = `1 1 ${100 - percent}%`;
+                }
+                
+                function stopResize() {
+                    document.removeEventListener('mousemove', resize);
+                }
+            });
+            
+            // Next Problem button
+            nextProbBtn.addEventListener('click', nextProblem);
+            
+            // Previous button
+            prevBtn.addEventListener('click', function() {
+                if (currentProblem > 0) {
+                    currentProblem--;
+                    updateProblem();
+                }
+            });
+            
+            // Update problem function
+            function updateProblem() {
+                problemTitle.textContent = problems[currentProblem].title;
+                problemContent.innerHTML = problems[currentProblem].content;
+                problemCounter.textContent = `Problem ${currentProblem + 1} of ${problems.length}`;
+                prevBtn.disabled = currentProblem === 0;
+                nextProbBtn.disabled = currentProblem === problems.length - 1;
+                
+                // Reload the iframe to clear previous code
+                programizFrame.src = 'https://www.programiz.com/java-programming/online-compiler/';
+            }
+            
+            function nextProblem() {
+                if (currentProblem < problems.length - 1) {
+                    currentProblem++;
+                    updateProblem();
+                }
+            }
+        });
+    </script>
+</body>
+</html>

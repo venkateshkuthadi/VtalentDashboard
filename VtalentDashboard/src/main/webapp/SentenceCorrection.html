@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentence Correction</title>
+    <style>
+        .main_box {
+            border: 0.5px solid black;
+            margin-top: 20px;
+        }
+        .main_box:hover {
+            border: 0;
+            box-shadow: 0px 2px 7px rgb(0, 0, 0);
+        }
+        .container {
+            box-shadow: 0px 0px 7px white;
+            margin: 12px;
+            padding: 15px;
+            border-radius: 10px;
+            background-color: aliceblue;
+        }
+        .question {
+            border: 1px solid;
+            font-size: large;
+            background-color: rgb(39, 39, 39);
+            color: white;
+            box-shadow: inset 0px 0px 5px rgb(0, 0, 0);
+        }
+        .hidden { display: none; }
+        .option-text {
+            position: relative;
+            padding-right: 25px;
+        }
+        .option-text.correct::after {
+            content: "✔";
+            color: green;
+            font-weight: bold;
+            position: absolute;
+            right: 0;
+        }
+        .option-text.wrong::after {
+            content: "✖";
+            color: red;
+            font-weight: bold;
+            position: absolute;
+            right: 0;
+        }
+        .explanation {
+            display: none;
+            margin-top: 10px;
+            color: #22b435;
+        }
+        .explanation .label {
+            font-weight: bold;
+            font-size: large;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Question 1 -->
+    <div class="container main_box">
+        <div class="container question">
+            1) The small child does whatever his father was done.
+        </div>
+        <div class="container options">
+            <label><input type="radio" name="Q1" onchange="fun(this,'A','C')"> <span class="option-text">has done</span></label><br>
+            <label><input type="radio" name="Q1" onchange="fun(this,'B','C')"> <span class="option-text">did</span></label><br>
+            <label><input type="radio" name="Q1" onchange="fun(this,'C','C')"> <span class="option-text">does</span></label><br>
+            <label><input type="radio" name="Q1" onchange="fun(this,'D','C')"> <span class="option-text">had done</span></label>
+        </div>
+    </div>
+
+        <!-- Question 2 -->
+    <div class="container main_box">
+        <div class="container question">
+            2) There are not many men who are so famous that they are frequently referred to by their short names only
+        </div>
+        <div class="container options">
+            <label><input type="radio" name="Q2" onchange="fun(this,'A','A')"> <span class="option-text">initials</span></label><br>
+            <label><input type="radio" name="Q2" onchange="fun(this,'B','A')"> <span class="option-text">signatures</span></label><br>
+            <label><input type="radio" name="Q2" onchange="fun(this,'C','A')"> <span class="option-text">pictures</span></label><br>
+            <label><input type="radio" name="Q2" onchange="fun(this,'D','A')"> <span class="option-text">middle names</span></label>
+        </div>
+    </div>
+
+        <!-- Question 3 -->
+    <div class="container main_box">
+        <div class="container question">
+            3)I need not offer any explanation regarding this incident - my behaviour is speaking itself.
+        </div>
+        <div class="container options">
+            <label><input type="radio" name="Q3" onchange="fun(this,'A','B')"> <span class="option-text">will speak to itself</span></label><br>
+            <label><input type="radio" name="Q3" onchange="fun(this,'B','B')"> <span class="option-text">speaks for itself</span></label><br>
+            <label><input type="radio" name="Q3" onchange="fun(this,'C','B')"> <span class="option-text">has been speaking</span></label><br>
+            <label><input type="radio" name="Q3" onchange="fun(this,'D','B')"> <span class="option-text">speaks about itself</span></label>
+        </div>
+    </div>
+
+    <!-- Question 4 -->
+    <div class="container main_box">
+        <div class="container question">
+            4) The population of Tokyo is greater than that of any other town in the world.
+        </div>
+        <div class="container options">
+            <label><input type="radio" name="Q4" onchange="fun(this,'A','D')"> <span class="option-text">greatest among any other</span></label><br>
+            <label><input type="radio" name="Q4" onchange="fun(this,'B','D')"> <span class="option-text">greater than all other</span></label><br>
+            <label><input type="radio" name="Q4" onchange="fun(this,'C','D')"> <span class="option-text">greater than any other</span></label><br>
+            <label><input type="radio" name="Q4" onchange="fun(this,'D','D')"> <span class="option-text">No correction required</span></label>
+        </div>
+    </div>
+
+    <!-- Question 5 -->
+    <div class="container main_box">
+        <div class="container question">
+            5) The performance of our players was rather worst than I had expected.
+        </div>
+        <div class="container options">
+            <label><input type="radio" name="Q5" onchange="fun(this,'A','C')"> <span class="option-text">bad as I had expected</span></label><br>
+            <label><input type="radio" name="Q5" onchange="fun(this,'B','C')"> <span class="option-text">worse than I had expected</span></label><br>
+            <label><input type="radio" name="Q5" onchange="fun(this,'C','C')"> <span class="option-text">worse than expectation</span></label><br>
+            <label><input type="radio" name="Q5" onchange="fun(this,'D','C')"> <span class="option-text">worst than was expected</span></label>
+        </div>
+    </div>
+
+    <!-- Question 6 -->
+    <div class="container main_box">
+        <div class="container question">
+            6) The intruder stood quietly for few moments
+        </div>
+        <div class="container options">
+            <label><input type="radio" name="Q6" onchange="fun(this,'A','D')"> <span class="option-text">for few time</span></label><br>
+            <label><input type="radio" name="Q6" onchange="fun(this,'B','D')"> <span class="option-text">for the few moments</span></label><br>
+            <label><input type="radio" name="Q6" onchange="fun(this,'C','D')"> <span class="option-text">for moments</span></label><br>
+            <label><input type="radio" name="Q6" onchange="fun(this,'D','D')"> <span class="option-text">for a few moments</span></label>
+        </div>
+    </div>
+
+    <!-- Question 7 -->
+    <div class="container main_box">
+        <div class="container question">
+            7) He found the gold coin as he cleans the floor.
+        </div>
+        <div class="container options">
+            <label><input type="radio" name="Q7" onchange="fun(this,'A','B')"> <span class="option-text">as he had cleaned</span></label><br>
+            <label><input type="radio" name="Q7" onchange="fun(this,'B','B')"> <span class="option-text">while cleaning</span></label><br>
+            <label><input type="radio" name="Q7" onchange="fun(this,'C','B')"> <span class="option-text">while he cleans</span></label><br>
+            <label><input type="radio" name="Q7" onchange="fun(this,'D','B')"> <span class="option-text">No correction required</span></label>
+        </div>
+    </div>
+
+    <!-- Question 8 -->
+    <div class="container main_box">
+        <div class="container question">
+            8) Acquisition of certain specific skills can be facilitated from general awareness, education to novel situations
+        </div>
+        <div class="container options">
+            <label><input type="radio" name="Q8" onchange="fun(this,'A','A')"> <span class="option-text">can be facilitated by</span></label><br>
+            <label><input type="radio" name="Q8" onchange="fun(this,'B','A')"> <span class="option-text">may facilitate through</span></label><br>
+            <label><input type="radio" name="Q8" onchange="fun(this,'C','A')"> <span class="option-text">can be felicitated with</span></label><br>
+            <label><input type="radio" name="Q8" onchange="fun(this,'D','A')"> <span class="option-text">may be felicitated with</span></label>
+        </div>
+    </div>
+
+    <!-- Question 9 -->
+    <div class="container main_box">
+        <div class="container question">
+            9) Technology must use to feed the forces of change.
+        </div>
+        <div class="container options">
+            <label><input type="radio" name="Q9" onchange="fun(this,'A','A')"> <span class="option-text">must be used to feed</span></label><br>
+            <label><input type="radio" name="Q9" onchange="fun(this,'B','A')"> <span class="option-text">must have been using to feed</span></label><br>
+            <label><input type="radio" name="Q9" onchange="fun(this,'C','A')"> <span class="option-text">must use having fed</span></label><br>
+            <label><input type="radio" name="Q9" onchange="fun(this,'D','A')"> <span class="option-text">must be using to feed</span></label>
+        </div>
+    </div>
+
+    <!-- Question 10 -->
+    <div class="container main_box">
+        <div class="container question">
+            10) Anyone interested in the use of computers can learn much if you have access to a personal computer.
+        </div>
+        <div class="container options">
+            <label><input type="radio" name="Q10" onchange="fun(this,'A','C')"> <span class="option-text">they have access</span></label><br>
+            <label><input type="radio" name="Q10" onchange="fun(this,'B','C')"> <span class="option-text">access can be available</span></label><br>
+            <label><input type="radio" name="Q10" onchange="fun(this,'C','C')"> <span class="option-text">he or she has access</span></label><br>
+            <label><input type="radio" name="Q10" onchange="fun(this,'D','C')"> <span class="option-text">one of them have access</span></label>
+        </div>
+    </div>
+
+    <!-- Question 11 -->
+    <div class="container main_box">
+        <div class="container question">
+            11) He has received no other message than an urgent telegram <b>asking him to rush his village</b> immediately.
+        </div>
+        <div class="container options">
+            <label><input type="radio" name="Q11" onchange="fun(this,'A','D')"> <span class="option-text">asked him to rush his village</span></label><br>
+            <label><input type="radio" name="Q11" onchange="fun(this,'B','D')"> <span class="option-text">asking him to have rush his village</span></label><br>
+            <label><input type="radio" name="Q11" onchange="fun(this,'C','D')"> <span class="option-text">asking him rushing at his village</span></label><br>
+            <label><input type="radio" name="Q11" onchange="fun(this,'D','D')"> <span class="option-text">asking him to rush to his village</span></label>
+        </div>
+    </div>
+
+    <!-- Question 12 -->
+    <div class="container main_box">
+        <div class="container question">
+            12) Their earnings are such that they find it difficult to make both ends to meet.
+        </div>
+        <div class="container options">
+            <label><input type="radio" name="Q12" onchange="fun(this,'A','C')"> <span class="option-text">to makings both ends meet</span></label><br>
+            <label><input type="radio" name="Q12" onchange="fun(this,'B','C')"> <span class="option-text">to make both ends for meeting</span></label><br>
+            <label><input type="radio" name="Q12" onchange="fun(this,'C','C')"> <span class="option-text">to make both ends meet</span></label><br>
+            <label><input type="radio" name="Q12" onchange="fun(this,'D','C')"> <span class="option-text">for making both ends to meet</span></label>
+        </div>
+    </div>
+
+    <!-- Question 13 -->
+    <div class="container main_box">
+        <div class="container question">
+            13) We don't know <b>how did the thief made</b> an escape.
+        </div>
+        <div class="container options">
+            <label><input type="radio" name="Q13" onchange="fun(this,'A','C')"> <span class="option-text">how the thief did make</span></label><br>
+            <label><input type="radio" name="Q13" onchange="fun(this,'B','C')"> <span class="option-text">how the thief does make</span></label><br>
+            <label><input type="radio" name="Q13" onchange="fun(this,'C','C')"> <span class="option-text">how the thief made</span></label><br>
+            <label><input type="radio" name="Q13" onchange="fun(this,'D','C')"> <span class="option-text">how was the thief made</span></label>
+        </div>
+    </div>
+
+    <!-- Question 14 -->
+    <div class="container main_box">
+        <div class="container question">
+            14) <b>Despite of their</b> differences on matters of principles, they all agree on the demand of hike is salary?
+        </div>
+        <div class="container options">
+            <label><input type="radio" name="Q14" onchange="fun(this,'A','C')"> <span class="option-text">Despite of the</span></label><br>
+            <label><input type="radio" name="Q14" onchange="fun(this,'B','C')"> <span class="option-text">Despite for their</span></label><br>
+            <label><input type="radio" name="Q14" onchange="fun(this,'C','C')"> <span class="option-text">Despite their</span></label><br>
+            <label><input type="radio" name="Q14" onchange="fun(this,'D','C')"> <span class="option-text">No correction required</span></label>
+        </div>
+    </div>
+
+    <!-- Question 15 -->
+    <div class="container main_box">
+        <div class="container question">
+            15) What does agonise me most is not this criticism, but the trivial reason behind it.
+        </div>
+        <div class="container options">
+            <label><input type="radio" name="Q15" onchange="fun(this,'A','B')"> <span class="option-text">most agonising me</span></label><br>
+            <label><input type="radio" name="Q15" onchange="fun(this,'B','B')"> <span class="option-text">agonises me most</span></label><br>
+            <label><input type="radio" name="Q15" onchange="fun(this,'C','B')"> <span class="option-text">agonising me most</span></label><br>
+            <label><input type="radio" name="Q15" onchange="fun(this,'D','B')"> <span class="option-text">I most agonised</span></label>
+        </div>
+    </div>
+
+
+    <script>
+        function fun(input, user_ans, right_ans, expId) {
+            const span = input.nextElementSibling;
+            if (user_ans === right_ans) {
+                span.classList.add("correct");
+            } else {
+                span.classList.add("wrong");
+            }
+        }
+    </script>
+
+</body>
+</html>
