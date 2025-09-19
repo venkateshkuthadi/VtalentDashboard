@@ -5,19 +5,19 @@
   <title>Admin Dashboard</title>
   <style>
     body {
-       font-family: Arial, sans-serif;
-		  background: #f3f0ff; /* soft light lavender */
-		  margin: 0;
-		  padding: 20px;
-		  display: flex;
-		  flex-direction: column;
-		  align-items: center;
+      font-family: Arial, sans-serif;
+      background: #f3f0ff; /* soft light lavender */
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
+
     header {
       background: #422ea1;
       color: #ffffff;
       padding: 20px;
-      margin-bottom: 40px;
       width: 100%;
     }
 
@@ -26,13 +26,15 @@
       align-items: center;
       justify-content: center;
       position: relative;
-      max-width: 1000px;
-      margin: auto;
+      flex-wrap: wrap;
     }
 
     .logo-box {
       position: absolute;
       left: 20px;
+      background-color: #fff;
+      padding: 5px;
+      border-radius: 8px;
     }
 
     .logo {
@@ -42,7 +44,6 @@
 
     .content {
       text-align: center;
-      width: 100%;
     }
 
     .content h1 {
@@ -65,18 +66,18 @@
       text-decoration: underline;
     }
 
-    h1 {
-      text-align: center;
-      margin-bottom: 40px;
-      color: #fff;
+    main {
+      width: 100%;
+      max-width: 800px;
+      margin-top: 30px;
     }
 
     .card-container {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
       gap: 30px;
-      max-width: 700px;
       width: 100%;
+      text-align: center;
     }
 
     .card {
@@ -84,13 +85,15 @@
       color: white;
       border-radius: 10px;
       padding: 30px 20px;
-      text-align: center;
       font-weight: bold;
       font-size: 1.2em;
       cursor: pointer;
       box-shadow: 0 6px 10px rgba(66, 46, 161, 0.3);
       transition: background 0.3s, box-shadow 0.3s, transform 0.3s;
       text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       user-select: none;
     }
 
@@ -101,31 +104,57 @@
       text-decoration: none;
       color: white;
     }
+
+    @media (max-width: 600px) {
+      .header-container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .logo-box {
+        position: static;
+        margin-bottom: 10px;
+      }
+
+      nav a {
+        display: block;
+        margin: 5px 0;
+      }
+    }
   </style>
 </head>
 <body>
-<header>
-  <div class="header-container">
-    <div class="logo-box">
+  <header>
+    <div class="header-container">
+      <!-- Logo at left -->
+      <div class="logo-box">
         <img src="https://vtalent.in/images/vtalentlogo.png" class="logo" alt="Logo" />
-    </div>
-    <div class="content">
-      <h1>Admin Dashboard</h1>
-      <nav>
-        <a href="View.html">Home</a>
-        <a href="#">Courses</a>
-        <a href="View.html">Contact</a>
-      </nav>
-    </div>
-  </div>
-</header>
+      </div>
 
-<div class="card-container">
-  <a href="add-student(admin).html" class="card">Add Student</a>
-  <a href="view-students(admin).html" class="card">View Students</a>
-  <a href="view-attendance(admin).html" class="card">View Attendance</a>
+      <!-- Content at center -->
+      <div class="content">
+        <h1>Admin Dashboard</h1>
+        <nav>
+          <a href="admin.html">Home</a>
+          <a href="coursepage(admin).html">Courses</a>
+          <a href="ViewContactInformation.html">Contact</a>
+          <a href="adminlogout.jsp">Logout</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="card-container">
+      <a href="Registration.jsp" class="card">Add Student</a>
+  
+  <form method="post" action="adminStudentdata" >
+  <button type="submit" class="card">View Students</button>
+</form>
+  <a href="view-attendance(admin).jsp" class="card" onclick="location.href='StudentAttendensecontroller'">View Attendance</a>
   <a href="viewPerformace(admin).html" class="card">View Performance</a>
-</div>
-
+  <a href="adminAssessment.jsp" class="card">publish assessments</a>
+    </div>
+  </main>
 </body>
 </html>

@@ -1,3 +1,13 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
+<%
+    String cancleLink = "index.jsp"; 
+    if (session.getAttribute("admin") != null) {
+        cancleLink = "admin.html";
+        
+    }
+%>
+
 <html>
 <head>
   <meta charset="UTF-8">
@@ -205,7 +215,7 @@
 
         <div class="button-group">
           <button type="submit">Register</button>
-          <button type="button" onclick="window.location.href='index.jsp'">Cancel</button>
+          <button type="button"  onclick="window.location.href='<%= cancleLink %>'">Cancel</button>
         </div>
       </form>
     </div>

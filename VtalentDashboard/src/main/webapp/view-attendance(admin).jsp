@@ -22,9 +22,45 @@
         th { background: #3498db; color: #fff; }
         tr:hover { background: #f1f1f1; }
         .error { color: red; text-align: center; }
+        header {
+      background: #422ea1;   /* ✅ Updated background color */
+      color: #ffffff;        /* ✅ White text for better contrast */
+      padding: 20px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .logo {
+      height: 60px;
+      width: auto;
+    }
+
+    nav a {
+      color: #fff;  /* ✅ Changed to white for visibility */
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
     </style>
 </head>
 <body>
+<header>
+    <div class="logo-box">
+      <!-- Replace this with your actual relative image path -->
+      <img src="images/logo.jpg.jpg" class="logo" alt="Logo" />
+    </div>
+    <nav>
+      <a href="admin.html">Home</a>
+      <a href="admin.html">Back</a>
+      
+    </nav>
+  </header>
 <div class="container">
     <h1>Admin - Search User Attendance</h1>
 
@@ -62,6 +98,7 @@
                 <table>
                     <thead>
                         <tr>
+                        	<th>Name</th>
                             <th>Login Time</th>
                             <th>Logout Time</th>
                             <th>Active Time</th>
@@ -71,10 +108,11 @@
                     <tbody>
                     <%
                         for (String[] record : attendanceList) {
-                            String loginTime = record[0];
-                            String logoutTime = record[1];
-                            String location = record[2];
-                            String activeTime = record[3];
+							String name=record[0];
+                            String loginTime = record[1];
+                            String logoutTime = record[2];
+                            String location = record[3];
+                            String activeTime = record[4];
 
                             if (activeTime == null || activeTime.trim().isEmpty()) {
                                 activeTime = (logoutTime != null && !"null".equals(logoutTime)) 
@@ -83,6 +121,7 @@
                             }
                     %>
                         <tr>
+                        	<td><%= name %></td>
                             <td><%= loginTime %></td>
                             <td><%= (logoutTime != null ? logoutTime : "Active") %></td>
                             <td><%= activeTime %></td>

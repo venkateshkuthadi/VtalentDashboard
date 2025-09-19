@@ -2,6 +2,9 @@ package com.VtalentDashboard.controller;
 
 import java.io.IOException;
 import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -12,6 +15,7 @@ import javax.servlet.http.HttpSession;
 
 import com.VtalentDashboard.dao.RegistrationDao;
 import com.VtalentDashboard.entity.RegistrationEntity;
+import com.VtalentDashboard.service.RegistrationMappingImpl;
 import com.google.protobuf.ByteString.Output;
 import com.mysql.cj.protocol.Resultset;
 
@@ -28,7 +32,8 @@ public class RegistrationServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.getWriter().append("Served at: ").append(request.getContextPath());
+    	
+        //response.getWriter().append("Served at: ").append(request.getContextPath());
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

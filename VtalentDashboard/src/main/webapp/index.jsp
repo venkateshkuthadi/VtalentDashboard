@@ -173,8 +173,8 @@
   <div class="navbar">
     <img src="https://vtalent.in/images/vtalentlogo.png" alt="Vtalent Logo">
     <div class="nav-links">
-      <a href="ViewContactInformation.html">Contact</a>
-      <a href="Coursespage.html">Course</a>
+      <a href="contact.html">Contact</a>
+      <a href="courses.html">Course</a>
       <a href="Registration.jsp">Register</a>
       <a href="LoginPage.jsp">Login</a>
     </div>

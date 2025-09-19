@@ -18,11 +18,11 @@ public class LoginService {
 	   
 	    try {
 	        if (result != null && result.next()) {
-	        	s.setsName(result.getString(1));
-	        	s.setSid(result.getString(3));
-	        	s.setCourse(result.getString(4));
+	        	s.setsName(result.getString(2));
+	        	s.setSid(result.getString(1));
+	        	s.setCourse(result.getString(10));
 	        	
-	        	System.out.println("Hii"+s.getCourse());
+	        	System.out.println("Hii"+result.getString(2)+":"+result.getString(1)+":"+result.getString(10));
 	        	
 	            return s;
 	        } else {

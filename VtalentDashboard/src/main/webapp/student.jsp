@@ -139,9 +139,10 @@
       <div class="content">
         <h1>Student Dashboard</h1>
         <nav>
-          <a href="index.jsp">Home</a>
+          <a href="#">Home</a>
           <a href="Coursespage.html">Courses</a>
-          <a href="ViewContactInformation.html">Contact</a>
+          <a href="Studentcontactpage.html">Contact</a>
+          <a href = "logout.jsp">Logout</a>
         </nav>
       </div>
     </div>

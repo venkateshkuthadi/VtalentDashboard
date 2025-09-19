@@ -158,6 +158,7 @@
             <table class="attendance-table">
                 <thead>
                     <tr>
+                    	<th>Name</th>
                         <th>Login Time</th>
                         <th>Logout Time</th>
                         <th>Active Time</th>
@@ -168,10 +169,11 @@
                     <%
                         Location locationUtil = new Location();
                         for (String[] record : attendanceList) {
-                            String loginTime = record[0];
-                            String logoutTime = record[1];
-                            String location = record[2];
-                            String activeTime = record[3];
+                        	String name=record[0];
+                            String loginTime = record[1];
+                            String logoutTime = record[2];
+                            String location = record[3];
+                            String activeTime = record[4];
 
                             // Fallback for location if it's Habeeb Nagar
                             if (location != null && location.contains("Habeeb Nagar")) {
@@ -188,6 +190,7 @@
                             }
                     %>
                     <tr>
+                    	<td> <%= name%></td>
                         <td><%= loginTime != null ? loginTime : "N/A" %></td>
                         <td><%= logoutTime != null ? logoutTime : "N/A" %></td>
                         <td><%= activeTime %></td>

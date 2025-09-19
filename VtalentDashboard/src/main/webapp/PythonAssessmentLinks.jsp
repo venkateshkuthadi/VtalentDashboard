@@ -59,6 +59,6 @@
         <% } %>
         
     </table>
-    <button onclick="location.href='search1.html'">Search result</button>
+  
 </body>
 </html>

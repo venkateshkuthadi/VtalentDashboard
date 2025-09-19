@@ -16,7 +16,7 @@ public class AttandanceDao {
 
     // Show attendance for a given username
     public ArrayList<String[]> showAttandance(String username) throws Exception {
-        String sql = "SELECT l.login_time, l.logout_time, l.location, l.active_time "
+        String sql = "SELECT username, l.login_time, l.logout_time, l.location, l.active_time "
                    + "FROM logins l WHERE l.username = ?";
 
         ArrayList<String[]> list = new ArrayList<>();
@@ -26,12 +26,13 @@ public class AttandanceDao {
             ResultSet rs = ps.executeQuery();
 
             while (rs.next()) {
+            	 String Name = rs.getString("username");
                 String login_time = rs.getString("login_time");
                 String logout_time = rs.getString("logout_time");
                 String location = rs.getString("location");
                 String active_time = rs.getString("active_time");
 
-                list.add(new String[]{login_time, logout_time, location, active_time});
+                list.add(new String[]{Name,login_time, logout_time, location, active_time});
             }
         }
         return list;
@@ -94,7 +95,7 @@ public class AttandanceDao {
         }
     }
     public ArrayList<String[]> showAttandanceBySID(int sid) throws Exception {
-        String sql = "SELECT l.login_time, l.logout_time, l.location, l.active_time "
+        String sql = "SELECT username,l.login_time, l.logout_time, l.location, l.active_time "
                    + "FROM logins l WHERE l.SID = ?";
 
         ArrayList<String[]> list = new ArrayList<>();
@@ -104,12 +105,13 @@ public class AttandanceDao {
             ResultSet rs = ps.executeQuery();
 
             while (rs.next()) {
+            	String name=rs.getString("username");
                 String login_time = rs.getString("login_time");
                 String logout_time = rs.getString("logout_time");
                 String location = rs.getString("location");
                 String active_time = rs.getString("active_time");
 
-                list.add(new String[]{login_time, logout_time, location, active_time});
+                list.add(new String[]{name,login_time, logout_time, location, active_time});
             }
         }
         return list;

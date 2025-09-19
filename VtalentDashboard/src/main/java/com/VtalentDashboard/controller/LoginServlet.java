@@ -71,11 +71,11 @@ public class LoginServlet extends HttpServlet {
                 try {
                     if (attendanceDao.hasLoggedInToday(username)) {
                     	session.setAttribute("username", username);
-                         request.getRequestDispatcher("profile.jsp").forward(request, response);
+                         request.getRequestDispatcher("student.jsp").forward(request, response);
                     } else {
                         session.setAttribute("username", username);
                         attendanceDao.saveLogInTime(username, ipAddress, latitude, longitude);
-                        response.sendRedirect("profile.jsp");
+                        response.sendRedirect("student.jsp");
                     }
                 } catch (SQLException e) {
                     request.setAttribute("errorMessage", "Database error occurred. Please try again later.");
@@ -85,7 +85,9 @@ public class LoginServlet extends HttpServlet {
                     request.getRequestDispatcher("LoginPage.jsp").forward(request, response);
                 }
             } else if (role.equalsIgnoreCase("admin")) {
-                response.sendRedirect("admin.html");
+            	session.setAttribute("admin", student);
+            	System.out.println("admin session created...");
+            	response.sendRedirect("admin.html");
             } else {
                 request.setAttribute("errorMessage", "Invalid role specified.");
                 request.getRequestDispatcher("LoginPage.jsp").forward(request, response);

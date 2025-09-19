@@ -48,10 +48,10 @@ public class AdminAssessmentController extends HttpServlet {
 		WeeklytestMappingImpl service=new WeeklytestMappingImpl();
 		int result=service.addAssessment(course,concept,link,type);
 		if(result>0) {
-		response.sendRedirect("index.jsp");
+		response.sendRedirect("admin.html");
 		}
 		else {
-			response.sendRedirect("index.jsp");
+			response.sendRedirect("admin.html");
 		}
 		doGet(request, response);
 	}
