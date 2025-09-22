@@ -6,7 +6,7 @@
     if (session.getAttribute("student") != null) {
         homeLink = "student.jsp";
         contactPage="Studentcontactpage.html";
-        courses="CoursesPage.html";
+        courses="Coursespage.html";
     }
 %>
 
