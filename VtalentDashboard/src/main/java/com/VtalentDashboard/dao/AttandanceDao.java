@@ -16,7 +16,7 @@ public class AttandanceDao {
 
     // Show attendance for a given username
     public ArrayList<String[]> showAttandance(String username) throws Exception {
-        String sql = "SELECT username, l.login_time, l.logout_time, l.location, l.active_time "
+        String sql = "SELECT username, l.login_time, l.logout_time, l.active_time "
                    + "FROM logins l WHERE l.username = ?";
 
         ArrayList<String[]> list = new ArrayList<>();
@@ -29,10 +29,9 @@ public class AttandanceDao {
             	 String Name = rs.getString("username");
                 String login_time = rs.getString("login_time");
                 String logout_time = rs.getString("logout_time");
-                String location = rs.getString("location");
                 String active_time = rs.getString("active_time");
 
-                list.add(new String[]{Name,login_time, logout_time, location, active_time});
+                list.add(new String[]{Name,login_time, logout_time, active_time});
             }
         }
         return list;
@@ -53,21 +52,8 @@ public class AttandanceDao {
     }
 
     // Save login time
-    public boolean saveLogInTime(String username, String ipAddress, String latitude, String longitude) throws Exception {
-        Location lca = new Location();
-        String location = "Unknown";
-
-        if (latitude != null && !latitude.isEmpty() && longitude != null && !longitude.isEmpty()) {
-            try {
-                double lat = Double.parseDouble(latitude);
-                double lon = Double.parseDouble(longitude);
-                location = lca.getLocationFromCoordinates(lat, lon); // Prefer GPS
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        } else {
-            location = lca.getLocationFromIP(ipAddress); // Fallback
-        }
+    public boolean saveLogInTime(String username) throws Exception {
+       
 
         // 🔹 Fetch SID from student table
         String sidQuery = "SELECT SID FROM student WHERE Name = ?";
@@ -84,18 +70,18 @@ public class AttandanceDao {
             throw new Exception("User not found for username: " + username);
         }
 
-        String sql = "INSERT INTO logins(SID, username, login_time, location) VALUES(?, ?, NOW(), ?)";
+        String sql = "INSERT INTO logins(SID, username, login_time) VALUES(?, ?, NOW())";
         try (PreparedStatement ps = con.prepareStatement(sql)) {
             ps.setInt(1, sid);
             ps.setString(2, username);
-            ps.setString(3, location);
+            
 
             int result = ps.executeUpdate();
             return result > 0;
         }
     }
     public ArrayList<String[]> showAttandanceBySID(int sid) throws Exception {
-        String sql = "SELECT username,l.login_time, l.logout_time, l.location, l.active_time "
+        String sql = "SELECT username,l.login_time, l.logout_time, l.active_time "
                    + "FROM logins l WHERE l.SID = ?";
 
         ArrayList<String[]> list = new ArrayList<>();
@@ -108,10 +94,10 @@ public class AttandanceDao {
             	String name=rs.getString("username");
                 String login_time = rs.getString("login_time");
                 String logout_time = rs.getString("logout_time");
-                String location = rs.getString("location");
+                
                 String active_time = rs.getString("active_time");
 
-                list.add(new String[]{name,login_time, logout_time, location, active_time});
+                list.add(new String[]{name,login_time, logout_time, active_time});
             }
         }
         return list;

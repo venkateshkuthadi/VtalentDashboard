@@ -56,8 +56,8 @@
       <img src="images/logo.jpg.jpg" class="logo" alt="Logo" />
     </div>
     <nav>
-      <a href="admin.html">Home</a>
-      <a href="admin.html">Back</a>
+      <a href="admin.jsp">Home</a>
+      <a href="admin.jsp">Back</a>
       
     </nav>
   </header>
@@ -102,7 +102,7 @@
                             <th>Login Time</th>
                             <th>Logout Time</th>
                             <th>Active Time</th>
-                            <th>Location</th>
+           
                         </tr>
                     </thead>
                     <tbody>
@@ -111,8 +111,8 @@
 							String name=record[0];
                             String loginTime = record[1];
                             String logoutTime = record[2];
-                            String location = record[3];
-                            String activeTime = record[4];
+                         
+                            String activeTime = record[3];
 
                             if (activeTime == null || activeTime.trim().isEmpty()) {
                                 activeTime = (logoutTime != null && !"null".equals(logoutTime)) 
@@ -125,7 +125,7 @@
                             <td><%= loginTime %></td>
                             <td><%= (logoutTime != null ? logoutTime : "Active") %></td>
                             <td><%= activeTime %></td>
-                            <td><%= (location != null ? location : "Unknown") %></td>
+                      
                         </tr>
                     <% } %>
                     </tbody>

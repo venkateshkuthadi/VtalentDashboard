@@ -1,6 +1,6 @@
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="com.VtalentDashboard.dao.AttandanceDao" %>
-<%@ page import="com.VtalentDashboard.utils.Location" %>
+
 <%@ page import="java.util.Date" %>
 <%@ page import="java.sql.Timestamp" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
@@ -162,23 +162,21 @@
                         <th>Login Time</th>
                         <th>Logout Time</th>
                         <th>Active Time</th>
-                        <th>Location</th>
+                        
                     </tr>
                 </thead>
                 <tbody>
                     <%
-                        Location locationUtil = new Location();
+                        
                         for (String[] record : attendanceList) {
                         	String name=record[0];
                             String loginTime = record[1];
                             String logoutTime = record[2];
-                            String location = record[3];
-                            String activeTime = record[4];
+                            
+                            String activeTime = record[3];
 
                             // Fallback for location if it's Habeeb Nagar
-                            if (location != null && location.contains("Habeeb Nagar")) {
-                                location = locationUtil.getLocationFromCoordinates(17.4948, 78.3996);
-                            }
+                           
 
                             if (activeTime == null || activeTime.trim().isEmpty()) {
                                 if (logoutTime != null && !"null".equals(logoutTime)) {
@@ -194,7 +192,7 @@
                         <td><%= loginTime != null ? loginTime : "N/A" %></td>
                         <td><%= logoutTime != null ? logoutTime : "N/A" %></td>
                         <td><%= activeTime %></td>
-                        <td><%= location != null ? location : "Unknown" %></td>
+                       
                     </tr>
                     <%
                         } // end for

@@ -145,8 +145,7 @@
         <label for="password">Password</label>
         <input type="password" id="password" name="password" placeholder="Enter your password" required />
       </div>
-       <input type="hidden" id="latitude" name="latitude">
-            <input type="hidden" id="longitude" name="longitude">
+      
       <div class="btn-group">
         <button type="submit" class="submit"><b>Submit</b></button>
         <button type="reset" class="cancel"><b>Cancel</b></button>
@@ -154,42 +153,6 @@
     </form>
   </div>
   
-  <script>
-  // Update heading when switching between Student and Admin
-  function updateHeading() {
-    const heading = document.getElementById("loginHeading");
-    if (document.getElementById("student").checked) {
-      heading.textContent = "Student Login";
-    } else if (document.getElementById("admin").checked) {
-      heading.textContent = "Admin Login";
-    }
-  }
-
-  document.addEventListener('DOMContentLoaded', updateHeading);
-
-  // Validate form and capture geolocation before submitting
-  function validateForm(event) {
-    event.preventDefault();
-
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(
-        function (position) {
-          document.getElementById("latitude").value = position.coords.latitude;
-          document.getElementById("longitude").value = position.coords.longitude;
-          document.getElementById('loginForm').submit(); // submit after getting location
-        },
-        function (error) {
-          console.log("Location access denied, falling back to IP");
-          document.getElementById('loginForm').submit(); // submit anyway
-        }
-      );
-    } else {
-      document.getElementById('loginForm').submit();
-    }
-
-    return false;
-  }
-</script>
-
+  
 </body>
 </html>

@@ -105,7 +105,7 @@
         <img src="images/talent logo.jpg" alt="Vtalent Logo"> <!-- Replace with actual image path -->
     </div>
     <div class="header-buttons">
-        <a href="admin.html" class="home">Home</a>
+        <a href="admin.jsp" class="home">Home</a>
         <a href="javascript:history.back()" class="back">Back</a>
     </div>
 </div>

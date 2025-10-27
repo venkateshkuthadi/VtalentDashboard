@@ -30,8 +30,7 @@ public class LoginServlet extends HttpServlet {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         String role = request.getParameter("userType");
-        String latitude = request.getParameter("latitude");
-        String longitude = request.getParameter("longitude");
+     
         String ipAddress = request.getHeader("X-Forwarded-For") != null ? request.getHeader("X-Forwarded-For") : request.getRemoteAddr();
 
         if (username == null || username.trim().isEmpty() || password == null || password.trim().isEmpty() || role == null || role.trim().isEmpty()) {
@@ -40,16 +39,7 @@ public class LoginServlet extends HttpServlet {
             return;
         }
 
-        try {
-            if (latitude != null && longitude != null) {
-                Double.parseDouble(latitude);
-                Double.parseDouble(longitude);
-            }
-        } catch (NumberFormatException e) {
-            request.setAttribute("errorMessage", "Invalid geolocation data.");
-            request.getRequestDispatcher("LoginPage.jsp").forward(request, response);
-            return;
-        }
+        
 
         LoginEntity login = new LoginEntity();
         login.setUsername(username);
@@ -61,6 +51,7 @@ public class LoginServlet extends HttpServlet {
         boolean isAuthenticated = student != null && student.getsName() != null;
 
         HttpSession session = request.getSession();
+        session.setAttribute("login", login);
         session.setAttribute("student", student);
 
         if (isAuthenticated) {
@@ -74,7 +65,7 @@ public class LoginServlet extends HttpServlet {
                          request.getRequestDispatcher("student.jsp").forward(request, response);
                     } else {
                         session.setAttribute("username", username);
-                        attendanceDao.saveLogInTime(username, ipAddress, latitude, longitude);
+                        attendanceDao.saveLogInTime(username);
                         response.sendRedirect("student.jsp");
                     }
                 } catch (SQLException e) {
@@ -87,7 +78,7 @@ public class LoginServlet extends HttpServlet {
             } else if (role.equalsIgnoreCase("admin")) {
             	session.setAttribute("admin", student);
             	System.out.println("admin session created...");
-            	response.sendRedirect("admin.html");
+            	response.sendRedirect("admin.jsp");
             } else {
                 request.setAttribute("errorMessage", "Invalid role specified.");
                 request.getRequestDispatcher("LoginPage.jsp").forward(request, response);

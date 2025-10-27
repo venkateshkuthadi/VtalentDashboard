@@ -3,7 +3,7 @@
 <%
     String cancleLink = "index.jsp"; 
     if (session.getAttribute("admin") != null) {
-        cancleLink = "admin.html";
+        cancleLink = "admin.jsp";
         
     }
 %>

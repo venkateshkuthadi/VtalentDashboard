@@ -64,8 +64,8 @@
                      alt="vtalent" width="120">
             </div>
             <div class="col-sm-6 d-flex justify-content-end">
-                <a href="admin.html" class="btn btn-warning">Home</a>
-                <a href="admin.html" class="btn btn-light">Back</a>
+                <a href="admin.jsp" class="btn btn-warning">Home</a>
+                <a href="admin.jsp" class="btn btn-light">Back</a>
             </div>
         </div>
     </div>
